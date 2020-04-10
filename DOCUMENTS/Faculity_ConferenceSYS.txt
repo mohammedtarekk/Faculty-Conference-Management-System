@@ -1,0 +1,404 @@
+
+////////////////////////////////////////////////
+create tables script codes
+/////////////////////////////////////////////////
+
+
+create table Author 
+(Author_ID number(10) primary key NOT NULL ,
+Author_Fname varchar2(50),
+Author_Sname varchar2(50),
+Author_DBirth DATE,
+Author_Email varchar2(100),
+Author_address varchar2(100),
+);
+.....................................
+
+create table Paper(
+Paper_ID number(10) primary key not null,
+Paper_Title varchar2(50),
+Paper_Content varchar2(1000),
+Research_ID number (10),
+Author_ID number(10)
+);
+........................................
+
+
+create table Reviewer 
+(Reviewer_ID number(10) primary key NOT NULL ,
+Reviewer_Fname varchar2(50),
+Reviewer_Sname varchar2(50),
+Reviewer_DBirth DATE,
+Reviewer_Email varchar2(100),
+Reviewer_address varchar2(100),
+);
+......................................
+
+create table Review(
+Paper_ID number (10) not null,
+Reviewer_ID number (10) not null,
+Rev_State varchar2(100), 
+CONSTRAINT PK_Review PRIMARY KEY (Paper_ID,Reviewer_ID)
+);
+.........................................
+
+create table Conference(
+Conference_ID number (10) primary key not null,
+Conference_Date Date,
+Conference_Place varchar2(100),
+Conference_Description varchar2(500),
+Conference_Duration number(10),
+Author_ID number (10)
+);
+
+..........................
+
+create table Research_CategoryField
+(
+Category_ID number(10) primary key not null,
+Category_Name varchar2(50),
+Category_Describtion varchar2(200)
+);
+
+........................................
+
+Create table Author_Phones
+(Author_ID number(10) not null primary key,
+Author_Phone varchar2(20)
+);
+
+.....................................
+
+Create table Reviewer_Phones
+(Reviewer_ID number(10) not null primary key,
+Reviewer_Phone varchar2(20)
+);
+
+
+
+///////////////////////////////////////////////////////
+Assign foreign Keys to primary keys
+///////////////////////////////////////////////////////
+
+
+ALTER TABLE Author_Phones
+ADD FOREIGN KEY (Author_ID) REFERENCES Author(Author_ID);
+
+.............................................................
+
+
+ALTER TABLE Paper
+ADD FOREIGN KEY (Author_ID) REFERENCES Author(Author_ID);
+
+
+.............................................................
+
+
+ALTER TABLE Conference
+ADD FOREIGN KEY (Author_ID) REFERENCES Author(Author_ID);
+
+..................................................................
+
+
+ALTER TABLE Reviewer_Phones
+ADD FOREIGN KEY (Reviewer_ID) REFERENCES Reviewer(Reviewer_ID);
+
+
+..................................................................
+
+
+ALTER TABLE Review
+ADD FOREIGN KEY (Reviewer_ID) REFERENCES Reviewer(Reviewer_ID);
+
+
+..................................................................
+
+
+ALTER TABLE Review
+ADD FOREIGN KEY (Paper_ID) REFERENCES Paper(Paper_ID);
+
+
+..................................................................
+
+
+ALTER TABLE Paper
+ADD FOREIGN KEY (Research_ID) REFERENCES Research_CategoryField(Category_ID);
+
+..........................................................
+
+/////////////////////////////////////////
+sequence(AUTOINCREMENT)
+///////////////////////////////////////
+
+//author seq
+CREATE SEQUENCE seq
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1 ;
+
+
+........................................
+
+//Reviewer seq
+CREATE SEQUENCE seq_Rev
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1 ;
+
+.........................................
+//conference seq
+
+CREATE SEQUENCE seq_Con
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1 ;
+
+..........................
+
+//paper seq
+
+CREATE SEQUENCE seq_paper
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1 ;
+
+
+/////////////////////////////////////////////////////////////////
+
+Insert in Author
+
+///////////////////////////////////////////////////////////
+
+INSERT INTO Author (Author_ID,Author_Fname, Author_Sname, Author_DBirth, Author_Email, Author_address)
+VALUES (seq.nextval , 'Ahmed', 'Ali', sysdate, 'Ahmed@gmail.com', '28 ahmel kamel st');
+
+INSERT INTO Author (Author_ID,Author_Fname, Author_Sname, Author_DBirth, Author_Email, Author_address)
+VALUES (seq.nextval , 'Ali', 'Amir', sysdate, 'Ali@gmail.com', '22 ahmel Ali st');
+
+INSERT INTO Author (Author_ID,Author_Fname, Author_Sname, Author_DBirth, Author_Email, Author_address)
+VALUES (seq.nextval , 'khaled', 'qutp', sysdate, 'qutp@gmail.com', '28 ahmel kamel st');
+
+INSERT INTO Author (Author_ID,Author_Fname, Author_Sname, Author_DBirth, Author_Email, Author_address)
+VALUES (seq.nextval , 'Omar', 'Ahmed', sysdate, 'Omar@gmail.com', '58s Omar khaled st');
+
+INSERT INTO Author (Author_ID,Author_Fname, Author_Sname, Author_DBirth, Author_Email, Author_address)
+VALUES (seq.nextval , 'Samy', 'Samy', sysdate, 'Samy@gmail.com', '98 Samy kamel st');
+
+INSERT INTO Author (Author_ID,Author_Fname, Author_Sname, Author_DBirth, Author_Email, Author_address)
+VALUES (seq.nextval , 'Yousef', 'Ahmed', sysdate, 'JO@gmail.com', '18 JO kamel st');
+
+INSERT INTO Author (Author_ID,Author_Fname, Author_Sname, Author_DBirth, Author_Email, Author_address)
+VALUES (seq.nextval ,' Ramy',' Gamal', sysdate, 'Ramy@gmail.com', '15 Ramy kamel st');
+
+INSERT INTO Author (Author_ID,Author_Fname, Author_Sname, Author_DBirth, Author_Email, Author_address)
+VALUES (seq.nextval , 'Ramez', 'Zaher', sysdate,' Zaher@gmail.com', '55 Zaher kamel st');
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Insert in Reviewer
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+INSERT INTO Reviewer (Reviewer_ID, Reviewer_Fname, Reviewer_Sname, Reviewer_DBirth, Reviewer_Email, Reviewer_address)
+VALUES (seq_Rev.nextval , 'Ahmed', 'Ali', sysdate, 'Ahmed@gmail.com', '28 ahmel kamel st');
+
+INSERT INTO Reviewer (Reviewer_ID, Reviewer_Fname, Reviewer_Sname, Reviewer_DBirth, Reviewer_Email, Reviewer_address)
+VALUES (seq_Rev.nextval , 'Ali', 'Amir', sysdate,' Ali@gmail.com', '22 ahmel Ali st');
+
+INSERT INTO Reviewer (Reviewer_ID, Reviewer_Fname, Reviewer_Sname, Reviewer_DBirth, Reviewer_Email, Reviewer_address)
+VALUES (seq_Rev.nextval , 'khaled', 'qutp', sysdate, 'qutp@gmail.com', '28 ahmel kamel st');
+
+INSERT INTO Reviewer (Reviewer_ID, Reviewer_Fname, Reviewer_Sname, Reviewer_DBirth, Reviewer_Email, Reviewer_address)
+VALUES (seq_Rev.nextval , 'Omar', 'Ahmed', sysdate, 'Omar@gmail.com', '58s Omar khaled st');
+
+INSERT INTO Reviewer (Reviewer_ID, Reviewer_Fname, Reviewer_Sname, Reviewer_DBirth, Reviewer_Email, Reviewer_address)
+VALUES (seq_Rev.nextval , 'Samy', 'Samy', sysdate, 'Samy@gmail.com', '98 Samy kamel st');
+
+INSERT INTO Reviewer (Reviewer_ID, Reviewer_Fname, Reviewer_Sname, Reviewer_DBirth, Reviewer_Email, Reviewer_address)
+VALUES (seq_Rev.nextval , 'Yousef', 'Ahmed', sysdate, 'JO@gmail.com', '18 JO kamel st');
+
+INSERT INTO Reviewer (Reviewer_ID, Reviewer_Fname, Reviewer_Sname, Reviewer_DBirth, Reviewer_Email, Reviewer_address)
+VALUES (seq_Rev.nextval , 'Ramy', 'Gamal', sysdate, 'Ramy@gmail.com', '15 Ramy kamel st');
+
+INSERT INTO Reviewer (Reviewer_ID, Reviewer_Fname, Reviewer_Sname, Reviewer_DBirth, Reviewer_Email, Reviewer_address)
+VALUES (seq_Rev.nextval ,' Ramez', 'Zaher', sysdate, 'Zaher@gmail.com', '55 Zaher kamel st');
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+Insert into Paper
+//////////////////////////////////////////////////////////////////////////////////
+
+INSERT INTO Paper (Paper_ID, Paper_Title, Paper_Content, Research_ID, Author_ID)
+VALUES (seq_paper.nextval , 'Programming',  'Programing Content', 1 , 1);
+
+INSERT INTO Paper (Paper_ID, Paper_Title, Paper_Content, Research_ID, Author_ID)
+VALUES (seq_paper.nextval , 'AI',  'AI Content', 2 , 2);
+
+INSERT INTO Paper (Paper_ID, Paper_Title, Paper_Content, Research_ID, Author_ID)
+VALUES (seq_paper.nextval , 'Biology',  'Biology Content', 3 , 3);
+
+INSERT INTO Paper (Paper_ID, Paper_Title, Paper_Content, Research_ID, Author_ID)
+VALUES (seq_paper.nextval , 'Software',  'Software Content', 2 , 4);
+
+INSERT INTO Paper (Paper_ID, Paper_Title, Paper_Content, Research_ID, Author_ID)
+VALUES (seq_paper.nextval , 'Math',  'Math Content', 1 , 5);
+
+INSERT INTO Paper (Paper_ID, Paper_Title, Paper_Content, Research_ID, Author_ID)
+VALUES (seq_paper.nextval , 'Language',  'Language Content', 3 , 6);
+
+INSERT INTO Paper (Paper_ID, Paper_Title, Paper_Content, Research_ID, Author_ID)
+VALUES (seq_paper.nextval , 'Machine Learning',  'Machine Learning Content', 3 , 7);
+
+INSERT INTO Paper (Paper_ID, Paper_Title, Paper_Content, Research_ID, Author_ID)
+VALUES (seq_paper.nextval , 'Economy',  'Economy Content', 1 , 8);
+
+
+
+/////////////////////////////
+Conference
+/////////////////////////////
+
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 1','discussing science',15,404);
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 2','discussing physics',20,118);
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 1','discussing geography',13,17);
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 3','discussing science',15,120);
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 2','discussing kemya',35,132);
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 1','discussing biology',12,114);
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 2','discussing science',30,112);
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 3','discussing tech',15,113);
+INSERT INTO Conference(Conference_ID,Conference_Date,Conference_Place,Conference_Description,Conference_Duration,Author_ID) VALUES (seq_Con.nextval,sysdate,'Hall 1','discussing chem',13,142);
+
+
+//////////////////////////////
+Research_categoryfield
+/////////////////////////
+
+INSERT INTO Research_CategoryField (Category_ID, Category_Name, Category_Describtion)
+VALUES (seq_Rev.nextval , ‘CS’ , ‘ Computer Sciences’ );
+
+INSERT INTO Research_CategoryField (Category_ID, Category_Name, Category_Describtion)
+VALUES (seq_Rev.nextval , ‘Eco’ , ‘ Economy’ );
+
+INSERT INTO Research_CategoryField (Category_ID, Category_Name, Category_Describtion)
+VALUES (seq_Rev.nextval , ‘Bio’ , ‘ Biology );
+
+/////////////////////////////////////////
+Review
+////////////////////////////////////////
+INSERT INTO Review (Paper_ID, REVIEWER_ID, Rev_State)
+VALUES (19 , 1 , 'Accepted' );
+
+INSERT INTO Review (Paper_ID, REVIEWER_ID, Rev_State)
+VALUES (18 , 2 , 'Accepted' );
+
+INSERT INTO Review (Paper_ID, REVIEWER_ID, Rev_State)
+VALUES (20 , 3 , ' Accepted' );
+
+INSERT INTO Review (Paper_ID, REVIEWER_ID, Rev_State)
+VALUES (21, 4 , 'Accepted');
+
+INSERT INTO Review (Paper_ID, REVIEWER_ID, Rev_State)
+VALUES (22 ,  5 , 'Rejected');
+
+INSERT INTO Review (Paper_ID, REVIEWER_ID, Rev_State)
+VALUES (23 ,  6 , ' Rejected' );
+
+INSERT INTO Review (Paper_ID, REVIEWER_ID, Rev_State)
+VALUES (24 ,  7 , 'Rejected');
+
+INSERT INTO Review (Review_ID, REVIEWER_ID, Rev_State)
+VALUES (25 ,  8 , ' Rejected' );
+
+
+/////////////////////////////////////////////////////
+Reviewer phones
+////////////////////////////////////////////
+INSERT INTO Reviewer_Phones (Reviewer_ID, Reviewer_Phone)
+VALUES (9, '0114739857' );
+
+INSERT INTO Reviewer_Phones (Reviewer_ID, Reviewer_Phone)
+VALUES (2, '0114739857' );
+
+INSERT INTO Reviewer_Phones (Reviewer_ID, Reviewer_Phone)
+VALUES (3, '0114739857'’ );
+
+INSERT INTO Reviewer_Phones (Reviewer_ID, Reviewer_Phone)
+VALUES (4, '0114739857' );
+
+INSERT INTO Reviewer_Phones (Reviewer_ID, Reviewer_Phone)
+VALUES (5, '0114739857' );
+
+INSERT INTO Reviewer_Phones (Reviewer_ID, Reviewer_Phone)
+VALUES (6,'0114739857' );
+
+INSERT INTO Reviewer_Phones (Reviewer_ID, Reviewer_Phone)
+VALUES (7, '0114739857');
+
+INSERT INTO Reviewer_Phones (Reviewer_ID, Reviewer_Phone)
+VALUES (8,'0114739857' );
+
+
+////////////////////////////////////
+Author phones
+/////////////////////////////////////
+INSERT INTO Author_Phones (Author_ID, Author_Phone)
+VALUES (7, '0114739857' );
+
+INSERT INTO Author_Phones (Author_ID, Author_Phone)
+VALUES (2, '0114782857' );
+
+INSERT INTO Author_Phones (Author_ID, Author_Phone)
+VALUES (3, '0114782857' );
+
+INSERT INTO Author_Phones (Author_ID, Author_Phone)
+VALUES (4, '0114782857' );
+
+INSERT INTO Author_Phones (Author_ID, Author_Phone)
+VALUES (5, '0114782857' );
+
+INSERT INTO Author_Phones (Author_ID, Author_Phone)
+VALUES (6, '0114782857' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe.config
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.pdb
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csprojAssemblyReference.cache
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Controls.ImageButtonCustom.resources
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Login_Form.resources
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Properties.Resources.resources
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.GenerateResource.cache
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CoreCompileInputs.cache
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
+E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Register_Form.resources
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe.config
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.pdb
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csprojAssemblyReference.cache
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Controls.ImageButtonCustom.resources
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Login_Form.resources
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Properties.Resources.resources
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Register_Form.resources
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.GenerateResource.cache
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CoreCompileInputs.cache
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
+C:\Users\Mohammed\Desktop\New folder\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
