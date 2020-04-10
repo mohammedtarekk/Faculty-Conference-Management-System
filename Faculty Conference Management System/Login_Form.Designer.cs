@@ -33,20 +33,22 @@
             this.UserID_txt = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Password_txt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.RegisterNowBT = new System.Windows.Forms.PictureBox();
+            this.AuthorRB = new System.Windows.Forms.RadioButton();
+            this.SignIn_bt = new CustomImageButton.ImageButtonCustom();
             this.Reviewer_RB_lbl = new CustomImageButton.ImageButtonCustom();
             this.Author_RB_lbl = new CustomImageButton.ImageButtonCustom();
             this.Exit_BT = new CustomImageButton.ImageButtonCustom();
             this.DragControlStartForm = new DragControlDemo.DragControl();
-            this.SignIn_bt = new CustomImageButton.ImageButtonCustom();
-            this.label2 = new System.Windows.Forms.Label();
-            this.RegisterNowBT = new System.Windows.Forms.PictureBox();
+            this.ReviewerRB = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RegisterNowBT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SignIn_bt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reviewer_RB_lbl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Author_RB_lbl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit_BT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SignIn_bt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RegisterNowBT)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPIC
@@ -96,6 +98,53 @@
             this.Password_txt.Text = "PASSWORD";
             this.Password_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Password_txt_MouseClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Location = new System.Drawing.Point(199, 359);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(263, 14);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "ALL COPYRIGHTS RESERVED TO TEAM ABO NESMA @2020";
+            // 
+            // RegisterNowBT
+            // 
+            this.RegisterNowBT.BackColor = System.Drawing.Color.Transparent;
+            this.RegisterNowBT.Image = global::Faculty_Conference_Management_System.Properties.Resources.RegisterNow;
+            this.RegisterNowBT.Location = new System.Drawing.Point(458, 275);
+            this.RegisterNowBT.Name = "RegisterNowBT";
+            this.RegisterNowBT.Size = new System.Drawing.Size(104, 32);
+            this.RegisterNowBT.TabIndex = 13;
+            this.RegisterNowBT.TabStop = false;
+            this.RegisterNowBT.Click += new System.EventHandler(this.RegisterNowBT_Click);
+            // 
+            // AuthorRB
+            // 
+            this.AuthorRB.AutoSize = true;
+            this.AuthorRB.BackColor = System.Drawing.Color.Transparent;
+            this.AuthorRB.Location = new System.Drawing.Point(379, 258);
+            this.AuthorRB.Name = "AuthorRB";
+            this.AuthorRB.Size = new System.Drawing.Size(14, 13);
+            this.AuthorRB.TabIndex = 14;
+            this.AuthorRB.TabStop = true;
+            this.AuthorRB.UseVisualStyleBackColor = false;
+            // 
+            // SignIn_bt
+            // 
+            this.SignIn_bt.BackColor = System.Drawing.Color.Transparent;
+            this.SignIn_bt.Image = global::Faculty_Conference_Management_System.Properties.Resources.SigninButton;
+            this.SignIn_bt.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.SigninButtonOnHover;
+            this.SignIn_bt.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.SigninButton;
+            this.SignIn_bt.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.SigninButton;
+            this.SignIn_bt.Location = new System.Drawing.Point(135, 237);
+            this.SignIn_bt.Name = "SignIn_bt";
+            this.SignIn_bt.Size = new System.Drawing.Size(182, 72);
+            this.SignIn_bt.TabIndex = 9;
+            this.SignIn_bt.TabStop = false;
+            // 
             // Reviewer_RB_lbl
             // 
             this.Reviewer_RB_lbl.BackColor = System.Drawing.Color.Transparent;
@@ -140,41 +189,16 @@
             // 
             this.DragControlStartForm.SelectControl = this;
             // 
-            // SignIn_bt
+            // ReviewerRB
             // 
-            this.SignIn_bt.BackColor = System.Drawing.Color.Transparent;
-            this.SignIn_bt.Image = global::Faculty_Conference_Management_System.Properties.Resources.SigninButton;
-            this.SignIn_bt.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.SigninButtonOnHover;
-            this.SignIn_bt.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.SigninButton;
-            this.SignIn_bt.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.SigninButton;
-            this.SignIn_bt.Location = new System.Drawing.Point(135, 237);
-            this.SignIn_bt.Name = "SignIn_bt";
-            this.SignIn_bt.Size = new System.Drawing.Size(182, 72);
-            this.SignIn_bt.TabIndex = 9;
-            this.SignIn_bt.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(199, 359);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 14);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "ALL COPYRIGHTS RESERVED TO TEAM ABO NESMA @2020";
-            // 
-            // RegisterNowBT
-            // 
-            this.RegisterNowBT.BackColor = System.Drawing.Color.Transparent;
-            this.RegisterNowBT.Image = global::Faculty_Conference_Management_System.Properties.Resources.RegisterNow;
-            this.RegisterNowBT.Location = new System.Drawing.Point(458, 275);
-            this.RegisterNowBT.Name = "RegisterNowBT";
-            this.RegisterNowBT.Size = new System.Drawing.Size(104, 32);
-            this.RegisterNowBT.TabIndex = 13;
-            this.RegisterNowBT.TabStop = false;
-            this.RegisterNowBT.Click += new System.EventHandler(this.RegisterNowBT_Click);
+            this.ReviewerRB.AutoSize = true;
+            this.ReviewerRB.BackColor = System.Drawing.Color.Transparent;
+            this.ReviewerRB.Location = new System.Drawing.Point(449, 258);
+            this.ReviewerRB.Name = "ReviewerRB";
+            this.ReviewerRB.Size = new System.Drawing.Size(14, 13);
+            this.ReviewerRB.TabIndex = 15;
+            this.ReviewerRB.TabStop = true;
+            this.ReviewerRB.UseVisualStyleBackColor = false;
             // 
             // Login_Form
             // 
@@ -182,6 +206,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Faculty_Conference_Management_System.Properties.Resources.BACKGROUNDFINAL;
             this.ClientSize = new System.Drawing.Size(656, 375);
+            this.Controls.Add(this.ReviewerRB);
+            this.Controls.Add(this.AuthorRB);
             this.Controls.Add(this.RegisterNowBT);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SignIn_bt);
@@ -198,11 +224,11 @@
             this.Text = "Conference Management System";
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RegisterNowBT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SignIn_bt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reviewer_RB_lbl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Author_RB_lbl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit_BT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SignIn_bt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RegisterNowBT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +247,8 @@
         private CustomImageButton.ImageButtonCustom SignIn_bt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox RegisterNowBT;
+        private System.Windows.Forms.RadioButton AuthorRB;
+        private System.Windows.Forms.RadioButton ReviewerRB;
     }
 }
 

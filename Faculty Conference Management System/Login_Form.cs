@@ -12,6 +12,8 @@ namespace Faculty_Conference_Management_System
 {
     public partial class Login_Form : Form
     {
+        public Register_Form RegisterFormObject = new Register_Form();
+
         public Login_Form()
         {
             InitializeComponent();
@@ -42,23 +44,11 @@ namespace Faculty_Conference_Management_System
             Password_txt.PasswordChar = '*';
         }
 
-        private void AuthorRB_OnChange(object sender, EventArgs e)
-        {
-            //if (AuthorRB.Checked)
-               // ReviewerRB.Checked = false;
-        }
-
-        private void ReviewerRB_OnChange(object sender, EventArgs e)
-        {
-           // if (ReviewerRB.Checked)
-              //  AuthorRB.Checked = false;
-        }
-
         private void RegisterNowBT_Click(object sender, EventArgs e)
         {
-            Register_Form rf = new Register_Form();
-            rf.Show();
+            RegisterFormObject.Show();
             this.Hide();
         }
+
     }
 }
