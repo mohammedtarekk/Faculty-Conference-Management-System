@@ -21,3 +21,15 @@ E:\College\Projects\Faculty Conference Management System\Faculty Conference Mana
 E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CoreCompileInputs.cache
 E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
 E:\College\Projects\Faculty Conference Management System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe.config
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.pdb
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csprojAssemblyReference.cache
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Controls.ImageButtonCustom.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Login_Form.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Properties.Resources.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Register_Form.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.GenerateResource.cache
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CoreCompileInputs.cache
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb

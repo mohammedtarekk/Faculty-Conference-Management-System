@@ -12,7 +12,7 @@ namespace Faculty_Conference_Management_System
 {
     public partial class Login_Form : Form
     {
-        public Register_Form RegisterFormObject = new Register_Form();
+      //  public Register_Form RegisterFormObject = new Register_Form();
 
         public Login_Form()
         {
@@ -46,7 +46,7 @@ namespace Faculty_Conference_Management_System
 
         private void RegisterNowBT_Click(object sender, EventArgs e)
         {
-            RegisterFormObject.Show();
+        //    RegisterFormObject.Show();
             this.Hide();
         }
 
