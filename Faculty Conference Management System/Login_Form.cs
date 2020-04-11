@@ -44,6 +44,8 @@ namespace Faculty_Conference_Management_System
         {
             Register_Form RegisterFormObject = new Register_Form();
             RegisterFormObject.Show();
+            new AuthorPage().Show();
+            new ReviewerPage().Show();
             this.Hide();
         }
 
