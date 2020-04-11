@@ -80,10 +80,15 @@ namespace Faculty_Conference_Management_System
             //PUT YOUR LOGIC HERE ^^
 
 
-            //USE ACCORDING TO YOUR LOGIC BUT DON'T MODIFY THIS
-            MessageBox.Show("SUCCESS","You have been registered successfully! Sign in NOW!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            //USE ACCORDING TO YOUR LOGIC
+            MessageBox.Show("You have been registered successfully! Sign in NOW!", "SUCCESS", MessageBoxButtons.OK,MessageBoxIcon.Information);
             this.Hide();
             LoginFormObject.Show();
+        }
+
+        private void Register_Form_Load(object sender, EventArgs e)
+        {
+
         }
     }
     

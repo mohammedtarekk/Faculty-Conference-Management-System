@@ -12,13 +12,9 @@ namespace Faculty_Conference_Management_System
 {
     public partial class Login_Form : Form
     {
-      //  public Register_Form RegisterFormObject = new Register_Form();
-
         public Login_Form()
         {
             InitializeComponent();
-           // Image AutNormalImageTemp = Author_RB_lbl.ImageNormal;
-
         }
 
         private void Exit_BT_Click(object sender, EventArgs e)
@@ -46,9 +42,14 @@ namespace Faculty_Conference_Management_System
 
         private void RegisterNowBT_Click(object sender, EventArgs e)
         {
-        //    RegisterFormObject.Show();
+            Register_Form RegisterFormObject = new Register_Form();
+            RegisterFormObject.Show();
             this.Hide();
         }
 
+        private void Login_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
