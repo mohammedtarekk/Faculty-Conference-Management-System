@@ -33,9 +33,9 @@
 			this.searchTxt = new System.Windows.Forms.TextBox();
 			this.searchBtn = new System.Windows.Forms.Button();
 			this.viewAllBtn = new System.Windows.Forms.Button();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.GridView1 = new System.Windows.Forms.DataGridView();
 			this.submitBtn = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// nextDate
@@ -58,40 +58,42 @@
 			// 
 			// searchTxt
 			// 
-			this.searchTxt.Location = new System.Drawing.Point(282, 124);
+			this.searchTxt.Location = new System.Drawing.Point(153, 120);
 			this.searchTxt.Name = "searchTxt";
 			this.searchTxt.Size = new System.Drawing.Size(144, 20);
 			this.searchTxt.TabIndex = 7;
 			// 
 			// searchBtn
 			// 
-			this.searchBtn.Location = new System.Drawing.Point(141, 106);
+			this.searchBtn.Location = new System.Drawing.Point(12, 102);
 			this.searchBtn.Name = "searchBtn";
 			this.searchBtn.Size = new System.Drawing.Size(135, 54);
 			this.searchBtn.TabIndex = 5;
 			this.searchBtn.Text = "Search";
 			this.searchBtn.UseVisualStyleBackColor = true;
+			this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
 			// 
 			// viewAllBtn
 			// 
-			this.viewAllBtn.Location = new System.Drawing.Point(537, 106);
+			this.viewAllBtn.Location = new System.Drawing.Point(408, 102);
 			this.viewAllBtn.Name = "viewAllBtn";
 			this.viewAllBtn.Size = new System.Drawing.Size(135, 54);
 			this.viewAllBtn.TabIndex = 6;
 			this.viewAllBtn.Text = "View all papers";
 			this.viewAllBtn.UseVisualStyleBackColor = true;
+			this.viewAllBtn.Click += new System.EventHandler(this.viewAllBtn_Click);
 			// 
-			// dataGridView1
+			// GridView1
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(141, 166);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(531, 272);
-			this.dataGridView1.TabIndex = 4;
+			this.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.GridView1.Location = new System.Drawing.Point(12, 162);
+			this.GridView1.Name = "GridView1";
+			this.GridView1.Size = new System.Drawing.Size(1022, 272);
+			this.GridView1.TabIndex = 4;
 			// 
 			// submitBtn
 			// 
-			this.submitBtn.Location = new System.Drawing.Point(537, 19);
+			this.submitBtn.Location = new System.Drawing.Point(408, 15);
 			this.submitBtn.Name = "submitBtn";
 			this.submitBtn.Size = new System.Drawing.Size(135, 54);
 			this.submitBtn.TabIndex = 6;
@@ -102,17 +104,17 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(679, 446);
+			this.ClientSize = new System.Drawing.Size(1046, 446);
 			this.Controls.Add(this.nextDate);
 			this.Controls.Add(this.lable1);
 			this.Controls.Add(this.searchTxt);
 			this.Controls.Add(this.searchBtn);
 			this.Controls.Add(this.submitBtn);
 			this.Controls.Add(this.viewAllBtn);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.GridView1);
 			this.Name = "AuthorPage";
 			this.Text = "AuthorPage";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -125,7 +127,7 @@
 		private System.Windows.Forms.TextBox searchTxt;
 		private System.Windows.Forms.Button searchBtn;
 		private System.Windows.Forms.Button viewAllBtn;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView GridView1;
 		private System.Windows.Forms.Button submitBtn;
 	}
 }

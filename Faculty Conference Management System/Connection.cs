@@ -6,12 +6,55 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
+using System.Windows.Forms;
 namespace Faculty_Conference_Management_System
 {
 	public class Connection
 	{
-		public string conStr = "Data Source=orcl; User Id=hr; Password=hr;";
+		private string conStr { get; set; }
+		private OracleDataAdapter adapter { get; set; }
+		private OracleCommandBuilder builder { get; set; }
+		private DataSet DBdataSet { get; set; }
         OracleConnection con;
+		public Connection()
+		{
+			conStr = "Data Source=orcl; User Id=hr; Password=hr;";
+		}
+		/// <summary>
+		/// Excutes query in disconnected mode
+		/// </summary>
+		/// <param name="query">SQL query to excute</param>
+		/// <returns>DataTable contains data from database</returns>
+		public DataSet DisconnectedExcuteQuery(string query)
+		{
+			adapter = new OracleDataAdapter(query, conStr);
+			DBdataSet = new DataSet();
+			adapter.Fill(DBdataSet);
+			return DBdataSet;
+		}
+
+		/// <summary>
+		/// Excutes query in disconnected mode
+		/// </summary>
+		/// <param name="query">SQL query to excute</param>
+		/// <param name="parametersList">queue of command parameters</param>
+		/// <returns>DataTable contains data from database</returns>
+		public DataSet DisconnectedExcuteQuery(string query, Queue<string> parametersList)
+		{
+			adapter = new OracleDataAdapter(query, conStr);
+			adapter.SelectCommand.Parameters.Add(parametersList.Dequeue(), parametersList.Dequeue());
+			DBdataSet = new DataSet();
+			adapter.Fill(DBdataSet);
+			return DBdataSet;
+		}
+
+		internal void Update(DataSet dataSet)
+		{
+			builder = new OracleCommandBuilder(adapter);
+			dataSet.AcceptChanges();
+			adapter.Update(dataSet.Tables[0]);
+		}
+
        public struct account
         {
            public int ID;

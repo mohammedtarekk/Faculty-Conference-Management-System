@@ -28,22 +28,23 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.GridView1 = new System.Windows.Forms.DataGridView();
 			this.viewAllBtn = new System.Windows.Forms.Button();
 			this.searchBtn = new System.Windows.Forms.Button();
 			this.searchTxt = new System.Windows.Forms.TextBox();
 			this.lable1 = new System.Windows.Forms.Label();
 			this.nextDate = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.saveBtn = new System.Windows.Forms.Button();
+			((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// dataGridView1
+			// GridView1
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(151, 166);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(531, 272);
-			this.dataGridView1.TabIndex = 0;
+			this.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.GridView1.Location = new System.Drawing.Point(12, 166);
+			this.GridView1.Name = "GridView1";
+			this.GridView1.Size = new System.Drawing.Size(940, 225);
+			this.GridView1.TabIndex = 0;
 			// 
 			// viewAllBtn
 			// 
@@ -63,6 +64,7 @@
 			this.searchBtn.TabIndex = 1;
 			this.searchBtn.Text = "Search";
 			this.searchBtn.UseVisualStyleBackColor = true;
+			this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
 			// 
 			// searchTxt
 			// 
@@ -89,20 +91,31 @@
 			this.nextDate.TabIndex = 3;
 			this.nextDate.Text = "dd/mm/yyyy";
 			// 
+			// saveBtn
+			// 
+			this.saveBtn.Location = new System.Drawing.Point(350, 397);
+			this.saveBtn.Name = "saveBtn";
+			this.saveBtn.Size = new System.Drawing.Size(135, 41);
+			this.saveBtn.TabIndex = 4;
+			this.saveBtn.Text = "Save Changes";
+			this.saveBtn.UseVisualStyleBackColor = true;
+			this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+			// 
 			// ReviewerPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(694, 450);
+			this.ClientSize = new System.Drawing.Size(964, 450);
+			this.Controls.Add(this.saveBtn);
 			this.Controls.Add(this.nextDate);
 			this.Controls.Add(this.lable1);
 			this.Controls.Add(this.searchTxt);
 			this.Controls.Add(this.searchBtn);
 			this.Controls.Add(this.viewAllBtn);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.GridView1);
 			this.Name = "ReviewerPage";
 			this.Text = "ReviewerPage";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -110,11 +123,12 @@
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView GridView1;
 		private System.Windows.Forms.Button viewAllBtn;
 		private System.Windows.Forms.Button searchBtn;
 		private System.Windows.Forms.TextBox searchTxt;
 		private System.Windows.Forms.Label lable1;
 		private System.Windows.Forms.Label nextDate;
+		private System.Windows.Forms.Button saveBtn;
 	}
 }
