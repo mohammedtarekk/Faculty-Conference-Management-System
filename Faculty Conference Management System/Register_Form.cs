@@ -12,6 +12,9 @@ namespace Faculty_Conference_Management_System
 {
     public partial class Register_Form : Form
     {
+        public Login_Form LoginFormObject = new Login_Form();
+        Connection con=new Connection();
+
         public Register_Form()
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace Faculty_Conference_Management_System
         private void Exit_BT_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Login_Form().Show();
+            LoginFormObject.Show();
         }
 
         private void UserID_txt_MouseClick(object sender, MouseEventArgs e)
@@ -75,13 +78,23 @@ namespace Faculty_Conference_Management_System
 
         private void SignUp_bt_Click(object sender, EventArgs e)
         {
+            bool res=true;
             //PUT YOUR LOGIC HERE ^^
+           if (ReviewerRB.Checked)
+                res = con.Signup('R',FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
+           else if(AuthorRB.Checked)
+                 res = con.Signup('A', FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
+
 
 
             //USE ACCORDING TO YOUR LOGIC
+            if (res==true)
             MessageBox.Show("You have been registered successfully! Sign in NOW!", "SUCCESS", MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            else
+                MessageBox.Show("A7aaaaaaaaaaaa!!!!555555555555", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
-            new Login_Form().Show();
+            LoginFormObject.Show();
         }
 
         private void Register_Form_Load(object sender, EventArgs e)
