@@ -12,8 +12,6 @@ namespace Faculty_Conference_Management_System
 {
     public partial class Register_Form : Form
     {
-        public Login_Form LoginFormObject = new Login_Form();
-
         public Register_Form()
         {
             InitializeComponent();
@@ -29,7 +27,7 @@ namespace Faculty_Conference_Management_System
         private void Exit_BT_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginFormObject.Show();
+            new Login_Form().Show();
         }
 
         private void UserID_txt_MouseClick(object sender, MouseEventArgs e)
@@ -83,7 +81,7 @@ namespace Faculty_Conference_Management_System
             //USE ACCORDING TO YOUR LOGIC
             MessageBox.Show("You have been registered successfully! Sign in NOW!", "SUCCESS", MessageBoxButtons.OK,MessageBoxIcon.Information);
             this.Hide();
-            LoginFormObject.Show();
+            new Login_Form().Show();
         }
 
         private void Register_Form_Load(object sender, EventArgs e)
