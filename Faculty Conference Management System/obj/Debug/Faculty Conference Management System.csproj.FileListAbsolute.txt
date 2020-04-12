@@ -78,3 +78,5 @@ D:\3rd term\second term\DataBase\project\Faculty-Conference-Management-System-ma
 D:\3rd term\second term\DataBase\project\Faculty-Conference-Management-System-master\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
 D:\3rd term\second term\DataBase\project\Faculty-Conference-Management-System-master\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
 D:\3rd term\second term\DataBase\project\Faculty-Conference-Management-System-master\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AuthorPage.resources
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.ReviewerPage.resources

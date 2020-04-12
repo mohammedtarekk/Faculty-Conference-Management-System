@@ -43,10 +43,7 @@ namespace Faculty_Conference_Management_System
 
         private void RegisterNowBT_Click(object sender, EventArgs e)
         {
-            Register_Form RegisterFormObject = new Register_Form();
-            RegisterFormObject.Show();
-           // new AuthorPage().Show();
-            //new ReviewerPage().Show();
+            new Register_Form().Show();
             this.Hide();
         }
 
@@ -59,9 +56,9 @@ namespace Faculty_Conference_Management_System
         {
             bool res = true;
             if(AuthorRB.Checked)
-           res= con.Get_Accounts('A');
+                res= con.Get_Accounts('A');
             else
-              res= con.Get_Accounts('R');
+                res= con.Get_Accounts('R');
 
             if (res == true)
             {
@@ -72,11 +69,7 @@ namespace Faculty_Conference_Management_System
                     MessageBox.Show("Login failed :( ");
             }
             else
-            {
                 MessageBox.Show("error loading data from oracle");
-            }
-
-
         }
     }
 }
