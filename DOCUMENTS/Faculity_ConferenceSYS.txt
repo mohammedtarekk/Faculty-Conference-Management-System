@@ -1,4 +1,4 @@
-
+﻿
 ////////////////////////////////////////////////
 create tables script codes
 /////////////////////////////////////////////////
@@ -10,7 +10,7 @@ Author_Fname varchar2(50),
 Author_Sname varchar2(50),
 Author_DBirth DATE,
 Author_Email varchar2(100),
-Author_address varchar2(100),
+Author_address varchar2(100)
 );
 .....................................
 
@@ -30,7 +30,7 @@ Reviewer_Fname varchar2(50),
 Reviewer_Sname varchar2(50),
 Reviewer_DBirth DATE,
 Reviewer_Email varchar2(100),
-Reviewer_address varchar2(100),
+Reviewer_address varchar2(100)
 );
 ......................................
 
