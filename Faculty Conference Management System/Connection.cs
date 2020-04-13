@@ -15,11 +15,13 @@ namespace Faculty_Conference_Management_System
 		private OracleDataAdapter adapter { get; set; }
 		private OracleCommandBuilder builder { get; set; }
 		private DataSet DBdataSet { get; set; }
+
         OracleConnection con;
 		public Connection()
 		{
 			conStr = "Data Source=orcl; User Id=hr; Password=hr;";
 		}
+
 		/// <summary>
 		/// Excutes query in disconnected mode
 		/// </summary>
@@ -80,7 +82,7 @@ namespace Faculty_Conference_Management_System
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
                 if(type=='A')
-                cmd.CommandText = "Author_Signup";
+                    cmd.CommandText = "Author_Signup";
                 else
                     cmd.CommandText = "Reviewer_Signup";
 
@@ -97,8 +99,6 @@ namespace Faculty_Conference_Management_System
             {
                 return false;
             }
-
-
             return true;
         }
 
@@ -110,7 +110,7 @@ namespace Faculty_Conference_Management_System
             accounts.Clear();
             con = new OracleConnection(conStr);
             con.Open();
-           try
+            try
             {       
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
@@ -126,13 +126,12 @@ namespace Faculty_Conference_Management_System
                 while(dr.Read())
                 {
                     account a;
-                   a.ID =Convert.ToInt32(dr[0]);
-                   a.password =Convert.ToString(dr[1]);
+                    a.ID =Convert.ToInt32(dr[0]);
+                    a.password =Convert.ToString(dr[1]);
                     
                     accounts.Add(a);
                 }
                 dr.Close();              
-
             }
             catch  
             {
@@ -142,14 +141,12 @@ namespace Faculty_Conference_Management_System
         }
 
         //this function is to return if account is exist or not
-      public bool check_exist(int id,string pass)
+        public bool check_exist(int id,string pass)
         {
             for(int i=0;i<accounts.Count;i++)
             {
                 if (accounts[i].ID == id && accounts[i].password == pass)
-                {
                     return true;
-                }
             }
             return false;
         }

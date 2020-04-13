@@ -100,6 +100,7 @@
             this.UserID_txt.TabIndex = 14;
             this.UserID_txt.Text = "USER  ID";
             this.UserID_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UserID_txt_MouseClick);
+            this.UserID_txt.TextChanged += new System.EventHandler(this.UserID_txt_TextChanged);
             // 
             // textBoxPIC
             // 
@@ -354,7 +355,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Register_Form";
             this.Text = "Register_Form";
-            this.Load += new System.EventHandler(this.Register_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

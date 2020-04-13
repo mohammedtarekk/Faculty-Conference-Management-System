@@ -43,32 +43,33 @@ namespace Faculty_Conference_Management_System
 
         private void RegisterNowBT_Click(object sender, EventArgs e)
         {
-            //Register_Form RegisterFormObject = new Register_Form();
-            //RegisterFormObject.Show();
-            new AuthorPage().Show();
-            new ReviewerPage().Show();
-           // new Register_Form().Show();
+            new Register_Form().Show();
             this.Hide();
         }
-
-        private void Login_Form_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void SignIn_bt_Click(object sender, EventArgs e)
         {
             bool res = true;
-            if(AuthorRB.Checked)
-                res= con.Get_Accounts('A');
+            int type = 0; //0 if author, 1 if reviewer
+            if (AuthorRB.Checked)
+                res = con.Get_Accounts('A');
             else
-                res= con.Get_Accounts('R');
+            {
+                res = con.Get_Accounts('R');
+                type = 1;
+            }
 
             if (res == true)
             {
                 bool found = con.check_exist(Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
                 if (found == true)
+                {
                     MessageBox.Show("Login successfully :)");
+                    this.Hide();
+                    if (type == 0)
+                        new AuthorPage().Show();
+                    else
+                        new ReviewerPage().Show();
+                }
                 else
                     MessageBox.Show("Login failed :( ");
             }

@@ -18,12 +18,6 @@ namespace Faculty_Conference_Management_System
         {
             InitializeComponent();
         }
-
-        private void BunifuDropdown1_onItemSelected(object sender, EventArgs e)
-        {
-           
-        }
-
         private void Exit_BT_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -60,19 +54,16 @@ namespace Faculty_Conference_Management_System
             Email_txt.Text = "";
             Email_txt.ForeColor = Color.Silver;
         }
-
         private void Address_txt_MouseClick(object sender, MouseEventArgs e)
         {
             Address_txt.Text = "";
             Address_txt.ForeColor = Color.Silver;
         }
-
         private void DateBirth_txt_MouseClick(object sender, MouseEventArgs e)
         {
             DateBirth_txt.Text = "";
             DateBirth_txt.ForeColor = Color.Silver;
         }
-
         private void SignUp_bt_Click(object sender, EventArgs e)
         {
             bool res = true;
@@ -81,10 +72,7 @@ namespace Faculty_Conference_Management_System
             else if(AuthorRB.Checked)
                 res = con.Signup('A', FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
 
-
-
-            //USE ACCORDING TO YOUR LOGIC
-            if (res == true)
+            if (res)
                 MessageBox.Show("You have been registered successfully! Sign in NOW!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("Please enter your data correctly.", "FAILURE", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -96,10 +84,9 @@ namespace Faculty_Conference_Management_System
             }
 
         }
-
-        private void Register_Form_Load(object sender, EventArgs e)
+        private void UserID_txt_TextChanged(object sender, EventArgs e)
         {
-
+            UserID_txt.ForeColor = Color.Silver;
         }
     }
     
