@@ -32,7 +32,10 @@ namespace Faculty_Conference_Management_System
 			adapter = new OracleDataAdapter(query, conStr);
 			DBdataSet = new DataSet();
 			adapter.Fill(DBdataSet);
-			return DBdataSet;
+            if (DBdataSet.Tables[0].Rows.Count == 0)
+                throw new Exception("No papers found !");
+
+            return DBdataSet;
 		}
 
 		/// <summary>
@@ -50,10 +53,12 @@ namespace Faculty_Conference_Management_System
 			    adapter.SelectCommand.Parameters.Add(parameterName, parameterData);
 			    DBdataSet = new DataSet();
 			    adapter.Fill(DBdataSet);
+                if (DBdataSet.Tables[0].Rows.Count == 0)
+                    throw new Exception("No papers found with the given title !");
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString());
+                throw;
             }
 			return DBdataSet;
 		}

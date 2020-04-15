@@ -29,3 +29,4 @@ F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Confer
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.pdb
+F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.SubmitPaper.resources

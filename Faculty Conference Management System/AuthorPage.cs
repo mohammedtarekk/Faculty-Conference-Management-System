@@ -25,7 +25,6 @@ namespace Faculty_Conference_Management_System
 		}
 		private void Search_BT_Click(object sender, EventArgs e)
 		{
-			Queue<string> parametersList = new Queue<string>();
 			string cmd = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer_fname Reviewer
 							  from paper, review, reviewer, research_categoryfield, author
                               WHERE paper.paper_id = review.paper_id
@@ -34,24 +33,24 @@ namespace Faculty_Conference_Management_System
                               AND author.author_id = paper.author_id 
 							  AND paper.paper_title = :t
 			                  ";
+			try
+			{
+				set = con.DisconnectedExcuteQuery(cmd, "t", searchTxt.Text);
 
-			set = con.DisconnectedExcuteQuery(cmd, "t", searchTxt.Text);
-
-			GridView1.AutoGenerateColumns = true;
-			GridView1.DataSource = set.Tables[0];
+				GridView1.AutoGenerateColumns = true;
+				GridView1.DataSource = set.Tables[0];
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message,"No Data Found", MessageBoxButtons.OK,MessageBoxIcon.Error);
+			}
 		}
 
 		private void ViewAll_BT_Click(object sender, EventArgs e)
 		{
-			//string cmd = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer_fname Reviewer, rev_state AcceptenceState 
-			//											  from paper
-			//											  INNER JOIN  review ON paper.paper_id = review.paper_id
-			//											  INNER JOIN  reviewer ON  review.reviewer_id = reviewer.reviewer_id
-			//											  INNER JOIN  research_categoryfield ON paper.research_id = research_categoryfield.category_id
-			//											  INNER JOIN  author ON author.author_id = paper.author_id
-			//                                              ";
-			//string cmd = "select paper.paper_id ID,paper_title Title, paper_content Content from paper";
 			string cmd = "select * from paper";
+			try
+			{
 			set = con.DisconnectedExcuteQuery(cmd);
 			GridView1.AutoGenerateColumns = true;
 			GridView1.DataSource = set.Tables[0];
@@ -59,9 +58,11 @@ namespace Faculty_Conference_Management_System
 			GridView1.Columns[3].Visible=false;
 			GridView1.Columns[4].Visible=false;
 
-
-
-
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void Exit_BT_Click(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace Faculty_Conference_Management_System
 			searchTxt.ForeColor = Color.Silver;
 		}
 
+		//The change he can do is to delete the rejected papers only
 		private void SaveAll_BT_Click(object sender, EventArgs e)
 		{
 			OracleConnection connection = new OracleConnection(con.conStr);

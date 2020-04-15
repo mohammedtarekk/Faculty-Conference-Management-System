@@ -29,6 +29,9 @@ namespace Faculty_Conference_Management_System
                               AND author.author_id = paper.author_id 
 							  AND paper.paper_title = :t
 			                  ";
+			try
+			{
+
 			tmpSet = con.DisconnectedExcuteQuery(cmd, "t", searchTxt.Text);
 
 			GridView1.AutoGenerateColumns = true;
@@ -42,6 +45,11 @@ namespace Faculty_Conference_Management_System
 			Gridview2.Columns[0].Visible = false;
 			Gridview2.Columns[1].Visible = false;
 
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 
 		}
 
@@ -58,8 +66,9 @@ namespace Faculty_Conference_Management_System
                               AND review.reviewer_id = reviewer.reviewer_id
                               AND paper.research_id = research_categoryfield.category_id
                               AND author.author_id = paper.author_id";
-			 
 
+			try
+			{
 			GridView1.AutoGenerateColumns = true;
 			GridView1.DataSource = con.DisconnectedExcuteQuery(cmd).Tables[0];
 			cmd = "select  *  from review";
@@ -70,6 +79,11 @@ namespace Faculty_Conference_Management_System
 			Gridview2.DataSource = set.Tables[0];
 			Gridview2.Columns[0].Visible = false;
 			Gridview2.Columns[1].Visible = false;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void SaveAll_BT_Click(object sender, EventArgs e)
