@@ -92,6 +92,12 @@
     <Compile Include="ReviewerPage.Designer.cs">
       <DependentUpon>ReviewerPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubmitPaper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmitPaper.Designer.cs">
+      <DependentUpon>SubmitPaper.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AuthorPage.resx">
       <DependentUpon>AuthorPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReviewerPage.resx">
       <DependentUpon>ReviewerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmitPaper.resx">
+      <DependentUpon>SubmitPaper.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
