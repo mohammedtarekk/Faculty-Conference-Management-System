@@ -127,11 +127,30 @@ namespace Faculty_Conference_Management_System
 				revIdLbl.Text = dr["reviewerID"].ToString();
 				revNameLbl.Text = dr["ReviewerName"].ToString();
 				stateLbl.Text = dr["ReviewState"].ToString();
-				contentTxt.Text = dr["Content"].ToString();
+				content_textBox.Text = dr["Content"].ToString();
 
 			}
 			connection.Close();
 			PaperDataPnl.Visible = true;
+		}
+
+		private void Submit_BT_Click(object sender, EventArgs e)
+		{
+			new SubmitPaper().Show();
+		}
+
+		private void PaperDataPnl_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void CrystalReport_BT_Click(object sender, EventArgs e)
+		{
+		}
+
+		private void AuthorPage_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }

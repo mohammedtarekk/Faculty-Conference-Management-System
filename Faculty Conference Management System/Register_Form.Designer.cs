@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register_Form));
             this.Password_txt = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UserID_txt = new System.Windows.Forms.TextBox();
@@ -41,7 +40,6 @@
             this.Author_RB_lbl = new CustomImageButton.ImageButtonCustom();
             this.SignUp_bt = new CustomImageButton.ImageButtonCustom();
             this.dragControl1 = new DragControlDemo.DragControl();
-            this.Exit_BT = new CustomImageButton.ImageButtonCustom();
             this.Email_txt = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Address_txt = new System.Windows.Forms.TextBox();
@@ -58,7 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Reviewer_RB_lbl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Author_RB_lbl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SignUp_bt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Exit_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -205,20 +202,6 @@
             // 
             this.dragControl1.SelectControl = this;
             // 
-            // Exit_BT
-            // 
-            this.Exit_BT.BackColor = System.Drawing.Color.Transparent;
-            this.Exit_BT.Image = ((System.Drawing.Image)(resources.GetObject("Exit_BT.Image")));
-            this.Exit_BT.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.Close;
-            this.Exit_BT.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.close_on_hover;
-            this.Exit_BT.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.close_on_hover;
-            this.Exit_BT.Location = new System.Drawing.Point(622, 12);
-            this.Exit_BT.Name = "Exit_BT";
-            this.Exit_BT.Size = new System.Drawing.Size(22, 21);
-            this.Exit_BT.TabIndex = 25;
-            this.Exit_BT.TabStop = false;
-            this.Exit_BT.Click += new System.EventHandler(this.Exit_BT_Click);
-            // 
             // Email_txt
             // 
             this.Email_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(85)))), ((int)(((byte)(90)))));
@@ -340,7 +323,6 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.Email_txt);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.Exit_BT);
             this.Controls.Add(this.LNAME_txt);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.FName_txt);
@@ -352,9 +334,10 @@
             this.Controls.Add(this.UserID_txt);
             this.Controls.Add(this.textBoxPIC);
             this.Controls.Add(this.SignUp_bt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Register_Form";
-            this.Text = "Register_Form";
+            this.Text = "Registration";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -362,7 +345,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Reviewer_RB_lbl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Author_RB_lbl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SignUp_bt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Exit_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -385,7 +367,6 @@
         private System.Windows.Forms.TextBox LNAME_txt;
         private System.Windows.Forms.PictureBox pictureBox3;
         private DragControlDemo.DragControl dragControl1;
-        private CustomImageButton.ImageButtonCustom Exit_BT;
         private System.Windows.Forms.TextBox Address_txt;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox Email_txt;

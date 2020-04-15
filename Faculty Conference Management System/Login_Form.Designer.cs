@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
             this.textBoxPIC = new System.Windows.Forms.PictureBox();
             this.UserID_txt = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -36,19 +35,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.RegisterNowBT = new System.Windows.Forms.PictureBox();
             this.AuthorRB = new System.Windows.Forms.RadioButton();
+            this.ReviewerRB = new System.Windows.Forms.RadioButton();
             this.SignIn_bt = new CustomImageButton.ImageButtonCustom();
             this.Reviewer_RB_lbl = new CustomImageButton.ImageButtonCustom();
             this.Author_RB_lbl = new CustomImageButton.ImageButtonCustom();
-            this.Exit_BT = new CustomImageButton.ImageButtonCustom();
             this.DragControlStartForm = new DragControlDemo.DragControl();
-            this.ReviewerRB = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterNowBT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SignIn_bt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reviewer_RB_lbl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Author_RB_lbl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Exit_BT)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPIC
@@ -132,6 +129,17 @@
             this.AuthorRB.TabStop = true;
             this.AuthorRB.UseVisualStyleBackColor = false;
             // 
+            // ReviewerRB
+            // 
+            this.ReviewerRB.AutoSize = true;
+            this.ReviewerRB.BackColor = System.Drawing.Color.Transparent;
+            this.ReviewerRB.Location = new System.Drawing.Point(449, 258);
+            this.ReviewerRB.Name = "ReviewerRB";
+            this.ReviewerRB.Size = new System.Drawing.Size(14, 13);
+            this.ReviewerRB.TabIndex = 15;
+            this.ReviewerRB.TabStop = true;
+            this.ReviewerRB.UseVisualStyleBackColor = false;
+            // 
             // SignIn_bt
             // 
             this.SignIn_bt.BackColor = System.Drawing.Color.Transparent;
@@ -172,34 +180,9 @@
             this.Author_RB_lbl.TabIndex = 7;
             this.Author_RB_lbl.TabStop = false;
             // 
-            // Exit_BT
-            // 
-            this.Exit_BT.BackColor = System.Drawing.Color.Transparent;
-            this.Exit_BT.Image = ((System.Drawing.Image)(resources.GetObject("Exit_BT.Image")));
-            this.Exit_BT.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.Close;
-            this.Exit_BT.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.close_on_hover;
-            this.Exit_BT.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.close_on_hover;
-            this.Exit_BT.Location = new System.Drawing.Point(622, 12);
-            this.Exit_BT.Name = "Exit_BT";
-            this.Exit_BT.Size = new System.Drawing.Size(22, 21);
-            this.Exit_BT.TabIndex = 0;
-            this.Exit_BT.TabStop = false;
-            this.Exit_BT.Click += new System.EventHandler(this.Exit_BT_Click);
-            // 
             // DragControlStartForm
             // 
             this.DragControlStartForm.SelectControl = this;
-            // 
-            // ReviewerRB
-            // 
-            this.ReviewerRB.AutoSize = true;
-            this.ReviewerRB.BackColor = System.Drawing.Color.Transparent;
-            this.ReviewerRB.Location = new System.Drawing.Point(449, 258);
-            this.ReviewerRB.Name = "ReviewerRB";
-            this.ReviewerRB.Size = new System.Drawing.Size(14, 13);
-            this.ReviewerRB.TabIndex = 15;
-            this.ReviewerRB.TabStop = true;
-            this.ReviewerRB.UseVisualStyleBackColor = false;
             // 
             // Login_Form
             // 
@@ -218,18 +201,18 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UserID_txt);
             this.Controls.Add(this.textBoxPIC);
-            this.Controls.Add(this.Exit_BT);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Login_Form";
-            this.Text = "Conference Management System";
+            this.Text = "Faculty Conference Management System";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_Form_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterNowBT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SignIn_bt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reviewer_RB_lbl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Author_RB_lbl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Exit_BT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +221,6 @@
         #endregion
 
         private DragControlDemo.DragControl DragControlStartForm;
-        private CustomImageButton.ImageButtonCustom Exit_BT;
         private System.Windows.Forms.PictureBox textBoxPIC;
         private System.Windows.Forms.TextBox UserID_txt;
         private System.Windows.Forms.TextBox Password_txt;

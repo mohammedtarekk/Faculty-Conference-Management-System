@@ -45,8 +45,9 @@ namespace Faculty_Conference_Management_System
         {
             //new Register_Form().Show();
             //  new ReviewerPage().Show();
+            //new AuthorPage().Show();
             new AuthorPage().Show();
-            
+
             this.Hide();
         }
         private void SignIn_bt_Click(object sender, EventArgs e)
@@ -78,6 +79,11 @@ namespace Faculty_Conference_Management_System
             }
             else
                 MessageBox.Show("error loading data from oracle");
+        }
+
+        private void Login_Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
