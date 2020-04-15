@@ -11,7 +11,7 @@ namespace Faculty_Conference_Management_System
 {
 	public class Connection
 	{
-		private string conStr { get; set; }
+		public string conStr { get; set; }
 		private OracleDataAdapter adapter { get; set; }
 		private OracleCommandBuilder builder { get; set; }
 		private DataSet DBdataSet { get; set; }
@@ -39,21 +39,28 @@ namespace Faculty_Conference_Management_System
 		/// Excutes query in disconnected mode
 		/// </summary>
 		/// <param name="query">SQL query to excute</param>
-		/// <param name="parametersList">queue of command parameters</param>
+		/// <param name="parameterName">Parameter name in query</param>
+		/// <param name="parameterData">Parameter data send to database</param>
 		/// <returns>DataTable contains data from database</returns>
-		public DataSet DisconnectedExcuteQuery(string query, Queue<string> parametersList)
+		public DataSet DisconnectedExcuteQuery(string query, string parameterName,string parameterData)
 		{
-			adapter = new OracleDataAdapter(query, conStr);
-			adapter.SelectCommand.Parameters.Add(parametersList.Dequeue(), parametersList.Dequeue());
-			DBdataSet = new DataSet();
-			adapter.Fill(DBdataSet);
+            try
+            {
+			    adapter = new OracleDataAdapter(query, conStr);
+			    adapter.SelectCommand.Parameters.Add(parameterName, parameterData);
+			    DBdataSet = new DataSet();
+			    adapter.Fill(DBdataSet);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
 			return DBdataSet;
 		}
 
 		internal void Update(DataSet dataSet)
 		{
 			builder = new OracleCommandBuilder(adapter);
-			dataSet.AcceptChanges();
 			adapter.Update(dataSet.Tables[0]);
 		}
 

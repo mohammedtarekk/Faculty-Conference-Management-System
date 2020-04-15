@@ -20,22 +20,28 @@ namespace Faculty_Conference_Management_System
 		}
 		private void Search_BT_Click(object sender, EventArgs e)
 		{
-			Queue<string> parametersList = new Queue<string>();
-			string cmd = @"select paper.paper_id, paper_title, paper_content, category_name,author.author_id, author_fname, reviewer_fname, reviewer_sname, rev_state 
-														  from paper
-														  INNER JOIN  review ON paper.paper_id = review.paper_id
-														  INNER JOIN  reviewer ON  review.reviewer_id = reviewer.reviewer_id
-														  INNER JOIN  research_categoryfield ON paper.research_id = research_categoryfield.category_id
-														  INNER JOIN  author ON author.author_id = paper.author_id
-														  WHERE paper.paper_title = :t
-			                                              ";
-
-			parametersList.Enqueue("t");
-			parametersList.Enqueue(searchTxt.Text);
-			set = con.DisconnectedExcuteQuery(cmd, parametersList);
+			DataSet tmpSet;
+			string cmd = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer_fname Reviewer
+							  from paper, review, reviewer, research_categoryfield, author
+                              WHERE paper.paper_id = review.paper_id
+                              AND review.reviewer_id = reviewer.reviewer_id
+                              AND paper.research_id = research_categoryfield.category_id
+                              AND author.author_id = paper.author_id 
+							  AND paper.paper_title = :t
+			                  ";
+			tmpSet = con.DisconnectedExcuteQuery(cmd, "t", searchTxt.Text);
 
 			GridView1.AutoGenerateColumns = true;
-			GridView1.DataSource = set.Tables[0];
+			GridView1.DataSource = tmpSet.Tables[0];
+			cmd = "select  *  from review WHERE review.paper_id = :t";
+
+			set = con.DisconnectedExcuteQuery(cmd, "t", tmpSet.Tables[0].Rows[0][0].ToString());
+			Gridview2.AutoGenerateColumns = true;
+			Gridview2.RowHeadersVisible = false;
+			Gridview2.DataSource = set.Tables[0];
+			Gridview2.Columns[0].Visible = false;
+			Gridview2.Columns[1].Visible = false;
+
 
 		}
 
@@ -46,22 +52,30 @@ namespace Faculty_Conference_Management_System
 
 		private void ViewAll_BT_Click(object sender, EventArgs e)
 		{
-			string cmd = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer_fname Reviewer, rev_state AcceptenceState 
-														  from paper
-														  INNER JOIN  review ON paper.paper_id = review.paper_id
-														  INNER JOIN  reviewer ON  review.reviewer_id = reviewer.reviewer_id
-														  INNER JOIN  research_categoryfield ON paper.research_id = research_categoryfield.category_id
-														  INNER JOIN  author ON author.author_id = paper.author_id
-			                                              ";
-			set = con.DisconnectedExcuteQuery(cmd);
+			string cmd = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer_fname Reviewer
+							 from paper, review, reviewer, research_categoryfield, author
+                              WHERE paper.paper_id = review.paper_id
+                              AND review.reviewer_id = reviewer.reviewer_id
+                              AND paper.research_id = research_categoryfield.category_id
+                              AND author.author_id = paper.author_id";
+			 
 
 			GridView1.AutoGenerateColumns = true;
-			GridView1.DataSource = set.Tables[0];
+			GridView1.DataSource = con.DisconnectedExcuteQuery(cmd).Tables[0];
+			cmd = "select  *  from review";
+
+			set = con.DisconnectedExcuteQuery(cmd);
+			Gridview2.AutoGenerateColumns = true;
+			Gridview2.RowHeadersVisible = false;
+			Gridview2.DataSource = set.Tables[0];
+			Gridview2.Columns[0].Visible = false;
+			Gridview2.Columns[1].Visible = false;
 		}
 
 		private void SaveAll_BT_Click(object sender, EventArgs e)
 		{
 			con.Update(set);
+			MessageBox.Show("Review state is changed successfully");
 		}
 
 		private void searchTxt_MouseClick(object sender, MouseEventArgs e)
@@ -73,6 +87,14 @@ namespace Faculty_Conference_Management_System
 		private void searchTxt_TextChanged(object sender, EventArgs e)
 		{
 			searchTxt.ForeColor = Color.Silver;
+		}
+
+		private void Gridview2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			//here will be the condition of editing rev_state in search button
+			//if(the paper is reviewed by the current reviewer)then enable editing
+			//else disable editing
+			// w ma3 el salama rawa7 lommak :)
 		}
 	}
 }
