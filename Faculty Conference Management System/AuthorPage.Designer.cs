@@ -631,6 +631,7 @@
             this.Controls.Add(this.GridView1);
             this.Controls.Add(this.textBoxPIC);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AuthorPage";
             this.Text = "Author";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AuthorPage_FormClosed);
