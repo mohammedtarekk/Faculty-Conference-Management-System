@@ -31,17 +31,13 @@ namespace Faculty_Conference_Management_System
         private void Submit_BT_Click(object sender, EventArgs e)
         {
             Connection c = new Connection();
-            OracleCommand cmd = new OracleCommand();
-            OracleConnection con = new OracleConnection(c.conStr);
-            cmd.Connection = con;
-            cmd.CommandText = "insert into PAPER values (:PAPER_TITLE,:PAPER_CONTENT,:)";
-            cmd.Parameters.Add("PAPER_TITLE", Title_textBox.Text);
-            cmd.Parameters.Add("PAPER_CONTENT", content_textBox.Text);
-            int r = cmd.ExecuteNonQuery();
-            if (r != -1)
-            {
-                MessageBox.Show("Submittion is succussful");
-            }
+            string selected_Category = Categories_combo.SelectedItem.ToString();
+            int CatID = c.Get_CatID(selected_Category);
+            bool check = c.submit_paper(Title_textBox.Text, content_textBox.Text,CatID);
+            if (check == true)
+                MessageBox.Show("submitted successfully :)");
+            else
+                MessageBox.Show("submitted failed :(");
         }
         private void Title_textBox_TextChanged(object sender, EventArgs e)
         {
@@ -197,6 +193,15 @@ namespace Faculty_Conference_Management_System
         private void Undo_BT_Click(object sender, EventArgs e)
         {
             content_textBox.Text = text;
+        }
+
+        private void ComboBox1_Click(object sender, EventArgs e)
+        {
+            Connection c = new Connection();
+            List<String> Cat = c.Get_Categories();
+            Categories_combo.Items.Clear();
+            for (int i = 0; i < Cat.Count; i++)
+                Categories_combo.Items.Add(Cat[i]);
         }
     }
 }

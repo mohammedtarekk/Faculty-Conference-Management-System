@@ -26,7 +26,7 @@ namespace Faculty_Conference_Management_System
 
         private void UserID_txt_MouseClick(object sender, MouseEventArgs e)
         {
-            UserID_txt.Text = "";
+           // UserID_txt.Text = "";
             UserID_txt.ForeColor = Color.Silver;
         }
 
@@ -68,9 +68,12 @@ namespace Faculty_Conference_Management_System
         {
             bool res = true;
             if (ReviewerRB.Checked)
-                res = con.Signup('R',FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
+                res = con.Signup("Author",FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
             else if(AuthorRB.Checked)
-                res = con.Signup('A', FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
+                res = con.Signup("Reviewer", FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
+            else if(AdminRB.Checked)
+                res = con.Signup("Admin", FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
+
 
             if (res)
                 MessageBox.Show("You have been registered successfully! Sign in NOW!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -87,6 +90,20 @@ namespace Faculty_Conference_Management_System
         private void UserID_txt_TextChanged(object sender, EventArgs e)
         {
             UserID_txt.ForeColor = Color.Silver;
+        }
+
+        private void UserID_txt_Click(object sender, EventArgs e)
+        {
+            int x = 0;
+            Connection c = new Connection();
+            if (AuthorRB.Checked)
+                x = c.GetNextID("Author");
+            else if (ReviewerRB.Checked)
+                x = c.GetNextID("Reviewer");
+            else if(AdminRB.Checked)
+                x = c.GetNextID("Admin");
+
+            UserID_txt.Text = x.ToString();
         }
     }
     

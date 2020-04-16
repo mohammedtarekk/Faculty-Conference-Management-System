@@ -49,6 +49,8 @@
             this.DateBirth_txt = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.AdminRB = new System.Windows.Forms.RadioButton();
+            this.imageButtonCustom1 = new CustomImageButton.ImageButtonCustom();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -59,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageButtonCustom1)).BeginInit();
             this.SuspendLayout();
             // 
             // Password_txt
@@ -67,9 +70,10 @@
             this.Password_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Password_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Password_txt.Location = new System.Drawing.Point(371, 303);
+            this.Password_txt.Location = new System.Drawing.Point(495, 373);
+            this.Password_txt.Margin = new System.Windows.Forms.Padding(4);
             this.Password_txt.Name = "Password_txt";
-            this.Password_txt.Size = new System.Drawing.Size(233, 14);
+            this.Password_txt.Size = new System.Drawing.Size(311, 18);
             this.Password_txt.TabIndex = 16;
             this.Password_txt.Text = "PASSWORD";
             this.Password_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Password_txt_MouseClick);
@@ -78,9 +82,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox1.Location = new System.Drawing.Point(351, 291);
+            this.pictureBox1.Location = new System.Drawing.Point(468, 358);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(276, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(368, 55);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -91,11 +96,13 @@
             this.UserID_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserID_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserID_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.UserID_txt.Location = new System.Drawing.Point(369, 108);
+            this.UserID_txt.Location = new System.Drawing.Point(492, 133);
+            this.UserID_txt.Margin = new System.Windows.Forms.Padding(4);
             this.UserID_txt.Name = "UserID_txt";
-            this.UserID_txt.Size = new System.Drawing.Size(236, 14);
+            this.UserID_txt.Size = new System.Drawing.Size(315, 18);
             this.UserID_txt.TabIndex = 14;
             this.UserID_txt.Text = "USER  ID";
+            this.UserID_txt.Click += new System.EventHandler(this.UserID_txt_Click);
             this.UserID_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UserID_txt_MouseClick);
             this.UserID_txt.TextChanged += new System.EventHandler(this.UserID_txt_TextChanged);
             // 
@@ -103,9 +110,10 @@
             // 
             this.textBoxPIC.BackColor = System.Drawing.Color.Transparent;
             this.textBoxPIC.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.textBoxPIC.Location = new System.Drawing.Point(349, 95);
+            this.textBoxPIC.Location = new System.Drawing.Point(465, 117);
+            this.textBoxPIC.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPIC.Name = "textBoxPIC";
-            this.textBoxPIC.Size = new System.Drawing.Size(279, 45);
+            this.textBoxPIC.Size = new System.Drawing.Size(372, 55);
             this.textBoxPIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.textBoxPIC.TabIndex = 13;
             this.textBoxPIC.TabStop = false;
@@ -116,9 +124,10 @@
             this.FName_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FName_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FName_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.FName_txt.Location = new System.Drawing.Point(375, 149);
+            this.FName_txt.Location = new System.Drawing.Point(500, 183);
+            this.FName_txt.Margin = new System.Windows.Forms.Padding(4);
             this.FName_txt.Name = "FName_txt";
-            this.FName_txt.Size = new System.Drawing.Size(105, 14);
+            this.FName_txt.Size = new System.Drawing.Size(140, 18);
             this.FName_txt.TabIndex = 22;
             this.FName_txt.Text = "FIRST NAME";
             this.FName_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FName_txt_MouseClick);
@@ -127,9 +136,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox2.Location = new System.Drawing.Point(355, 136);
+            this.pictureBox2.Location = new System.Drawing.Point(473, 167);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(137, 45);
+            this.pictureBox2.Size = new System.Drawing.Size(183, 55);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
@@ -140,9 +150,10 @@
             this.LNAME_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LNAME_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNAME_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.LNAME_txt.Location = new System.Drawing.Point(506, 149);
+            this.LNAME_txt.Location = new System.Drawing.Point(675, 183);
+            this.LNAME_txt.Margin = new System.Windows.Forms.Padding(4);
             this.LNAME_txt.Name = "LNAME_txt";
-            this.LNAME_txt.Size = new System.Drawing.Size(101, 14);
+            this.LNAME_txt.Size = new System.Drawing.Size(135, 18);
             this.LNAME_txt.TabIndex = 24;
             this.LNAME_txt.Text = "LAST NAME";
             this.LNAME_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LNAME_txt_MouseClick);
@@ -151,9 +162,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox3.Location = new System.Drawing.Point(486, 136);
+            this.pictureBox3.Location = new System.Drawing.Point(648, 167);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(133, 45);
+            this.pictureBox3.Size = new System.Drawing.Size(177, 55);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
@@ -165,9 +177,10 @@
             this.Reviewer_RB_lbl.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewerOnHover;
             this.Reviewer_RB_lbl.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
             this.Reviewer_RB_lbl.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
-            this.Reviewer_RB_lbl.Location = new System.Drawing.Point(494, 330);
+            this.Reviewer_RB_lbl.Location = new System.Drawing.Point(659, 406);
+            this.Reviewer_RB_lbl.Margin = new System.Windows.Forms.Padding(4);
             this.Reviewer_RB_lbl.Name = "Reviewer_RB_lbl";
-            this.Reviewer_RB_lbl.Size = new System.Drawing.Size(64, 20);
+            this.Reviewer_RB_lbl.Size = new System.Drawing.Size(85, 25);
             this.Reviewer_RB_lbl.TabIndex = 18;
             this.Reviewer_RB_lbl.TabStop = false;
             // 
@@ -178,9 +191,10 @@
             this.Author_RB_lbl.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.radioAuthorOnHover;
             this.Author_RB_lbl.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.radioAuthor;
             this.Author_RB_lbl.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.radioAuthor;
-            this.Author_RB_lbl.Location = new System.Drawing.Point(424, 330);
+            this.Author_RB_lbl.Location = new System.Drawing.Point(565, 406);
+            this.Author_RB_lbl.Margin = new System.Windows.Forms.Padding(4);
             this.Author_RB_lbl.Name = "Author_RB_lbl";
-            this.Author_RB_lbl.Size = new System.Drawing.Size(64, 20);
+            this.Author_RB_lbl.Size = new System.Drawing.Size(85, 25);
             this.Author_RB_lbl.TabIndex = 17;
             this.Author_RB_lbl.TabStop = false;
             // 
@@ -191,9 +205,10 @@
             this.SignUp_bt.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.SignUpButtonOnHover;
             this.SignUp_bt.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.SignUpButton;
             this.SignUp_bt.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.SignUpButton;
-            this.SignUp_bt.Location = new System.Drawing.Point(136, 236);
+            this.SignUp_bt.Location = new System.Drawing.Point(181, 290);
+            this.SignUp_bt.Margin = new System.Windows.Forms.Padding(4);
             this.SignUp_bt.Name = "SignUp_bt";
-            this.SignUp_bt.Size = new System.Drawing.Size(182, 72);
+            this.SignUp_bt.Size = new System.Drawing.Size(243, 89);
             this.SignUp_bt.TabIndex = 10;
             this.SignUp_bt.TabStop = false;
             this.SignUp_bt.Click += new System.EventHandler(this.SignUp_bt_Click);
@@ -208,9 +223,10 @@
             this.Email_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Email_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Email_txt.Location = new System.Drawing.Point(369, 191);
+            this.Email_txt.Location = new System.Drawing.Point(492, 235);
+            this.Email_txt.Margin = new System.Windows.Forms.Padding(4);
             this.Email_txt.Name = "Email_txt";
-            this.Email_txt.Size = new System.Drawing.Size(234, 14);
+            this.Email_txt.Size = new System.Drawing.Size(312, 18);
             this.Email_txt.TabIndex = 27;
             this.Email_txt.Text = "EMAIL";
             this.Email_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Email_txt_MouseClick);
@@ -219,9 +235,10 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox4.Location = new System.Drawing.Point(349, 178);
+            this.pictureBox4.Location = new System.Drawing.Point(465, 219);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(278, 45);
+            this.pictureBox4.Size = new System.Drawing.Size(371, 55);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 26;
             this.pictureBox4.TabStop = false;
@@ -232,9 +249,10 @@
             this.Address_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Address_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Address_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Address_txt.Location = new System.Drawing.Point(371, 230);
+            this.Address_txt.Location = new System.Drawing.Point(495, 283);
+            this.Address_txt.Margin = new System.Windows.Forms.Padding(4);
             this.Address_txt.Name = "Address_txt";
-            this.Address_txt.Size = new System.Drawing.Size(233, 14);
+            this.Address_txt.Size = new System.Drawing.Size(311, 18);
             this.Address_txt.TabIndex = 29;
             this.Address_txt.Text = "ADDRESS";
             this.Address_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Address_txt_MouseClick);
@@ -243,9 +261,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox5.Location = new System.Drawing.Point(350, 217);
+            this.pictureBox5.Location = new System.Drawing.Point(467, 267);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(276, 45);
+            this.pictureBox5.Size = new System.Drawing.Size(368, 55);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 28;
             this.pictureBox5.TabStop = false;
@@ -254,9 +273,10 @@
             // 
             this.ReviewerRB.AutoSize = true;
             this.ReviewerRB.BackColor = System.Drawing.Color.Transparent;
-            this.ReviewerRB.Location = new System.Drawing.Point(497, 333);
+            this.ReviewerRB.Location = new System.Drawing.Point(663, 410);
+            this.ReviewerRB.Margin = new System.Windows.Forms.Padding(4);
             this.ReviewerRB.Name = "ReviewerRB";
-            this.ReviewerRB.Size = new System.Drawing.Size(14, 13);
+            this.ReviewerRB.Size = new System.Drawing.Size(17, 16);
             this.ReviewerRB.TabIndex = 31;
             this.ReviewerRB.TabStop = true;
             this.ReviewerRB.UseVisualStyleBackColor = false;
@@ -265,9 +285,10 @@
             // 
             this.AuthorRB.AutoSize = true;
             this.AuthorRB.BackColor = System.Drawing.Color.Transparent;
-            this.AuthorRB.Location = new System.Drawing.Point(427, 333);
+            this.AuthorRB.Location = new System.Drawing.Point(569, 410);
+            this.AuthorRB.Margin = new System.Windows.Forms.Padding(4);
             this.AuthorRB.Name = "AuthorRB";
-            this.AuthorRB.Size = new System.Drawing.Size(14, 13);
+            this.AuthorRB.Size = new System.Drawing.Size(17, 16);
             this.AuthorRB.TabIndex = 30;
             this.AuthorRB.TabStop = true;
             this.AuthorRB.UseVisualStyleBackColor = false;
@@ -278,9 +299,10 @@
             this.DateBirth_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DateBirth_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateBirth_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.DateBirth_txt.Location = new System.Drawing.Point(371, 265);
+            this.DateBirth_txt.Location = new System.Drawing.Point(495, 326);
+            this.DateBirth_txt.Margin = new System.Windows.Forms.Padding(4);
             this.DateBirth_txt.Name = "DateBirth_txt";
-            this.DateBirth_txt.Size = new System.Drawing.Size(233, 14);
+            this.DateBirth_txt.Size = new System.Drawing.Size(311, 18);
             this.DateBirth_txt.TabIndex = 33;
             this.DateBirth_txt.Text = "DATE OF BIRTH";
             this.DateBirth_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DateBirth_txt_MouseClick);
@@ -289,9 +311,10 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox6.Location = new System.Drawing.Point(350, 252);
+            this.pictureBox6.Location = new System.Drawing.Point(467, 310);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(276, 45);
+            this.pictureBox6.Size = new System.Drawing.Size(368, 55);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 32;
             this.pictureBox6.TabStop = false;
@@ -302,18 +325,47 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(199, 359);
+            this.label2.Location = new System.Drawing.Point(265, 442);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 14);
+            this.label2.Size = new System.Drawing.Size(354, 17);
             this.label2.TabIndex = 34;
             this.label2.Text = "ALL COPYRIGHTS RESERVED TO TEAM ABO NESMA @2020";
             // 
+            // AdminRB
+            // 
+            this.AdminRB.AutoSize = true;
+            this.AdminRB.BackColor = System.Drawing.Color.Transparent;
+            this.AdminRB.Location = new System.Drawing.Point(755, 410);
+            this.AdminRB.Margin = new System.Windows.Forms.Padding(4);
+            this.AdminRB.Name = "AdminRB";
+            this.AdminRB.Size = new System.Drawing.Size(17, 16);
+            this.AdminRB.TabIndex = 36;
+            this.AdminRB.TabStop = true;
+            this.AdminRB.UseVisualStyleBackColor = false;
+            // 
+            // imageButtonCustom1
+            // 
+            this.imageButtonCustom1.BackColor = System.Drawing.Color.Transparent;
+            this.imageButtonCustom1.Image = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
+            this.imageButtonCustom1.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewerOnHover;
+            this.imageButtonCustom1.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
+            this.imageButtonCustom1.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
+            this.imageButtonCustom1.Location = new System.Drawing.Point(751, 406);
+            this.imageButtonCustom1.Margin = new System.Windows.Forms.Padding(4);
+            this.imageButtonCustom1.Name = "imageButtonCustom1";
+            this.imageButtonCustom1.Size = new System.Drawing.Size(85, 25);
+            this.imageButtonCustom1.TabIndex = 35;
+            this.imageButtonCustom1.TabStop = false;
+            // 
             // Register_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Faculty_Conference_Management_System.Properties.Resources.BACKGROUND__;
-            this.ClientSize = new System.Drawing.Size(656, 375);
+            this.ClientSize = new System.Drawing.Size(875, 462);
+            this.Controls.Add(this.AdminRB);
+            this.Controls.Add(this.imageButtonCustom1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DateBirth_txt);
             this.Controls.Add(this.pictureBox6);
@@ -335,6 +387,7 @@
             this.Controls.Add(this.textBoxPIC);
             this.Controls.Add(this.SignUp_bt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Register_Form";
             this.Text = "Registration";
@@ -348,6 +401,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageButtonCustom1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,5 +430,7 @@
         private System.Windows.Forms.TextBox DateBirth_txt;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton AdminRB;
+        private CustomImageButton.ImageButtonCustom imageButtonCustom1;
     }
 }
