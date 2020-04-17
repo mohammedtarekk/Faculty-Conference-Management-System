@@ -206,7 +206,7 @@
             this.PaperDataPnl.Controls.Add(this.label5);
             this.PaperDataPnl.Controls.Add(this.label1);
             this.PaperDataPnl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.PaperDataPnl.Location = new System.Drawing.Point(253, 64);
+            this.PaperDataPnl.Location = new System.Drawing.Point(252, 58);
             this.PaperDataPnl.Name = "PaperDataPnl";
             this.PaperDataPnl.Size = new System.Drawing.Size(507, 289);
             this.PaperDataPnl.TabIndex = 30;

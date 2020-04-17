@@ -44,11 +44,7 @@ namespace Faculty_Conference_Management_System
             Title_textBox.ForeColor = Color.Silver;
         }
 
-        private void category_textBox_TextChanged(object sender, EventArgs e)
-        {
-            category_textBox.ForeColor = Color.Silver;
 
-        }
 
         private void content_textBox_TextChanged(object sender, EventArgs e)
         {
@@ -61,11 +57,6 @@ namespace Faculty_Conference_Management_System
             Title_textBox.ForeColor = Color.Silver;
         }
 
-        private void category_textBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            category_textBox.Text = "";
-            category_textBox.ForeColor = Color.Silver;
-        }
 
         private void content_textBox_MouseClick(object sender, MouseEventArgs e)
         {

@@ -32,3 +32,6 @@ D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Manageme
 D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
 D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
 D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AdminMainForm.resources
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AssignPaperForm.resources
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.BookAppointmentForm.resources

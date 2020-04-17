@@ -55,11 +55,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMainForm.Designer.cs">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignPaperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignPaperForm.Designer.cs">
+      <DependentUpon>AssignPaperForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AuthorPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AuthorPage.Designer.cs">
       <DependentUpon>AuthorPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookAppointmentForm.Designer.cs">
+      <DependentUpon>BookAppointmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Controls\DragControl.cs">
@@ -98,8 +116,17 @@
     <Compile Include="SubmitPaper.Designer.cs">
       <DependentUpon>SubmitPaper.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminMainForm.resx">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignPaperForm.resx">
+      <DependentUpon>AssignPaperForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AuthorPage.resx">
       <DependentUpon>AuthorPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookAppointmentForm.resx">
+      <DependentUpon>BookAppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ImageButtonCustom.resx" />
     <EmbeddedResource Include="Login_Form.resx">
