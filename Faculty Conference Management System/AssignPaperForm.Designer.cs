@@ -29,37 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssignPaperForm));
-            this.PapersGrid = new System.Windows.Forms.DataGridView();
+            this.papersGrid = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.reviewersGrid = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.SelectedPaper_txt = new System.Windows.Forms.TextBox();
+            this.selectedPaperTxt = new System.Windows.Forms.TextBox();
             this.textBoxPIC = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.selectedReviewerTxt = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Assign_BT = new CustomImageButton.ImageButtonCustom();
-            ((System.ComponentModel.ISupportInitialize)(this.PapersGrid)).BeginInit();
+            this.selectedDateTxt = new System.Windows.Forms.Label();
+            this.datesGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.papersGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewersGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Assign_BT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datesGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // PapersGrid
+            // papersGrid
             // 
-            this.PapersGrid.AllowUserToAddRows = false;
-            this.PapersGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.PapersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PapersGrid.Location = new System.Drawing.Point(12, 52);
-            this.PapersGrid.Name = "PapersGrid";
-            this.PapersGrid.ReadOnly = true;
-            this.PapersGrid.Size = new System.Drawing.Size(369, 289);
-            this.PapersGrid.TabIndex = 5;
+            this.papersGrid.AllowUserToAddRows = false;
+            this.papersGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.papersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.papersGrid.Location = new System.Drawing.Point(12, 52);
+            this.papersGrid.Name = "papersGrid";
+            this.papersGrid.ReadOnly = true;
+            this.papersGrid.Size = new System.Drawing.Size(369, 289);
+            this.papersGrid.TabIndex = 5;
+            this.papersGrid.SelectionChanged += new System.EventHandler(this.papersGrid_SelectionChanged);
             // 
             // pictureBox1
             // 
@@ -81,16 +85,17 @@
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
-            // dataGridView1
+            // reviewersGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(396, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(369, 289);
-            this.dataGridView1.TabIndex = 20;
+            this.reviewersGrid.AllowUserToAddRows = false;
+            this.reviewersGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.reviewersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reviewersGrid.Location = new System.Drawing.Point(396, 52);
+            this.reviewersGrid.Name = "reviewersGrid";
+            this.reviewersGrid.ReadOnly = true;
+            this.reviewersGrid.Size = new System.Drawing.Size(369, 289);
+            this.reviewersGrid.TabIndex = 20;
+            this.reviewersGrid.SelectionChanged += new System.EventHandler(this.reviewersGrid_SelectionChanged);
             // 
             // label1
             // 
@@ -104,19 +109,19 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Selected Paper ID";
             // 
-            // SelectedPaper_txt
+            // selectedPaperTxt
             // 
-            this.SelectedPaper_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(85)))), ((int)(((byte)(90)))));
-            this.SelectedPaper_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SelectedPaper_txt.Enabled = false;
-            this.SelectedPaper_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
-            this.SelectedPaper_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.SelectedPaper_txt.Location = new System.Drawing.Point(790, 125);
-            this.SelectedPaper_txt.Name = "SelectedPaper_txt";
-            this.SelectedPaper_txt.ReadOnly = true;
-            this.SelectedPaper_txt.Size = new System.Drawing.Size(163, 14);
-            this.SelectedPaper_txt.TabIndex = 27;
-            this.SelectedPaper_txt.Text = "SELECT PAPER FROM GRID";
+            this.selectedPaperTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(85)))), ((int)(((byte)(90)))));
+            this.selectedPaperTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.selectedPaperTxt.Enabled = false;
+            this.selectedPaperTxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
+            this.selectedPaperTxt.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.selectedPaperTxt.Location = new System.Drawing.Point(790, 125);
+            this.selectedPaperTxt.Name = "selectedPaperTxt";
+            this.selectedPaperTxt.ReadOnly = true;
+            this.selectedPaperTxt.Size = new System.Drawing.Size(163, 14);
+            this.selectedPaperTxt.TabIndex = 27;
+            this.selectedPaperTxt.Text = "SELECT PAPER FROM GRID";
             // 
             // textBoxPIC
             // 
@@ -128,18 +133,18 @@
             this.textBoxPIC.TabIndex = 28;
             this.textBoxPIC.TabStop = false;
             // 
-            // textBox1
+            // selectedReviewerTxt
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(85)))), ((int)(((byte)(90)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox1.Location = new System.Drawing.Point(790, 192);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(163, 14);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.Text = "SELECT REVIEWER FROM GRID";
+            this.selectedReviewerTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(85)))), ((int)(((byte)(90)))));
+            this.selectedReviewerTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.selectedReviewerTxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F);
+            this.selectedReviewerTxt.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.selectedReviewerTxt.Location = new System.Drawing.Point(790, 192);
+            this.selectedReviewerTxt.Name = "selectedReviewerTxt";
+            this.selectedReviewerTxt.ReadOnly = true;
+            this.selectedReviewerTxt.Size = new System.Drawing.Size(163, 14);
+            this.selectedReviewerTxt.TabIndex = 30;
+            this.selectedReviewerTxt.Text = "SELECT REVIEWER FROM GRID";
             // 
             // pictureBox3
             // 
@@ -189,36 +194,62 @@
             this.Assign_BT.TabStop = false;
             this.Assign_BT.Click += new System.EventHandler(this.Assign_BT_Click);
             // 
+            // selectedDateTxt
+            // 
+            this.selectedDateTxt.AutoSize = true;
+            this.selectedDateTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedDateTxt.Location = new System.Drawing.Point(489, 137);
+            this.selectedDateTxt.Name = "selectedDateTxt";
+            this.selectedDateTxt.Size = new System.Drawing.Size(111, 16);
+            this.selectedDateTxt.TabIndex = 34;
+            this.selectedDateTxt.Text = "No date selected";
+            // 
+            // datesGrid
+            // 
+            this.datesGrid.AllowUserToAddRows = false;
+            this.datesGrid.BackgroundColor = System.Drawing.Color.Black;
+            this.datesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datesGrid.Location = new System.Drawing.Point(437, 94);
+            this.datesGrid.Name = "datesGrid";
+            this.datesGrid.ReadOnly = true;
+            this.datesGrid.Size = new System.Drawing.Size(234, 83);
+            this.datesGrid.TabIndex = 33;
+            this.datesGrid.SelectionChanged += new System.EventHandler(this.datesGrid_SelectionChanged);
+            // 
             // AssignPaperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(977, 374);
+            this.Controls.Add(this.selectedDateTxt);
+            this.Controls.Add(this.datesGrid);
             this.Controls.Add(this.Assign_BT);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.selectedReviewerTxt);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.SelectedPaper_txt);
+            this.Controls.Add(this.selectedPaperTxt);
             this.Controls.Add(this.textBoxPIC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.reviewersGrid);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.PapersGrid);
+            this.Controls.Add(this.papersGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AssignPaperForm";
             this.Text = "Assign paper to reviewer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AssignPaperForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.PapersGrid)).EndInit();
+            this.Load += new System.EventHandler(this.AssignPaperForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.papersGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewersGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Assign_BT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datesGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,17 +257,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView PapersGrid;
+        private System.Windows.Forms.DataGridView papersGrid;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView reviewersGrid;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox SelectedPaper_txt;
+        private System.Windows.Forms.TextBox selectedPaperTxt;
         private System.Windows.Forms.PictureBox textBoxPIC;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox selectedReviewerTxt;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private CustomImageButton.ImageButtonCustom Assign_BT;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label selectedDateTxt;
+        private System.Windows.Forms.DataGridView datesGrid;
     }
 }

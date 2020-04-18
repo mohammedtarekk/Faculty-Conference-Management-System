@@ -42,14 +42,14 @@
             this.Author_RB_lbl = new CustomImageButton.ImageButtonCustom();
             this.DragControlStartForm = new DragControlDemo.DragControl();
             this.AdminRB = new System.Windows.Forms.RadioButton();
-            this.imageButtonCustom2 = new CustomImageButton.ImageButtonCustom();
+            this.imageButtonCustom1 = new CustomImageButton.ImageButtonCustom();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterNowBT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SignIn_bt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reviewer_RB_lbl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Author_RB_lbl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageButtonCustom2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageButtonCustom1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPIC
@@ -199,18 +199,18 @@
             this.AdminRB.TabStop = true;
             this.AdminRB.UseVisualStyleBackColor = false;
             // 
-            // imageButtonCustom2
+            // imageButtonCustom1
             // 
-            this.imageButtonCustom2.BackColor = System.Drawing.Color.Transparent;
-            this.imageButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom2.Image")));
-            this.imageButtonCustom2.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewerOnHover;
-            this.imageButtonCustom2.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
-            this.imageButtonCustom2.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
-            this.imageButtonCustom2.Location = new System.Drawing.Point(483, 255);
-            this.imageButtonCustom2.Name = "imageButtonCustom2";
-            this.imageButtonCustom2.Size = new System.Drawing.Size(64, 20);
-            this.imageButtonCustom2.TabIndex = 39;
-            this.imageButtonCustom2.TabStop = false;
+            this.imageButtonCustom1.BackColor = System.Drawing.Color.Transparent;
+            this.imageButtonCustom1.Image = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom1.Image")));
+            this.imageButtonCustom1.ImageHover = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom1.ImageHover")));
+            this.imageButtonCustom1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom1.ImageNormal")));
+            this.imageButtonCustom1.InitialImage = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom1.InitialImage")));
+            this.imageButtonCustom1.Location = new System.Drawing.Point(483, 255);
+            this.imageButtonCustom1.Name = "imageButtonCustom1";
+            this.imageButtonCustom1.Size = new System.Drawing.Size(64, 20);
+            this.imageButtonCustom1.TabIndex = 39;
+            this.imageButtonCustom1.TabStop = false;
             // 
             // Login_Form
             // 
@@ -230,7 +230,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UserID_txt);
             this.Controls.Add(this.textBoxPIC);
-            this.Controls.Add(this.imageButtonCustom2);
+            this.Controls.Add(this.imageButtonCustom1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -243,7 +243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SignIn_bt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reviewer_RB_lbl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Author_RB_lbl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageButtonCustom2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageButtonCustom1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,7 +264,7 @@
         private System.Windows.Forms.RadioButton AuthorRB;
         private System.Windows.Forms.RadioButton ReviewerRB;
         private System.Windows.Forms.RadioButton AdminRB;
-        private CustomImageButton.ImageButtonCustom imageButtonCustom2;
+        private CustomImageButton.ImageButtonCustom imageButtonCustom1;
     }
 }
 

@@ -46,8 +46,8 @@ namespace Faculty_Conference_Management_System
             //new AdminMainForm().Show();
             //new Register_Form().Show();
             //  new ReviewerPage().Show();
-            //new AuthorPage().Show();
-            new Admin_form().Show();
+            new AuthorPage().Show();
+            //new Admin_form().Show();
             this.Hide();
         }
         private void SignIn_bt_Click(object sender, EventArgs e)

@@ -7,55 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Oracle.DataAccess.Client;
 
 namespace Faculty_Conference_Management_System
 {
-    public partial class SubmitPaper : Form
+    public partial class UpdateForm : Form
     {
         string text;
         bool Bold = false;
         bool Italic = false;
         bool Underline = false;
 
-        public SubmitPaper()
+        public UpdateForm()
         {
             InitializeComponent();
         }
 
-        private void Submit_BT_Click(object sender, EventArgs e)
+        private void UpdateForm_Load(object sender, EventArgs e)
         {
-            Connection c = new Connection();
-            string selected_Category = Categories_combo.SelectedItem.ToString();
-            int CatID = c.Get_CatID(selected_Category);
-            bool check = c.submit_paper(Title_textBox.Text, content_textBox.Text,CatID);
-            if (check == true)
-                MessageBox.Show("submitted successfully :)");
-            else
-                MessageBox.Show("submitted failed :(");
+
         }
+
         private void Title_textBox_TextChanged(object sender, EventArgs e)
         {
             Title_textBox.ForeColor = Color.Silver;
         }
 
-
-
         private void content_textBox_TextChanged(object sender, EventArgs e)
         {
             content_textBox.ForeColor = Color.Silver;
-        }
 
-        private void Title_textBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            Title_textBox.Text = "";
-            Title_textBox.ForeColor = Color.Silver;
         }
-
 
         private void content_textBox_MouseClick(object sender, MouseEventArgs e)
         {
             content_textBox.ForeColor = Color.Silver;
+
         }
 
         int b = 0;
@@ -180,22 +166,7 @@ namespace Faculty_Conference_Management_System
         {
             content_textBox.Text = text;
         }
-
-        private void ComboBox1_Click(object sender, EventArgs e)
-        {
-            Connection c = new Connection();
-            List<String> Cat = c.Get_Categories();
-            Categories_combo.Items.Clear();
-            for (int i = 0; i < Cat.Count; i++)
-                Categories_combo.Items.Add(Cat[i]);
-        }
-
-        private void SubmitPaper_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Categories_combo_SelectedIndexChanged(object sender, EventArgs e)
+        private void Categories_combo_Click(object sender, EventArgs e)
         {
 
         }

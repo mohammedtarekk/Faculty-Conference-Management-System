@@ -157,5 +157,10 @@ namespace Faculty_Conference_Management_System
 				MessageBox.Show("Reviewer has been assigned successfully", "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
+
+		private void reviewersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }

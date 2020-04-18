@@ -155,5 +155,10 @@ namespace Faculty_Conference_Management_System
 		{
 			Application.Exit();
 		}
+
+		private void Update_BT_Click(object sender, EventArgs e)
+		{
+			new UpdateForm().Show();
+		}
 	}
 }
