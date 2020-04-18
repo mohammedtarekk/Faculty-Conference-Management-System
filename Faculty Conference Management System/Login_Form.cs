@@ -45,39 +45,65 @@ namespace Faculty_Conference_Management_System
         {
             //new Register_Form().Show();
             //  new ReviewerPage().Show();
-            new AuthorPage().Show();
-            
+            //new AuthorPage().Show();
+            new Admin_form().Show();
             this.Hide();
         }
         private void SignIn_bt_Click(object sender, EventArgs e)
         {
+            bool found = false;
             bool res = true;
             int type = 0; //0 if author, 1 if reviewer
             if (AuthorRB.Checked)
-                res = con.Get_Accounts('A');
-            else
+                res = con.Get_Accounts("Author");
+            else if(ReviewerRB.Checked)
             {
-                res = con.Get_Accounts('R');
+                res = con.Get_Accounts("Reviewer");
                 type = 1;
+            }
+            else if(AdminRB.Checked)
+            {
+                res = con.Get_Accounts("Admin");
+                type = 2;
             }
 
             if (res == true)
             {
-                bool found = con.check_exist(Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
+                try
+                {
+                    if (type == 0)
+                        found = con.check_exist("Author", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
+                    else if (type == 1)
+                        found = con.check_exist("Reviewer", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
+                    else if(type==2)
+                        found = con.check_exist("Admin", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
+                }
+                catch (Exception)
+                {
+                    found = false;
+                }
+
                 if (found == true)
                 {
                     MessageBox.Show("Login successfully :)");
                     this.Hide();
                     if (type == 0)
                         new AuthorPage().Show();
-                    else
+                    else if (type == 1)
                         new ReviewerPage().Show();
+                    else
+                        new Admin_form().Show();
                 }
                 else
                     MessageBox.Show("Login failed :( ");
             }
             else
                 MessageBox.Show("error loading data from oracle");
+        }
+
+        private void Login_Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

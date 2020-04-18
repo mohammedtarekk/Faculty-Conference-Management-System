@@ -50,13 +50,15 @@ namespace Faculty_Conference_Management_System
 		{
 			string cmd = "select * from paper";
 			try
-			{
-			set = con.DisconnectedExcuteQuery(cmd);
-			GridView1.AutoGenerateColumns = true;
-			GridView1.DataSource = set.Tables[0];
-			GridView1.Columns[2].Visible=false;
-			GridView1.Columns[3].Visible=false;
-			GridView1.Columns[4].Visible=false;
+				{
+				set = con.DisconnectedExcuteQuery(cmd);
+				GridView1.AutoGenerateColumns = true;
+				GridView1.DataSource = set.Tables[0];
+				GridView1.Columns[2].Visible = false;
+				GridView1.Columns[3].Visible = false;
+				GridView1.Columns[4].Visible = false;
+				GridView1.Columns[5].Visible = false;
+
 
 			}
 			catch (Exception ex)
@@ -93,6 +95,7 @@ namespace Faculty_Conference_Management_System
 			cmd.CommandType = CommandType.Text;
 			cmd.ExecuteNonQuery();
 			connection.Close();
+
 			con.Update(set);
 			PaperDataPnl.Visible = false;
 			MessageBox.Show("Changes are saved successfully");
@@ -127,11 +130,30 @@ namespace Faculty_Conference_Management_System
 				revIdLbl.Text = dr["reviewerID"].ToString();
 				revNameLbl.Text = dr["ReviewerName"].ToString();
 				stateLbl.Text = dr["ReviewState"].ToString();
-				contentTxt.Text = dr["Content"].ToString();
+				content_textBox.Text = dr["Content"].ToString();
 
 			}
 			connection.Close();
 			PaperDataPnl.Visible = true;
+		}
+
+		private void Submit_BT_Click(object sender, EventArgs e)
+		{
+			new SubmitPaper().Show();
+		}
+
+		private void PaperDataPnl_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void CrystalReport_BT_Click(object sender, EventArgs e)
+		{
+		}
+
+		private void AuthorPage_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }

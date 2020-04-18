@@ -117,19 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Exit_BT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAABGdBTUEAALGPC/xhBQAAAV5JREFUOE+N
-        VEFOw0AMzBN4As/gsquIzQmJIxLHig/QF9DCB+AJPIEftB9A9BDtcqkKt97gwD3Yzm5rb7xJLY2i2OuJ
-        PXa20izUF+efzt6Hxqy8sz+hsV0Ps4LnAuPx6LRBwvJIUIZvzPOurs9i2tAw6Bv7oSWXgOeLpMGZjZY0
-        BZUUdHoZHL6+ku9jfmdeI1U/gPyAXzx1rd93/m4m/fBOfohzPyENCsSdiwBU0IZ9137/CdJERn6I55Vi
-        l0QIq7DmAQpiMid9eBRkeeUEZ3eRMAtECNKEElnEKCGCtGSEqnYMifA3DyCEZglMUw2RsKAh1wwr5Zpq
-        lcIeE+FgyoD2fXskixXRR5im4fZG5BymjFsODtE2JQNp3l4iHd1DNHCcdCEQlD/lUB03TcuTkLTLrb9t
-        zJuaVIRZF2+bZHAQ21dXiQHjy5gybTSoSzPDWwSr8M580RM7AH+5qqr6Bze/8jgIFlUaAAAAAElFTkSu
-        QmCC
-</value>
-  </data>
   <metadata name="DragControlStartForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
