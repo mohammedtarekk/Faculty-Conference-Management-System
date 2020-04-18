@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - Friday-April-17-2020   
+--  File created - Saturday-April-18-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence ADMIN_SEQ
@@ -148,7 +148,7 @@
 
   CREATE TABLE "REVIEWER_DATES" 
    (	"REVIEWER_ID" NUMBER, 
-	"DATE" VARCHAR2(10)
+	"REV_DATE" VARCHAR2(10)
    ) ;
 --------------------------------------------------------
 --  DDL for Table REVIEWER_PHONES
@@ -215,9 +215,10 @@ Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,CONFERENC
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into REVIEW
+Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (3,1,'Waiting');
 Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (1,1,'Accepted');
 Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (2,2,'Rejected');
-Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (3,1,'Waiting');
+Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (5,2,'Waiting');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEW
@@ -258,7 +259,7 @@ Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('19/4/2020','sunday','0'
 Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('20/4/2020','monday','0');
 Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('21/4/2020','tuesday','0');
 Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('22/4/2020','wednesday','1');
-Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('23/4/2020','thursday','1');
+Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('23/4/2020','thursday','0');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE DATES
@@ -273,7 +274,7 @@ Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_A
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (3,'medo','hhhhhhhhhhhhhh',1,1,'1');
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (4,'testtest','hiiiiiiiiiiiii',2,2,'0');
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (1,'medo','medo1',1,1,'1');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (5,'test3','byeeeeeeeeeeee',3,3,'0');
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (5,'test3','byeeeeeeeeeeee',3,3,'1');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE PAPER
@@ -298,14 +299,12 @@ Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (4,'0444444444')
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into REVIEWER_DATES
-Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (3,'22/4/2020');
-Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (4,'23/4/2020');
-Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (3,'20/4/2020');
-Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (4,'21/4/2020');
-Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (2,'19/4/2020');
-Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (1,'22/4/2020');
-Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (1,'21/4/2020');
-Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (2,'23/4/2020');
+Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'20/4/2020');
+Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (4,'21/4/2020');
+Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (2,'19/4/2020');
+Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (1,'22/4/2020');
+Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (1,'21/4/2020');
+Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'22/4/2020');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEWER_DATES
@@ -393,7 +392,7 @@ Insert into REVIEWER_DATES (REVIEWER_ID,DATE) values (2,'23/4/2020');
 
   ALTER TABLE "REVIEWER_DATES" MODIFY ("REVIEWER_ID" NOT NULL ENABLE);
  
-  ALTER TABLE "REVIEWER_DATES" MODIFY ("DATE" NOT NULL ENABLE);
+  ALTER TABLE "REVIEWER_DATES" MODIFY ("REV_DATE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table REVIEWER_PHONES
 --------------------------------------------------------

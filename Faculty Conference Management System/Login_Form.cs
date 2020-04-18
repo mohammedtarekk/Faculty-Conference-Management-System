@@ -44,11 +44,10 @@ namespace Faculty_Conference_Management_System
         private void RegisterNowBT_Click(object sender, EventArgs e)
         {
             //new AdminMainForm().Show();
-            new Register_Form().Show();
+            //new Register_Form().Show();
             //  new ReviewerPage().Show();
             //new AuthorPage().Show();
-           // new AuthorPage().Show();
-
+            new Admin_form().Show();
             this.Hide();
         }
         private void SignIn_bt_Click(object sender, EventArgs e)

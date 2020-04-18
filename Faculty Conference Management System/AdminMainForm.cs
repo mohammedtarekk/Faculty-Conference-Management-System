@@ -19,7 +19,8 @@ namespace Faculty_Conference_Management_System
 
         private void AssignBT_Click(object sender, EventArgs e)
         {
-            new AssignPaperForm().Show();
+            new Admin_form();
+            //new AssignPaperForm().Show();
             this.Hide();
         }
 
