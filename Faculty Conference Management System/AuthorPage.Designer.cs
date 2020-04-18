@@ -65,7 +65,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SaveAll_BT = new CustomImageButton.ImageButtonCustom();
+            this.Delete_BT = new CustomImageButton.ImageButtonCustom();
+            this.Update_BT = new CustomImageButton.ImageButtonCustom();
             this.Submit_BT = new CustomImageButton.ImageButtonCustom();
             this.CrystalReport_BT = new CustomImageButton.ImageButtonCustom();
             this.ViewAll_BT = new CustomImageButton.ImageButtonCustom();
@@ -85,7 +88,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveAll_BT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delete_BT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Update_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Submit_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrystalReport_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewAll_BT)).BeginInit();
@@ -154,10 +160,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(77)))), ((int)(((byte)(111)))));
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(364, 358);
+            this.label2.Location = new System.Drawing.Point(363, 407);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(263, 14);
             this.label2.TabIndex = 24;
@@ -171,7 +177,7 @@
             this.GridView1.Location = new System.Drawing.Point(12, 58);
             this.GridView1.Name = "GridView1";
             this.GridView1.ReadOnly = true;
-            this.GridView1.Size = new System.Drawing.Size(234, 289);
+            this.GridView1.Size = new System.Drawing.Size(234, 341);
             this.GridView1.TabIndex = 4;
             this.GridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView1_RowHeaderMouseClick);
             // 
@@ -208,7 +214,7 @@
             this.PaperDataPnl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.PaperDataPnl.Location = new System.Drawing.Point(252, 58);
             this.PaperDataPnl.Name = "PaperDataPnl";
-            this.PaperDataPnl.Size = new System.Drawing.Size(507, 289);
+            this.PaperDataPnl.Size = new System.Drawing.Size(507, 346);
             this.PaperDataPnl.TabIndex = 30;
             this.PaperDataPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.PaperDataPnl_Paint);
             // 
@@ -219,7 +225,7 @@
             this.content_textBox.Location = new System.Drawing.Point(81, 165);
             this.content_textBox.Name = "content_textBox";
             this.content_textBox.ReadOnly = true;
-            this.content_textBox.Size = new System.Drawing.Size(414, 116);
+            this.content_textBox.Size = new System.Drawing.Size(414, 176);
             this.content_textBox.TabIndex = 40;
             this.content_textBox.Text = "";
             // 
@@ -229,7 +235,7 @@
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
             this.pictureBox12.Location = new System.Drawing.Point(69, 156);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(438, 135);
+            this.pictureBox12.Size = new System.Drawing.Size(438, 195);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 41;
             this.pictureBox12.TabStop = false;
@@ -536,6 +542,17 @@
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-2, 405);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(967, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
             // SaveAll_BT
             // 
             this.SaveAll_BT.BackColor = System.Drawing.Color.Transparent;
@@ -543,12 +560,39 @@
             this.SaveAll_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("SaveAll_BT.ImageHover")));
             this.SaveAll_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("SaveAll_BT.ImageNormal")));
             this.SaveAll_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("SaveAll_BT.InitialImage")));
-            this.SaveAll_BT.Location = new System.Drawing.Point(776, 247);
+            this.SaveAll_BT.Location = new System.Drawing.Point(776, 339);
             this.SaveAll_BT.Name = "SaveAll_BT";
             this.SaveAll_BT.Size = new System.Drawing.Size(174, 65);
             this.SaveAll_BT.TabIndex = 26;
             this.SaveAll_BT.TabStop = false;
             this.SaveAll_BT.Click += new System.EventHandler(this.SaveAll_BT_Click);
+            // 
+            // Delete_BT
+            // 
+            this.Delete_BT.BackColor = System.Drawing.Color.Transparent;
+            this.Delete_BT.Image = ((System.Drawing.Image)(resources.GetObject("Delete_BT.Image")));
+            this.Delete_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("Delete_BT.ImageHover")));
+            this.Delete_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("Delete_BT.ImageNormal")));
+            this.Delete_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("Delete_BT.InitialImage")));
+            this.Delete_BT.Location = new System.Drawing.Point(776, 284);
+            this.Delete_BT.Name = "Delete_BT";
+            this.Delete_BT.Size = new System.Drawing.Size(174, 65);
+            this.Delete_BT.TabIndex = 34;
+            this.Delete_BT.TabStop = false;
+            // 
+            // Update_BT
+            // 
+            this.Update_BT.BackColor = System.Drawing.Color.Transparent;
+            this.Update_BT.Image = ((System.Drawing.Image)(resources.GetObject("Update_BT.Image")));
+            this.Update_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("Update_BT.ImageHover")));
+            this.Update_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("Update_BT.ImageNormal")));
+            this.Update_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("Update_BT.InitialImage")));
+            this.Update_BT.Location = new System.Drawing.Point(776, 229);
+            this.Update_BT.Name = "Update_BT";
+            this.Update_BT.Size = new System.Drawing.Size(174, 65);
+            this.Update_BT.TabIndex = 33;
+            this.Update_BT.TabStop = false;
+            this.Update_BT.Click += new System.EventHandler(this.Update_BT_Click);
             // 
             // Submit_BT
             // 
@@ -557,7 +601,7 @@
             this.Submit_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("Submit_BT.ImageHover")));
             this.Submit_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("Submit_BT.ImageNormal")));
             this.Submit_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("Submit_BT.InitialImage")));
-            this.Submit_BT.Location = new System.Drawing.Point(776, 187);
+            this.Submit_BT.Location = new System.Drawing.Point(776, 174);
             this.Submit_BT.Name = "Submit_BT";
             this.Submit_BT.Size = new System.Drawing.Size(174, 65);
             this.Submit_BT.TabIndex = 25;
@@ -571,7 +615,7 @@
             this.CrystalReport_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("CrystalReport_BT.ImageHover")));
             this.CrystalReport_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("CrystalReport_BT.ImageNormal")));
             this.CrystalReport_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("CrystalReport_BT.InitialImage")));
-            this.CrystalReport_BT.Location = new System.Drawing.Point(776, 126);
+            this.CrystalReport_BT.Location = new System.Drawing.Point(776, 118);
             this.CrystalReport_BT.Name = "CrystalReport_BT";
             this.CrystalReport_BT.Size = new System.Drawing.Size(174, 65);
             this.CrystalReport_BT.TabIndex = 23;
@@ -615,10 +659,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(964, 374);
+            this.ClientSize = new System.Drawing.Size(964, 423);
+            this.Controls.Add(this.SaveAll_BT);
+            this.Controls.Add(this.Delete_BT);
+            this.Controls.Add(this.Update_BT);
             this.Controls.Add(this.PaperDataPnl);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.SaveAll_BT);
             this.Controls.Add(this.Submit_BT);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CrystalReport_BT);
@@ -630,6 +676,7 @@
             this.Controls.Add(this.searchTxt);
             this.Controls.Add(this.GridView1);
             this.Controls.Add(this.textBoxPIC);
+            this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AuthorPage";
@@ -650,7 +697,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveAll_BT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delete_BT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Update_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Submit_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrystalReport_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewAll_BT)).EndInit();
@@ -703,5 +753,8 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.RichTextBox content_textBox;
         private System.Windows.Forms.PictureBox pictureBox12;
+        private CustomImageButton.ImageButtonCustom Delete_BT;
+        private CustomImageButton.ImageButtonCustom Update_BT;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

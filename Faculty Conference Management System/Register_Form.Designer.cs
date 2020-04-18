@@ -328,9 +328,9 @@
             // 
             this.imageButtonCustom1.BackColor = System.Drawing.Color.Transparent;
             this.imageButtonCustom1.Image = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom1.Image")));
-            this.imageButtonCustom1.ImageHover = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewerOnHover;
-            this.imageButtonCustom1.ImageNormal = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
-            this.imageButtonCustom1.InitialImage = global::Faculty_Conference_Management_System.Properties.Resources.radioReviewer;
+            this.imageButtonCustom1.ImageHover = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom1.ImageHover")));
+            this.imageButtonCustom1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom1.ImageNormal")));
+            this.imageButtonCustom1.InitialImage = ((System.Drawing.Image)(resources.GetObject("imageButtonCustom1.InitialImage")));
             this.imageButtonCustom1.Location = new System.Drawing.Point(526, 330);
             this.imageButtonCustom1.Name = "imageButtonCustom1";
             this.imageButtonCustom1.Size = new System.Drawing.Size(64, 20);

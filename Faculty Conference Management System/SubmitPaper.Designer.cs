@@ -306,10 +306,11 @@
             this.Categories_combo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Categories_combo.FormattingEnabled = true;
             this.Categories_combo.Location = new System.Drawing.Point(85, 65);
-            this.Categories_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Categories_combo.Margin = new System.Windows.Forms.Padding(2);
             this.Categories_combo.Name = "Categories_combo";
             this.Categories_combo.Size = new System.Drawing.Size(179, 21);
             this.Categories_combo.TabIndex = 38;
+            this.Categories_combo.SelectedIndexChanged += new System.EventHandler(this.Categories_combo_SelectedIndexChanged);
             this.Categories_combo.Click += new System.EventHandler(this.ComboBox1_Click);
             // 
             // SubmitPaper
@@ -342,6 +343,7 @@
             this.Name = "SubmitPaper";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Submit Paper";
+            this.Load += new System.EventHandler(this.SubmitPaper_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
