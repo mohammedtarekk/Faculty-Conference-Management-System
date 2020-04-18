@@ -32,20 +32,6 @@ D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Manageme
 D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
 D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
 D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe.config
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.pdb
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Oracle.DataAccess.dll
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csprojAssemblyReference.cache
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Admin_form.resources
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AuthorPage.resources
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Controls.ImageButtonCustom.resources
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Login_Form.resources
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Properties.Resources.resources
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Register_Form.resources
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.ReviewerPage.resources
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.SubmitPaper.resources
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.GenerateResource.cache
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AdminMainForm.resources
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AssignPaperForm.resources
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.BookAppointmentForm.resources

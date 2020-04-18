@@ -43,10 +43,12 @@ namespace Faculty_Conference_Management_System
 
         private void RegisterNowBT_Click(object sender, EventArgs e)
         {
-            //new Register_Form().Show();
+            //new AdminMainForm().Show();
+            new Register_Form().Show();
             //  new ReviewerPage().Show();
             //new AuthorPage().Show();
-            new Admin_form().Show();
+           // new AuthorPage().Show();
+
             this.Hide();
         }
         private void SignIn_bt_Click(object sender, EventArgs e)
@@ -69,19 +71,13 @@ namespace Faculty_Conference_Management_System
 
             if (res == true)
             {
-                try
-                {
-                    if (type == 0)
-                        found = con.check_exist("Author", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
-                    else if (type == 1)
-                        found = con.check_exist("Reviewer", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
-                    else if(type==2)
-                        found = con.check_exist("Admin", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
-                }
-                catch (Exception)
-                {
-                    found = false;
-                }
+                if (type == 0)
+                    found = con.check_exist("Author", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
+                else if (type == 1)
+                    found = con.check_exist("Reviewer", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
+                else if(type==2)
+                    found = con.check_exist("Admin", Convert.ToInt32(UserID_txt.Text), Password_txt.Text);
+
 
                 if (found == true)
                 {
@@ -89,10 +85,8 @@ namespace Faculty_Conference_Management_System
                     this.Hide();
                     if (type == 0)
                         new AuthorPage().Show();
-                    else if (type == 1)
-                        new ReviewerPage().Show();
                     else
-                        new Admin_form().Show();
+                        new ReviewerPage().Show();
                 }
                 else
                     MessageBox.Show("Login failed :( ");

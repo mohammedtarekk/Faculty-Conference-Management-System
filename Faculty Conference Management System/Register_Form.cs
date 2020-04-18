@@ -76,15 +76,13 @@ namespace Faculty_Conference_Management_System
 
 
             if (res)
-                MessageBox.Show("You have been registered successfully! Sign in NOW!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("Please enter your data correctly.", "FAILURE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            if (res)
             {
+                MessageBox.Show("You have been registered successfully! Sign in NOW!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 new Login_Form().Show();
             }
+            else
+                MessageBox.Show("Please enter your data correctly.", "FAILURE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         private void UserID_txt_TextChanged(object sender, EventArgs e)
