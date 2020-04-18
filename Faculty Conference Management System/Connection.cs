@@ -87,9 +87,14 @@ namespace Faculty_Conference_Management_System
             return DBdataSet;
         }
 
+		internal void addConference(string conferenceDate, string conferencePlace, string paperTitle, string conferenceDuration, string paperID)
+		{
+            //Conference ID should be generated automatically
 
+			throw new NotImplementedException();
+		}
 
-        internal void Update(DataSet dataSet)
+		internal void Update(DataSet dataSet)
 		{
 			builder = new OracleCommandBuilder(adapter);
 			adapter.Update(dataSet.Tables[0]);

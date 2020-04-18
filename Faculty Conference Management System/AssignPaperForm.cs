@@ -15,15 +15,16 @@ namespace Faculty_Conference_Management_System
     {
 		private DataSet set;
 		private Connection con = new Connection();
+		private string cmd;
 		private string selectedPaper;
 		private string selectedDate;
 		private string selectedReviewer;
-		private string cmd;
+		private int numberOfAssignedPapers;
 
 		public AssignPaperForm()
         {
             InitializeComponent();
-        }
+		}
 
 		private void AssignPaperForm_Load(object sender, EventArgs e)
 		{
@@ -36,28 +37,11 @@ namespace Faculty_Conference_Management_System
 				papersGrid.DataSource = set.Tables[0];
 				papersGrid.Rows[0].Selected = true;
 
-				//selceting available dates
-				cmd = "select DAY_DATE, DAY_NAME FROM dates where day_state = 1";
-				set = con.DisconnectedExcuteQuery(cmd);
-				datesGrid.AutoGenerateColumns = true;
-				datesGrid.DataSource = set.Tables[0];
-				datesGrid.Rows[0].Selected = true;
-				selectedDate = datesGrid.SelectedRows[0].Cells[0].Value.ToString();
-
 				//selecting available reviewer for the selected date
-				DataSet tmp = new DataSet();
-				cmd = "select * FROM reviewer_dates where rev_DATE = :d";
-				set = con.DisconnectedExcuteQuery(cmd, "d", selectedDate);
-				for (int i = 0; i < set.Tables[0].Rows.Count; i++)
-				{
-					selectedReviewer = set.Tables[0].Rows[i][0].ToString();
-
-					cmd = "select reviewer_id, reviewer_fname, reviewer_sname FROM reviewer where reviewer_id = :r";
-					tmp.Merge(con.DisconnectedExcuteQuery(cmd, "r", selectedReviewer));
-				}
-
+				cmd = "select reviewer_id, reviewer_fname, reviewer_sname, assigned_papers FROM reviewer";
+				set = con.DisconnectedExcuteQuery(cmd);
 				reviewersGrid.AutoGenerateColumns = true;
-				reviewersGrid.DataSource = tmp.Tables[0];
+				reviewersGrid.DataSource = set.Tables[0];
 				reviewersGrid.Rows[0].Selected = true;
 			}
 			catch (Exception ex)
@@ -76,34 +60,6 @@ namespace Faculty_Conference_Management_System
 			}
 		}
 
-		private void datesGrid_SelectionChanged(object sender, EventArgs e)
-		{
-			if (datesGrid.SelectedRows.Count != 0)
-			{
-				selectedDate = datesGrid.SelectedRows[0].Cells[0].Value.ToString();
-
-				//selecting available reviewer for the selected date
-				DataSet tmp = new DataSet();
-				cmd = "select * FROM reviewer_dates where rev_DATE = :d";
-				set = con.DisconnectedExcuteQuery(cmd, "d", selectedDate);
-				for (int i = 0; i < set.Tables[0].Rows.Count; i++)
-				{
-					selectedReviewer = set.Tables[0].Rows[i][0].ToString();
-
-					cmd = "select reviewer_id, reviewer_fname, reviewer_sname FROM reviewer where reviewer_id = :r";
-					tmp.Merge(con.DisconnectedExcuteQuery(cmd, "r", selectedReviewer));
-				}
-
-				reviewersGrid.AutoGenerateColumns = true;
-				reviewersGrid.DataSource = tmp.Tables[0];
-				reviewersGrid.Rows[0].Selected = true;
-
-				selectedDate = datesGrid.SelectedRows[0].Cells[1].Value.ToString() + "  " + datesGrid.SelectedRows[0].Cells[0].Value.ToString();
-				selectedDateTxt.Text = selectedDate;
-				selectedDate = datesGrid.SelectedRows[0].Cells[0].Value.ToString();
-
-			}
-		}
 
 		private void reviewersGrid_SelectionChanged(object sender, EventArgs e)
 		{
@@ -122,15 +78,9 @@ namespace Faculty_Conference_Management_System
 			{
 
 				//Insert new row in Review table
-				cmd = "select * FROM review";
-				set = con.DisconnectedExcuteQuery(cmd, "d", selectedDate);
+				cmd = "select * FROM review" ;
+				set = con.DisconnectedExcuteQuery(cmd);
 				set.Tables[0].Rows.Add(Convert.ToInt32(selectedPaper), Convert.ToInt32(selectedReviewer), "Waiting");
-				con.Update(set);
-
-				//Update available date
-				cmd = "select * FROM DATES where DAY_DATE = :d";
-				set = con.DisconnectedExcuteQuery(cmd, "d", selectedDate);
-				set.Tables[0].Rows[0][2] = 0;
 				con.Update(set);
 
 				//Update isAssigned in paper
@@ -139,17 +89,12 @@ namespace Faculty_Conference_Management_System
 				set.Tables[0].Rows[0][5] = 1;
 				con.Update(set);
 
-				//Remove from Reviewer_Dates
-				OracleConnection connection = new OracleConnection(con.conStr);
-				connection.Open();
-				OracleCommand cmnd = new OracleCommand();
-				cmnd.Connection = connection;
-				cmnd.CommandText = @"delete FROM REVIEWER_DATES where REV_DATE = :d and REVIEWER_ID = :i";
-				cmnd.Parameters.Add("d", selectedDate);
-				cmnd.Parameters.Add("i", selectedReviewer);
-				cmnd.CommandType = CommandType.Text;
-				cmnd.ExecuteNonQuery();
-				connection.Close();
+				//increment assigned_papers
+				cmd = "select * FROM reviewer where reviewer_id = :i";
+				set = con.DisconnectedExcuteQuery(cmd, "i", selectedReviewer);
+				numberOfAssignedPapers = Convert.ToInt32(set.Tables[0].Rows[0][7]);
+				set.Tables[0].Rows[0][7] = numberOfAssignedPapers + 1;
+				con.Update(set);
 
 				AssignPaperForm_Load(sender, e);
 

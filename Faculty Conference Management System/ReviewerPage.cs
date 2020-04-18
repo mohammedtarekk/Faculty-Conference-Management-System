@@ -72,7 +72,6 @@ namespace Faculty_Conference_Management_System
 			GridView1.AutoGenerateColumns = true;
 			GridView1.DataSource = con.DisconnectedExcuteQuery(cmd).Tables[0];
 			cmd = "select  *  from review";
-
 			set = con.DisconnectedExcuteQuery(cmd);
 			Gridview2.AutoGenerateColumns = true;
 			Gridview2.RowHeadersVisible = false;

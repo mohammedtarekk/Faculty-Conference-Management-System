@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - Saturday-April-18-2020   
+--  File created - Sunday-April-19-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence ADMIN_SEQ
@@ -83,7 +83,7 @@
    (	"CONFERENCE_ID" NUMBER(10,0), 
 	"CONFERENCE_DATE" VARCHAR2(100), 
 	"CONFERENCE_PLACE" VARCHAR2(100), 
-	"CONFERENCE_DESCRIPTION" VARCHAR2(500), 
+	"PAPER_TITLE" VARCHAR2(500), 
 	"CONFERENCE_DURATION" NUMBER(10,0), 
 	"PAPER_ID" NUMBER(10,0)
    ) ;
@@ -140,7 +140,8 @@
 	"REVIEWER_DBIRTH" VARCHAR2(100), 
 	"REVIEWER_EMAIL" VARCHAR2(100), 
 	"REVIEWER_ADDRESS" VARCHAR2(100), 
-	"REVIEWER_PASSWORD" VARCHAR2(100)
+	"REVIEWER_PASSWORD" VARCHAR2(100), 
+	"ASSIGNED_PAPERS" NUMBER DEFAULT 0
    ) ;
 --------------------------------------------------------
 --  DDL for Table REVIEWER_DATES
@@ -164,10 +165,10 @@
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into REVIEWER
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD) values (1,'r','r','r','r','r','r');
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD) values (2,'r2','r2','r2','r2','r2','r2');
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD) values (3,'r3','r3','r3','r3','r3','r3');
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD) values (4,'r4','r4','r4','r4','r4','r4');
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (1,'r','r','r','r','r','r',2);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (2,'r2','r2','r2','r2','r2','r2',1);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (3,'r3','r3','r3','r3','r3','r3',1);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (4,'r4','r4','r4','r4','r4','r4',0);
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEWER
@@ -202,9 +203,7 @@ Insert into RESEARCH_CATEGORYFIELD (CATEGORY_ID,CATEGORY_NAME,CATEGORY_DESCRIBTI
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into CONFERENCE
-Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,CONFERENCE_DESCRIPTION,CONFERENCE_DURATION,PAPER_ID) values (1,'19/4/2020','Fahmy Tolba','Conference 1',2,1);
-Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,CONFERENCE_DESCRIPTION,CONFERENCE_DURATION,PAPER_ID) values (2,'20/4/2020','Saieed Abdelwahab','Conference 2',1,2);
-Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,CONFERENCE_DESCRIPTION,CONFERENCE_DURATION,PAPER_ID) values (3,'21/4/2020','seminar','Conference 3',2,3);
+Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,PAPER_TITLE,CONFERENCE_DURATION,PAPER_ID) values (1,'19/4/2020','Fahmy Tolba HAll','medo',2,1);
 
 ---------------------------------------------------
 --   END DATA FOR TABLE CONFERENCE
@@ -218,7 +217,8 @@ REM INSERTING into REVIEW
 Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (3,1,'Waiting');
 Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (1,1,'Accepted');
 Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (2,2,'Rejected');
-Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (5,2,'Waiting');
+Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (4,3,'Waiting');
+Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (4,1,'Waiting');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEW
@@ -232,6 +232,7 @@ REM INSERTING into AUTHOR
 Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (1,'m','m','m','m','m','m');
 Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (2,'mm','mm','mm','mm','mm','mm');
 Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (3,'Ali','Ahmed','20/10/1990','Ali@gmail.com','blalball','ali');
+Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (4,'Ahmed','Khaled','20/9/1995','Ahmed@gmail.com','blalball','ahmed');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE AUTHOR
@@ -259,7 +260,7 @@ Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('19/4/2020','sunday','0'
 Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('20/4/2020','monday','0');
 Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('21/4/2020','tuesday','0');
 Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('22/4/2020','wednesday','1');
-Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('23/4/2020','thursday','0');
+Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('23/4/2020','thursday','1');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE DATES
@@ -271,10 +272,11 @@ Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('23/4/2020','thursday','
 ---------------------------------------------------
 REM INSERTING into PAPER
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (2,'meeting','we will hold meeting at 5 pm isa',1,3,'1');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (3,'medo','hhhhhhhhhhhhhh',1,1,'1');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (4,'testtest','hiiiiiiiiiiiii',2,2,'0');
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (3,'medo','hhhhhhhhhhhhhh',1,1,'0');
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (4,'testtest','hiiiiiiiiiiiii',2,2,'1');
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (1,'medo','medo1',1,1,'1');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (5,'test3','byeeeeeeeeeeee',3,3,'1');
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (5,'test3','byeeeeeeeeeeee',3,3,'0');
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (6,'AI','AI Content byeeeeeeeeeeee',1,4,'0');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE PAPER
@@ -386,6 +388,8 @@ Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'22/4/2020');
   ALTER TABLE "REVIEWER" MODIFY ("REVIEWER_ID" NOT NULL ENABLE);
  
   ALTER TABLE "REVIEWER" ADD PRIMARY KEY ("REVIEWER_ID") ENABLE;
+ 
+  ALTER TABLE "REVIEWER" MODIFY ("ASSIGNED_PAPERS" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table REVIEWER_DATES
 --------------------------------------------------------
