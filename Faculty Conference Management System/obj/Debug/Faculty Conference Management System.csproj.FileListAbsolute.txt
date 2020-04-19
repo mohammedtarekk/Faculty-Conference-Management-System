@@ -64,3 +64,26 @@ D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Manageme
 D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.UpdateForm.resources
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Delete.resources
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Update_Data.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe.config
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.exe
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.pdb
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Oracle.DataAccess.dll
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csprojAssemblyReference.cache
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AdminMainForm.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AssignPaperForm.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AuthorPage.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.BookAppointmentForm.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Controls.ImageButtonCustom.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Delete.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Login_Form.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Properties.Resources.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Register_Form.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.ReviewerPage.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.SubmitPaper.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.UpdateForm.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Update_Data.resources
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.GenerateResource.cache
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CoreCompileInputs.cache
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
+D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb

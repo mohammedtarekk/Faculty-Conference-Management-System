@@ -88,21 +88,43 @@ namespace Faculty_Conference_Management_System
         {
             Connection con = new Connection();
             DataSet tmpSet;
-            string cmd = "select  AUTHOR_FNAME ,AUTHOR_SNAME , AUTHOR_DBIRTH , AUTHOR_EMAIL , AUTHOR_ADDRESS ,AUTHOR_PASSWORD  from author WHERE AUTHOR_ID=:id ";
-            try
+            if (this.type == "Author")
             {
-                tmpSet = con.DisconnectedExcuteQuery(cmd, "id", "3");
-                FName_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[0].ToString();
-                LNAME_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[1].ToString();
-                DateBirth_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[2].ToString();
-                Email_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[3].ToString();
-                Address_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[4].ToString();
-                Password_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[5].ToString();
+                string cmd = "select  AUTHOR_FNAME ,AUTHOR_SNAME , AUTHOR_DBIRTH , AUTHOR_EMAIL , AUTHOR_ADDRESS ,AUTHOR_PASSWORD  from author WHERE AUTHOR_ID=:id ";
+                try
+                {
+                    tmpSet = con.DisconnectedExcuteQuery(cmd, "id", this.id.ToString());
+                    FName_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[0].ToString();
+                    LNAME_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[1].ToString();
+                    DateBirth_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[2].ToString();
+                    Email_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[3].ToString();
+                    Address_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[4].ToString();
+                    Password_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[5].ToString();
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else if (this.type == "Reviewer")
             {
-                MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string cmd = "select  REVIEWER_FNAME ,REVIEWER_SNAME , REVIEWER_DBIRTH , REVIEWER_EMAIL , REVIEWER_ADDRESS ,REVIEWER_PASSWORD from Reviewer WHERE REVIEWER_ID=:id ";
+                try
+                {
+                    tmpSet = con.DisconnectedExcuteQuery(cmd, "id", this.id.ToString());
+                    FName_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[0].ToString();
+                    LNAME_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[1].ToString();
+                    DateBirth_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[2].ToString();
+                    Email_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[3].ToString();
+                    Address_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[4].ToString();
+                    Password_txt.Text = tmpSet.Tables[0].Rows[0].ItemArray[5].ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

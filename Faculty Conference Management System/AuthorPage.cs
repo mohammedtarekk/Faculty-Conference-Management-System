@@ -168,7 +168,7 @@ namespace Faculty_Conference_Management_System
 		private void modifyInfoBtn_Click(object sender, EventArgs e)
 		{
 			// replace 1 by the Fucken current ID
-			new Update_Data(3, "Author").Show();
+			new Update_Data(1, "Author").Show();
 			this.Hide();
 		}
 	}
