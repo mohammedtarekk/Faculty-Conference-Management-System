@@ -42,6 +42,8 @@
 			this.ViewAll_BT = new CustomImageButton.ImageButtonCustom();
 			this.Search_BT = new CustomImageButton.ImageButtonCustom();
 			this.dragControl1 = new DragControlDemo.DragControl();
+			this.acceptRB = new System.Windows.Forms.RadioButton();
+			this.rejectRB = new System.Windows.Forms.RadioButton();
 			((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).BeginInit();
@@ -60,10 +62,12 @@
 			this.GridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.GridView1.Location = new System.Drawing.Point(12, 53);
+			this.GridView1.MultiSelect = false;
 			this.GridView1.Name = "GridView1";
 			this.GridView1.ReadOnly = true;
 			this.GridView1.Size = new System.Drawing.Size(612, 291);
 			this.GridView1.TabIndex = 0;
+			this.GridView1.SelectionChanged += new System.EventHandler(this.GridView1_SelectionChanged);
 			// 
 			// searchTxt
 			// 
@@ -144,10 +148,13 @@
 			this.Gridview2.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.Gridview2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.Gridview2.Location = new System.Drawing.Point(644, 53);
+			this.Gridview2.MultiSelect = false;
 			this.Gridview2.Name = "Gridview2";
+			this.Gridview2.ReadOnly = true;
 			this.Gridview2.Size = new System.Drawing.Size(111, 291);
 			this.Gridview2.TabIndex = 16;
 			this.Gridview2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gridview2_CellDoubleClick);
+			this.Gridview2.SelectionChanged += new System.EventHandler(this.Gridview2_SelectionChanged);
 			// 
 			// CrystalReport_BT
 			// 
@@ -208,12 +215,41 @@
 			// 
 			this.dragControl1.SelectControl = this;
 			// 
+			// acceptRB
+			// 
+			this.acceptRB.AutoSize = true;
+			this.acceptRB.BackColor = System.Drawing.Color.Transparent;
+			this.acceptRB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.acceptRB.Location = new System.Drawing.Point(639, 30);
+			this.acceptRB.Name = "acceptRB";
+			this.acceptRB.Size = new System.Drawing.Size(59, 17);
+			this.acceptRB.TabIndex = 17;
+			this.acceptRB.Text = "Accept";
+			this.acceptRB.UseVisualStyleBackColor = false;
+			this.acceptRB.Click += new System.EventHandler(this.acceptRB_Click);
+			// 
+			// rejectRB
+			// 
+			this.rejectRB.AutoSize = true;
+			this.rejectRB.BackColor = System.Drawing.Color.Transparent;
+			this.rejectRB.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
+			this.rejectRB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.rejectRB.Location = new System.Drawing.Point(700, 30);
+			this.rejectRB.Name = "rejectRB";
+			this.rejectRB.Size = new System.Drawing.Size(56, 17);
+			this.rejectRB.TabIndex = 17;
+			this.rejectRB.Text = "Reject";
+			this.rejectRB.UseVisualStyleBackColor = false;
+			this.rejectRB.Click += new System.EventHandler(this.rejectRB_Click);
+			// 
 			// ReviewerPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(964, 374);
+			this.Controls.Add(this.rejectRB);
+			this.Controls.Add(this.acceptRB);
 			this.Controls.Add(this.Gridview2);
 			this.Controls.Add(this.CrystalReport_BT);
 			this.Controls.Add(this.SaveAll_BT);
@@ -258,5 +294,7 @@
         private CustomImageButton.ImageButtonCustom SaveAll_BT;
         private CustomImageButton.ImageButtonCustom CrystalReport_BT;
 		private System.Windows.Forms.DataGridView Gridview2;
+		private System.Windows.Forms.RadioButton rejectRB;
+		private System.Windows.Forms.RadioButton acceptRB;
 	}
 }
