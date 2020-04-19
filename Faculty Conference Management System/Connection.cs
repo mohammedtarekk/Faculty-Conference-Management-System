@@ -250,6 +250,95 @@ namespace Faculty_Conference_Management_System
             return x + 1;
         }
 
+        public bool Delete_Author(int id)
+        {
+            con = new OracleConnection(conStr);
+            con.Open();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "Delete from Author where AUTHOR_ID=:id";
+                cmd.Parameters.Add("id", id);
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Delete_Reviewer(int id)
+        {
+            con = new OracleConnection(conStr);
+            con.Open();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "Delete from Reviewer where REVIEWER_ID=:id";
+                cmd.Parameters.Add("id", id);
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Update_Author_Data(int id , string firstName, string secondName , string birth ,string email, string address ,string password)
+        {
+            con = new OracleConnection(conStr);
+            con.Open();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "update Author set AUTHOR_FNAME=:firstName ,AUTHOR_SNAME=:secondName , AUTHOR_DBIRTH=:birth , AUTHOR_EMAIL:=email , AUTHOR_ADDRESS=:address ,AUTHOR_PASSWORD:=password where AUTHOR_ID=:id ";
+                cmd.Parameters.Add("firstName", firstName);
+                cmd.Parameters.Add("secondName", secondName);
+                cmd.Parameters.Add("birth", birth);
+                cmd.Parameters.Add("email", email);
+                cmd.Parameters.Add("address", address);
+                cmd.Parameters.Add("password", password);
+                cmd.Parameters.Add("id", id);
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Update_Reviewer_Data(int id, string firstName, string secondName, string birth, string email, string address, string password)
+        {
+            con = new OracleConnection(conStr);
+            con.Open();
+            try 
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "update Reviewer set REVIEWER_FNAME=:firstName ,REVIEWER_SNAME=:secondName , REVIEWER_DBIRTH=:birth , REVIEWER_EMAIL:=email , REVIEWER_ADDRESS=:address ,REVIEWER_PASSWORD:=password where REVIEWER_ID=:id ";
+                cmd.Parameters.Add("firstName", firstName);
+                cmd.Parameters.Add("secondName", secondName);
+                cmd.Parameters.Add("birth", birth);
+                cmd.Parameters.Add("email", email);
+                cmd.Parameters.Add("address", address);
+                cmd.Parameters.Add("password", password);
+                cmd.Parameters.Add("id", id);
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+
         public bool submit_paper(string title, string content,int Cat_ID)
         {
             con = new OracleConnection(conStr);
