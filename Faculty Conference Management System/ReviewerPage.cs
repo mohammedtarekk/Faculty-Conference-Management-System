@@ -210,5 +210,12 @@ namespace Faculty_Conference_Management_System
 				connection.Close();
 			}
 		}
+
+		private void modifyInfoBtn_Click(object sender, EventArgs e)
+		{
+			// replace 1 by the Fucken current ID
+			new Update_Data(1, "Reviewer").Show();
+			this.Hide();
+		}
 	}
 }

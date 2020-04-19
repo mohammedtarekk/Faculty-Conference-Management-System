@@ -296,7 +296,7 @@ namespace Faculty_Conference_Management_System
             {
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "update Author set AUTHOR_FNAME=:firstName ,AUTHOR_SNAME=:secondName , AUTHOR_DBIRTH=:birth , AUTHOR_EMAIL:=email , AUTHOR_ADDRESS=:address ,AUTHOR_PASSWORD:=password where AUTHOR_ID=:id ";
+                cmd.CommandText = "update Author set AUTHOR_FNAME=:firstName ,AUTHOR_SNAME=:secondName , AUTHOR_DBIRTH=:birth , AUTHOR_EMAIL=:email , AUTHOR_ADDRESS=:address ,AUTHOR_PASSWORD=:password where AUTHOR_ID=:id ";
                 cmd.Parameters.Add("firstName", firstName);
                 cmd.Parameters.Add("secondName", secondName);
                 cmd.Parameters.Add("birth", birth);
@@ -321,7 +321,7 @@ namespace Faculty_Conference_Management_System
             {
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "update Reviewer set REVIEWER_FNAME=:firstName ,REVIEWER_SNAME=:secondName , REVIEWER_DBIRTH=:birth , REVIEWER_EMAIL:=email , REVIEWER_ADDRESS=:address ,REVIEWER_PASSWORD:=password where REVIEWER_ID=:id ";
+                cmd.CommandText = "update Reviewer set REVIEWER_FNAME=:firstName ,REVIEWER_SNAME=:secondName , REVIEWER_DBIRTH=:birth , REVIEWER_EMAIL=:email , REVIEWER_ADDRESS=:address ,REVIEWER_PASSWORD=:password where REVIEWER_ID=:id ";
                 cmd.Parameters.Add("firstName", firstName);
                 cmd.Parameters.Add("secondName", secondName);
                 cmd.Parameters.Add("birth", birth);

@@ -44,6 +44,7 @@
 			this.ViewAll_BT = new CustomImageButton.ImageButtonCustom();
 			this.Search_BT = new CustomImageButton.ImageButtonCustom();
 			this.dragControl1 = new DragControlDemo.DragControl();
+			this.modifyInfoBtn = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).BeginInit();
@@ -244,12 +245,23 @@
 			// 
 			this.dragControl1.SelectControl = this;
 			// 
+			// modifyInfoBtn
+			// 
+			this.modifyInfoBtn.Location = new System.Drawing.Point(802, 7);
+			this.modifyInfoBtn.Name = "modifyInfoBtn";
+			this.modifyInfoBtn.Size = new System.Drawing.Size(109, 37);
+			this.modifyInfoBtn.TabIndex = 18;
+			this.modifyInfoBtn.Text = "Modifay Info";
+			this.modifyInfoBtn.UseVisualStyleBackColor = true;
+			this.modifyInfoBtn.Click += new System.EventHandler(this.modifyInfoBtn_Click);
+			// 
 			// ReviewerPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(964, 374);
+			this.Controls.Add(this.modifyInfoBtn);
 			this.Controls.Add(this.rejectRB);
 			this.Controls.Add(this.acceptRB);
 			this.Controls.Add(this.GridView2);
@@ -299,5 +311,6 @@
 		private System.Windows.Forms.DataGridView GridView2;
 		private System.Windows.Forms.RadioButton rejectRB;
 		private System.Windows.Forms.RadioButton acceptRB;
+		private System.Windows.Forms.Button modifyInfoBtn;
 	}
 }

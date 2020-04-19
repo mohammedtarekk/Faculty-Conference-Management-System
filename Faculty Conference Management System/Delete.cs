@@ -19,34 +19,7 @@ namespace Faculty_Conference_Management_System
         {
             this.type = type;
             InitializeComponent();
-            if(type == "Reviewer")
-            {
-                string cmd = "select * from Reviewer";
-                try
-                {
-                    set = con.DisconnectedExcuteQuery(cmd);
-                    GridView.AutoGenerateColumns = true;
-                    GridView.DataSource = set.Tables[0];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else if(type == "Author")
-            {
-                string cmd = "select * from Author";
-                try
-                {
-                    set = con.DisconnectedExcuteQuery(cmd);
-                    GridView.AutoGenerateColumns = true;
-                    GridView.DataSource = set.Tables[0];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+           
         }
 
         private void Delete_btn_Click(object sender, EventArgs e)
@@ -67,11 +40,44 @@ namespace Faculty_Conference_Management_System
                 else
                     MessageBox.Show("Deleted failed :(");
             }
+            Delete_Load(sender, e);
         }
 
         private void Delete_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Delete_Load(object sender, EventArgs e)
+        {
+            if (type == "Reviewer")
+            {
+                string cmd = "select * from Reviewer";
+                try
+                {
+                    set = con.DisconnectedExcuteQuery(cmd);
+                    GridView.AutoGenerateColumns = true;
+                    GridView.DataSource = set.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (type == "Author")
+            {
+                string cmd = "select * from Author";
+                try
+                {
+                    set = con.DisconnectedExcuteQuery(cmd);
+                    GridView.AutoGenerateColumns = true;
+                    GridView.DataSource = set.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

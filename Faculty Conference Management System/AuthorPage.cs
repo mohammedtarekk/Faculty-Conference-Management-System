@@ -164,5 +164,12 @@ namespace Faculty_Conference_Management_System
 				PaperDataPnl.Visible = true;
 			}
 		}
+
+		private void modifyInfoBtn_Click(object sender, EventArgs e)
+		{
+			// replace 1 by the Fucken current ID
+			new Update_Data(3, "Author").Show();
+			this.Hide();
+		}
 	}
 }

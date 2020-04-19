@@ -74,6 +74,7 @@
 			this.ViewAll_BT = new CustomImageButton.ImageButtonCustom();
 			this.Search_BT = new CustomImageButton.ImageButtonCustom();
 			this.dragControl1 = new DragControlDemo.DragControl();
+			this.modifyInfoBtn = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
@@ -655,12 +656,23 @@
 			// 
 			this.dragControl1.SelectControl = this;
 			// 
+			// modifyInfoBtn
+			// 
+			this.modifyInfoBtn.Location = new System.Drawing.Point(293, 8);
+			this.modifyInfoBtn.Name = "modifyInfoBtn";
+			this.modifyInfoBtn.Size = new System.Drawing.Size(109, 37);
+			this.modifyInfoBtn.TabIndex = 35;
+			this.modifyInfoBtn.Text = "Modifay Info";
+			this.modifyInfoBtn.UseVisualStyleBackColor = true;
+			this.modifyInfoBtn.Click += new System.EventHandler(this.modifyInfoBtn_Click);
+			// 
 			// AuthorPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(964, 423);
+			this.Controls.Add(this.modifyInfoBtn);
 			this.Controls.Add(this.SaveAll_BT);
 			this.Controls.Add(this.Delete_BT);
 			this.Controls.Add(this.Update_BT);
@@ -757,5 +769,6 @@
         private CustomImageButton.ImageButtonCustom Delete_BT;
         private CustomImageButton.ImageButtonCustom Update_BT;
         private System.Windows.Forms.PictureBox pictureBox2;
-    }
+		private System.Windows.Forms.Button modifyInfoBtn;
+	}
 }
