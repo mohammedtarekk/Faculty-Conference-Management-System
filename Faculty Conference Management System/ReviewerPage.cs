@@ -213,8 +213,7 @@ namespace Faculty_Conference_Management_System
 
 		private void modifyInfoBtn_Click(object sender, EventArgs e)
 		{
-			// replace 1 by the Fucken current ID
-			new Update_Data(1, "Reviewer").Show();
+            new Update_Data(Connection.Current_ReviewerID, "Reviewer").Show();
 			this.Hide();
 		}
 	}
