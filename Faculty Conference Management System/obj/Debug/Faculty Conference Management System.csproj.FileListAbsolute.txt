@@ -54,7 +54,6 @@ F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Confer
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
-E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Admin_form.resources
 E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.UpdateForm.resources
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.UpdateForm.resources
 D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Admin_form.resources
@@ -87,3 +86,5 @@ D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Manag
 D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
 D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
 D:\Projects\github\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Delete.resources
+E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Update_Data.resources

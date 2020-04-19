@@ -77,10 +77,14 @@ namespace Faculty_Conference_Management_System
 			searchTxt.ForeColor = Color.Silver;
 		}
 
+		bool clickedOnce = false;
 		private void searchTxt_MouseClick(object sender, MouseEventArgs e)
 		{
-			searchTxt.Text = "";
+			if(!clickedOnce)
+				searchTxt.Text = "";
+
 			searchTxt.ForeColor = Color.Silver;
+			clickedOnce = true;
 		}
 
 		//The change he can do is to delete the rejected papers only
@@ -164,11 +168,14 @@ namespace Faculty_Conference_Management_System
 				PaperDataPnl.Visible = true;
 			}
 		}
-
-		private void modifyInfoBtn_Click(object sender, EventArgs e)
+		private void UpdateInfo_BT_Click(object sender, EventArgs e)
 		{
 			new Update_Data(Connection.Current_AuthorID, "Author").Show();
-			this.Hide();
+		}
+
+		private void content_textBox_TextChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

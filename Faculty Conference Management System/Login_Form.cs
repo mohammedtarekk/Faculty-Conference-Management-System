@@ -28,24 +28,30 @@ namespace Faculty_Conference_Management_System
             UserID_txt.ForeColor = Color.Silver;
         }
 
+        bool clickedOnce = false;
         private void UserID_txt_MouseClick(object sender, MouseEventArgs e)
         {
-            UserID_txt.Text = "";
+            if (!clickedOnce)
+                UserID_txt.Text = "";
             UserID_txt.ForeColor = Color.Silver;
+            clickedOnce = true;
         }
 
+        bool clickedOnce2 = false;
         private void Password_txt_MouseClick(object sender, MouseEventArgs e)
         {
-            Password_txt.Text = "";
+            if (!clickedOnce)
+                Password_txt.Text = "";
             Password_txt.ForeColor = Color.Silver;
             Password_txt.PasswordChar = '*';
+            clickedOnce2 = true;
         }
 
         private void RegisterNowBT_Click(object sender, EventArgs e)
         {
-            new AdminMainForm().Show();
+            //new AdminMainForm().Show();
             //new Register_Form().Show();
-             new ReviewerPage().Show();
+             //new ReviewerPage().Show();
              new AuthorPage().Show();
             //new AssignPaperForm().Show();
             this.Hide();

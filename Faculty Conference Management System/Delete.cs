@@ -22,30 +22,9 @@ namespace Faculty_Conference_Management_System
            
         }
 
-        private void Delete_btn_Click(object sender, EventArgs e)
-        {
-            if (this.type == "Author")
-            {
-                bool check = con.Delete_Author(int.Parse(ID_txt.Text));
-                if (check == true)
-                    MessageBox.Show("Deleted successfully :)");
-                else
-                    MessageBox.Show("Deleted failed :(");
-            }
-            else if (this.type== "Reviewer")
-            {
-                bool check = con.Delete_Reviewer(int.Parse(ID_txt.Text));
-                if (check == true)
-                    MessageBox.Show("Deleted successfully :)");
-                else
-                    MessageBox.Show("Deleted failed :(");
-            }
-            Delete_Load(sender, e);
-        }
-
         private void Delete_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            new AdminMainForm().Show();
         }
 
         private void Delete_Load(object sender, EventArgs e)
@@ -78,6 +57,27 @@ namespace Faculty_Conference_Management_System
                     MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void Delete_BT_Click(object sender, EventArgs e)
+        {
+            if (this.type == "Author")
+            {
+                bool check = con.Delete_Author(int.Parse(ID_txt.Text));
+                if (check == true)
+                    MessageBox.Show("Deleted successfully :)");
+                else
+                    MessageBox.Show("Deleted failed :(");
+            }
+            else if (this.type == "Reviewer")
+            {
+                bool check = con.Delete_Reviewer(int.Parse(ID_txt.Text));
+                if (check == true)
+                    MessageBox.Show("Deleted successfully :)");
+                else
+                    MessageBox.Show("Deleted failed :(");
+            }
+            Delete_Load(sender, e);
         }
     }
 }

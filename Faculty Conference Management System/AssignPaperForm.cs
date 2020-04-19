@@ -106,5 +106,15 @@ namespace Faculty_Conference_Management_System
 		{
 			new AdminMainForm().Show();
 		}
+
+		private void selectedPaperTxt_TextChanged(object sender, EventArgs e)
+		{
+			selectedPaperTxt.ForeColor = Color.Silver;
+		}
+
+		private void selectedReviewerTxt_TextChanged(object sender, EventArgs e)
+		{
+			selectedReviewerTxt.ForeColor = Color.Silver;
+		}
 	}
 }

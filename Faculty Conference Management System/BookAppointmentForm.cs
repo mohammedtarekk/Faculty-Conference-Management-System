@@ -100,9 +100,23 @@ namespace Faculty_Conference_Management_System
             }
         }
 
+        bool clickedOnce = false;
         private void durationTxt_MouseClick(object sender, MouseEventArgs e)
         {
-            durationTxt.Text = "";
+            if (!clickedOnce)
+                durationTxt.Text = "";
+
+            durationTxt.ForeColor = Color.Silver;
+            clickedOnce = true;
+        }
+
+        private void SelectedPaper_txt_TextChanged(object sender, EventArgs e)
+        {
+            SelectedPaper_txt.ForeColor = Color.Silver;
+        }
+
+        private void durationTxt_TextChanged(object sender, EventArgs e)
+        {
             durationTxt.ForeColor = Color.Silver;
         }
     }

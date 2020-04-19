@@ -211,10 +211,9 @@ namespace Faculty_Conference_Management_System
 			}
 		}
 
-		private void modifyInfoBtn_Click(object sender, EventArgs e)
+		private void UpdateInfo_BT_Click(object sender, EventArgs e)
 		{
-            new Update_Data(Connection.Current_ReviewerID, "Reviewer").Show();
-			this.Hide();
+			new Update_Data(Connection.Current_ReviewerID, "Reviewer").Show();
 		}
 	}
 }
