@@ -98,7 +98,7 @@ namespace Faculty_Conference_Management_System
                 cmd.CommandText = "Add_Conference";
              
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("daye", conferenceDate);
+                cmd.Parameters.Add("dates", conferenceDate);
                 cmd.Parameters.Add("place", conferencePlace);
                 cmd.Parameters.Add("title", paperTitle);
                 cmd.Parameters.Add("dur", conferenceDuration);

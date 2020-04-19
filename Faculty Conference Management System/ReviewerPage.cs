@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,10 @@ namespace Faculty_Conference_Management_System
 	{
 		private Connection con = new Connection();
 		private DataSet set;
+		private int selectedPaper;
+		private string cmd;
+		private string selectedReviewer;
+
 		public ReviewerPage()
 		{
 			InitializeComponent();
@@ -32,18 +37,18 @@ namespace Faculty_Conference_Management_System
 			try
 			{
 
-			tmpSet = con.DisconnectedExcuteQuery(cmd, "t", searchTxt.Text);
+				tmpSet = con.DisconnectedExcuteQuery(cmd, "t", searchTxt.Text);
 
-			GridView1.AutoGenerateColumns = true;
-			GridView1.DataSource = tmpSet.Tables[0];
-			cmd = "select  *  from review WHERE review.paper_id = :t";
+				GridView1.AutoGenerateColumns = true;
+				GridView1.DataSource = tmpSet.Tables[0];
+				cmd = "select  *  from review WHERE review.paper_id = :t";
 
-			set = con.DisconnectedExcuteQuery(cmd, "t", tmpSet.Tables[0].Rows[0][0].ToString());
-			Gridview2.AutoGenerateColumns = true;
-			Gridview2.RowHeadersVisible = false;
-			Gridview2.DataSource = set.Tables[0];
-			Gridview2.Columns[0].Visible = false;
-			Gridview2.Columns[1].Visible = false;
+				set = con.DisconnectedExcuteQuery(cmd, "t", tmpSet.Tables[0].Rows[0][0].ToString());
+				Gridview2.AutoGenerateColumns = true;
+				Gridview2.RowHeadersVisible = false;
+				Gridview2.DataSource = set.Tables[0];
+				Gridview2.Columns[0].Visible = false;
+				Gridview2.Columns[1].Visible = false;
 
 			}
 			catch (Exception ex)
@@ -60,24 +65,27 @@ namespace Faculty_Conference_Management_System
 
 		private void ViewAll_BT_Click(object sender, EventArgs e)
 		{
-			string cmd = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer_fname Reviewer
+			cmd = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer.reviewer_id ReviewerID, reviewer_fname Reviewer
 							 from paper, review, reviewer, research_categoryfield, author
                               WHERE paper.paper_id = review.paper_id
                               AND review.reviewer_id = reviewer.reviewer_id
                               AND paper.research_id = research_categoryfield.category_id
-                              AND author.author_id = paper.author_id";
+                              AND author.author_id = paper.author_id
+							  ORDER BY paper.paper_id ASC
+								";
 
 			try
 			{
-			GridView1.AutoGenerateColumns = true;
-			GridView1.DataSource = con.DisconnectedExcuteQuery(cmd).Tables[0];
-			cmd = "select  *  from review";
-			set = con.DisconnectedExcuteQuery(cmd);
-			Gridview2.AutoGenerateColumns = true;
-			Gridview2.RowHeadersVisible = false;
-			Gridview2.DataSource = set.Tables[0];
-			Gridview2.Columns[0].Visible = false;
-			Gridview2.Columns[1].Visible = false;
+				GridView1.AutoGenerateColumns = true;
+				GridView1.DataSource = con.DisconnectedExcuteQuery(cmd).Tables[0];
+				cmd = "select  *  from review ORDER BY paper_id ASC";
+				set = con.DisconnectedExcuteQuery(cmd);
+				Gridview2.AutoGenerateColumns = true;
+				Gridview2.RowHeadersVisible = false;
+				Gridview2.DataSource = set.Tables[0];
+				Gridview2.Columns[0].Visible = false;
+				Gridview2.Columns[1].Visible = false;
+				Gridview2.Rows[0].Selected = true;
 			}
 			catch (Exception ex)
 			{
@@ -110,9 +118,94 @@ namespace Faculty_Conference_Management_System
 			// w ma3 el salama rawa7 lommak :)
 		}
 
-        private void Gridview2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+		private void GridView1_SelectionChanged(object sender, EventArgs e)
+		{
+			if (GridView1.SelectedRows.Count != 0)
+			{
+				selectedPaper = GridView1.SelectedRows[0].Index;
+				Gridview2.Rows[selectedPaper].Selected = true;
+			}
+		}
 
-        }
-    }
+		private void Gridview2_SelectionChanged(object sender, EventArgs e)
+		{
+			if (Gridview2.SelectedRows.Count != 0)
+			{
+				switch (Gridview2.SelectedRows[0].Cells[2].Value)
+				{
+					case "Accepted":
+						acceptRB.Checked = true;
+						break;
+
+					case "Rejected":
+						rejectRB.Checked = true;
+						break;
+
+					case "Waiting":
+						acceptRB.Checked = false;
+						rejectRB.Checked = false;
+						break;
+				}
+			}
+		}
+
+		private void acceptRB_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Are you sure you accept the selected paper " + GridView1.SelectedRows[0].Cells[1].Value.ToString() + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+				== DialogResult.Yes)
+			{
+				Gridview2.SelectedRows[0].Cells[2].Value = "Accepted";
+
+				//decrement assigned_papers
+				int numberOfAssignedPapers;
+
+				OracleConnection connection = new OracleConnection(con.conStr);
+				connection.Open();
+				OracleCommand cmd = new OracleCommand();
+				cmd.Connection = connection;
+				cmd.CommandText = @"select assigned_papers FROM reviewer where reviewer_id = :i";
+				cmd.Parameters.Add("i", selectedReviewer);
+				cmd.CommandType = CommandType.Text;
+				OracleDataReader dr = cmd.ExecuteReader();
+				if (dr.Read())
+				{
+					numberOfAssignedPapers = Convert.ToInt32(dr["assigned_papers"]);
+					cmd.CommandText = @"update reviewer SET(assigned_papers) = :n where reviewer_id = :i";
+					cmd.Parameters.Add("n", numberOfAssignedPapers - 1);
+					cmd.Parameters.Add("i", selectedReviewer);
+					cmd.ExecuteNonQuery();
+				}
+				connection.Close();
+			}
+		}
+
+		private void rejectRB_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Are you sure you reject the selected paper " + GridView1.SelectedRows[0].Cells[1].Value.ToString() + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+				== DialogResult.Yes)
+			{
+				Gridview2.SelectedRows[0].Cells[2].Value = "Rejected";
+
+				//decrement assigned_papers
+				int numberOfAssignedPapers;
+				OracleConnection connection = new OracleConnection(con.conStr);
+				connection.Open();
+				OracleCommand cmd = new OracleCommand();
+				cmd.Connection = connection;
+				cmd.CommandText = @"select assigned_papers FROM reviewer where reviewer_id = :i";
+				cmd.Parameters.Add("i", selectedReviewer);
+				cmd.CommandType = CommandType.Text;
+				OracleDataReader dr = cmd.ExecuteReader();
+				if (dr.Read())
+				{
+					numberOfAssignedPapers = Convert.ToInt32(dr["assigned_papers"]);
+					cmd.CommandText = @"update reviewer SET(assigned_papers) = :n where reviewer_id = :i";
+					cmd.Parameters.Add("n", numberOfAssignedPapers - 1);
+					cmd.Parameters.Add("i", selectedReviewer);
+					cmd.ExecuteNonQuery();
+				}
+				connection.Close();
+			}
+		}
+	}
 }
