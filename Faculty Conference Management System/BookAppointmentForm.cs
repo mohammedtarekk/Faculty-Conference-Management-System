@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,24 +37,32 @@ namespace Faculty_Conference_Management_System
                     from paper, review
                     where rev_state = 'Accepted'
                     AND paper.paper_id = review.paper_id
+                    AND paper.hasconference = 0
                     ORDER BY paper.paper_id ASC";
-
-            set = con.DisconnectedExcuteQuery(cmd);
-            AcceptedPapersGrid.AutoGenerateColumns = true;
-            AcceptedPapersGrid.DataSource = set.Tables[0];
-            AcceptedPapersGrid.Rows[0].Selected = true;
-
-
-            //selceting available dates
-            cmd = "select DAY_DATE, DAY_NAME FROM dates where day_state = 1";
-            set = con.DisconnectedExcuteQuery(cmd);
-            for (int i = 0; i < set.Tables[0].Rows.Count; i++)
+            try
             {
-                DatesCB.Items.Add(set.Tables[0].Rows[i][0]);
-            }
+                set = con.DisconnectedExcuteQuery(cmd);
+                AcceptedPapersGrid.AutoGenerateColumns = true;
+                AcceptedPapersGrid.DataSource = set.Tables[0];
+                AcceptedPapersGrid.Rows[0].Selected = true;
 
-            DatesCB.SelectedItem = DatesCB.Items[0];
-            selectedDate = DatesCB.SelectedItem.ToString(); 
+
+                //selceting available dates
+                cmd = "select DAY_DATE, DAY_NAME FROM dates where day_state = 1";
+                set = con.DisconnectedExcuteQuery(cmd);
+                for (int i = 0; i < set.Tables[0].Rows.Count; i++)
+                {
+                    DatesCB.Items.Add(set.Tables[0].Rows[i][0]);
+                }
+
+                DatesCB.SelectedItem = DatesCB.Items[0];
+                selectedDate = DatesCB.SelectedItem.ToString(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
 
         private void Finish_BT_Click(object sender, EventArgs e)
@@ -66,6 +75,19 @@ namespace Faculty_Conference_Management_System
 
             //Add new conference
             con.addConference(selectedDate,placesCB.Text,SelectedPaper_txt.Text,durationTxt.Text,selectedPaper);
+
+            OracleConnection connection = new OracleConnection(con.conStr);
+            connection.Open();
+            OracleCommand cmnd = new OracleCommand();
+            cmnd.Connection = connection;
+            cmnd.CommandText = @"update paper SET(hasconference) = 1 where paper_id = :i";
+            cmnd.Parameters.Add("i", selectedPaper);
+            cmnd.CommandType = CommandType.Text;
+            cmnd.ExecuteNonQuery();
+            connection.Close();
+
+            MessageBox.Show("conference added successfully");
+            BookAppointmentForm_Load(sender, e);
         }
 
         private void AcceptedPapersGrid_SelectionChanged(object sender, EventArgs e)

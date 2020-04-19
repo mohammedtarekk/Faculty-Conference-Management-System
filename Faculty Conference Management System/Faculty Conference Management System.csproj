@@ -55,12 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin form.Designer.cs">
-      <DependentUpon>Admin form.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,9 +122,6 @@
     <Compile Include="UpdateForm.Designer.cs">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin form.resx">
-      <DependentUpon>Admin form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>

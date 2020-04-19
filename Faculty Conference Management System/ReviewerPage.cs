@@ -44,11 +44,11 @@ namespace Faculty_Conference_Management_System
 				cmd = "select  *  from review WHERE review.paper_id = :t";
 
 				set = con.DisconnectedExcuteQuery(cmd, "t", tmpSet.Tables[0].Rows[0][0].ToString());
-				Gridview2.AutoGenerateColumns = true;
-				Gridview2.RowHeadersVisible = false;
-				Gridview2.DataSource = set.Tables[0];
-				Gridview2.Columns[0].Visible = false;
-				Gridview2.Columns[1].Visible = false;
+				GridView2.AutoGenerateColumns = true;
+				GridView2.RowHeadersVisible = false;
+				GridView2.DataSource = set.Tables[0];
+				GridView2.Columns[0].Visible = false;
+				GridView2.Columns[1].Visible = false;
 
 			}
 			catch (Exception ex)
@@ -80,12 +80,12 @@ namespace Faculty_Conference_Management_System
 				GridView1.DataSource = con.DisconnectedExcuteQuery(cmd).Tables[0];
 				cmd = "select  *  from review ORDER BY paper_id ASC";
 				set = con.DisconnectedExcuteQuery(cmd);
-				Gridview2.AutoGenerateColumns = true;
-				Gridview2.RowHeadersVisible = false;
-				Gridview2.DataSource = set.Tables[0];
-				Gridview2.Columns[0].Visible = false;
-				Gridview2.Columns[1].Visible = false;
-				Gridview2.Rows[0].Selected = true;
+				GridView2.AutoGenerateColumns = true;
+				GridView2.RowHeadersVisible = false;
+				GridView2.DataSource = set.Tables[0];
+				GridView2.Columns[0].Visible = false;
+				GridView2.Columns[1].Visible = false;
+				GridView2.Rows[0].Selected = true;
 			}
 			catch (Exception ex)
 			{
@@ -120,18 +120,21 @@ namespace Faculty_Conference_Management_System
 
 		private void GridView1_SelectionChanged(object sender, EventArgs e)
 		{
-			if (GridView1.SelectedRows.Count != 0)
+			if (GridView1.SelectedRows.Count != 0 && GridView1.Rows.Count == GridView2.Rows.Count) 
 			{
 				selectedPaper = GridView1.SelectedRows[0].Index;
-				Gridview2.Rows[selectedPaper].Selected = true;
+				GridView2.Rows[selectedPaper].Selected = true;
 			}
 		}
 
 		private void Gridview2_SelectionChanged(object sender, EventArgs e)
 		{
-			if (Gridview2.SelectedRows.Count != 0)
+			if (GridView2.SelectedRows.Count != 0 && GridView1.Rows.Count == GridView2.Rows.Count)
 			{
-				switch (Gridview2.SelectedRows[0].Cells[2].Value)
+				selectedPaper = GridView2.SelectedRows[0].Index;
+				GridView1.Rows[selectedPaper].Selected = true;
+
+				switch (GridView2.SelectedRows[0].Cells[2].Value)
 				{
 					case "Accepted":
 						acceptRB.Checked = true;
@@ -154,7 +157,7 @@ namespace Faculty_Conference_Management_System
 			if (MessageBox.Show("Are you sure you accept the selected paper " + GridView1.SelectedRows[0].Cells[1].Value.ToString() + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 				== DialogResult.Yes)
 			{
-				Gridview2.SelectedRows[0].Cells[2].Value = "Accepted";
+				GridView2.SelectedRows[0].Cells[2].Value = "Accepted";
 
 				//decrement assigned_papers
 				int numberOfAssignedPapers;
@@ -184,7 +187,7 @@ namespace Faculty_Conference_Management_System
 			if (MessageBox.Show("Are you sure you reject the selected paper " + GridView1.SelectedRows[0].Cells[1].Value.ToString() + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 				== DialogResult.Yes)
 			{
-				Gridview2.SelectedRows[0].Cells[2].Value = "Rejected";
+				GridView2.SelectedRows[0].Cells[2].Value = "Rejected";
 
 				//decrement assigned_papers
 				int numberOfAssignedPapers;

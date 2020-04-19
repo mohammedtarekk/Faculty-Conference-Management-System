@@ -79,6 +79,7 @@
 			this.AcceptedPapersGrid.Location = new System.Drawing.Point(12, 52);
 			this.AcceptedPapersGrid.Name = "AcceptedPapersGrid";
 			this.AcceptedPapersGrid.ReadOnly = true;
+			this.AcceptedPapersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.AcceptedPapersGrid.Size = new System.Drawing.Size(369, 289);
 			this.AcceptedPapersGrid.TabIndex = 27;
 			this.AcceptedPapersGrid.SelectionChanged += new System.EventHandler(this.AcceptedPapersGrid_SelectionChanged);
@@ -202,7 +203,6 @@
 			this.durationTxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.durationTxt.Location = new System.Drawing.Point(406, 230);
 			this.durationTxt.Name = "durationTxt";
-			this.durationTxt.ReadOnly = true;
 			this.durationTxt.Size = new System.Drawing.Size(161, 14);
 			this.durationTxt.TabIndex = 33;
 			this.durationTxt.Text = "Enter conference duration";
@@ -230,6 +230,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.Name = "BookAppointmentForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Book an appointment";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookAppointmentForm_FormClosed);
 			this.Load += new System.EventHandler(this.BookAppointmentForm_Load);

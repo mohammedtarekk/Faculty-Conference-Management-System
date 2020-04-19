@@ -40,7 +40,6 @@ F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Confer
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Faculty Conference Management System.pdb
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\bin\Debug\Oracle.DataAccess.dll
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csprojAssemblyReference.cache
-F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Admin_form.resources
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AdminMainForm.resources
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AssignPaperForm.resources
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AuthorPage.resources
@@ -58,3 +57,8 @@ F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Confer
 E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Admin_form.resources
 E:\College\Projects\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.UpdateForm.resources
 F:\projects\Database Project\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.UpdateForm.resources
+D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Admin_form.resources
+D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AdminMainForm.resources
+D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.AssignPaperForm.resources
+D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.BookAppointmentForm.resources
+D:\3rd term\second term\DataBase\Faculity conference\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.UpdateForm.resources

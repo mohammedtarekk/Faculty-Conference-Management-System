@@ -48,7 +48,7 @@ namespace Faculty_Conference_Management_System
 
 		private void ViewAll_BT_Click(object sender, EventArgs e)
 		{
-			string cmd = "select * from paper";
+			string cmd = "select * from paper where paper.is_assigned = 1";
 			try
 				{
 				set = con.DisconnectedExcuteQuery(cmd);
@@ -102,41 +102,7 @@ namespace Faculty_Conference_Management_System
 		}
 
 		private int SelectedPaperID;
-		private void GridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-		{
-			SelectedPaperID = Convert.ToInt32(GridView1.SelectedRows[0].Cells[0].Value);
-			OracleConnection connection = new OracleConnection(con.conStr);
-			connection.Open();
-			OracleCommand cmd = new OracleCommand();
-			cmd.Connection = connection;
-			cmd.CommandText = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer.reviewer_id reviewerID, reviewer_fname ReviewerName, rev_state ReviewState
-							  from paper, review, reviewer, research_categoryfield, author
-                              WHERE paper.paper_id = review.paper_id
-                              AND review.reviewer_id = reviewer.reviewer_id
-                              AND paper.research_id = research_categoryfield.category_id
-                              AND author.author_id = paper.author_id 
-							  AND paper.paper_title = :t
-			                  ";
-			cmd.Parameters.Add("t", GridView1.SelectedRows[0].Cells[1].Value.ToString());
-			cmd.CommandType = CommandType.Text;
-
-			OracleDataReader dr = cmd.ExecuteReader();
-			while (dr.Read())
-			{
-				idLbl.Text = dr["ID"].ToString();
-				titleLbl.Text = dr["Title"].ToString();
-				authorIdLbl.Text = dr["AuthorID"].ToString();
-				authorNameLbl.Text = dr["AuthorName"].ToString();
-				revIdLbl.Text = dr["reviewerID"].ToString();
-				revNameLbl.Text = dr["ReviewerName"].ToString();
-				stateLbl.Text = dr["ReviewState"].ToString();
-				content_textBox.Text = dr["Content"].ToString();
-
-			}
-			connection.Close();
-			PaperDataPnl.Visible = true;
-		}
-
+		
 		private void Submit_BT_Click(object sender, EventArgs e)
 		{
 			new SubmitPaper().Show();
@@ -159,6 +125,44 @@ namespace Faculty_Conference_Management_System
 		private void Update_BT_Click(object sender, EventArgs e)
 		{
 			new UpdateForm().Show();
+		}
+
+		private void GridView1_SelectionChanged(object sender, EventArgs e)
+		{
+			if(GridView1.SelectedRows.Count != 0)
+			{
+				SelectedPaperID = Convert.ToInt32(GridView1.SelectedRows[0].Cells[0].Value);
+				OracleConnection connection = new OracleConnection(con.conStr);
+				connection.Open();
+				OracleCommand cmd = new OracleCommand();
+				cmd.Connection = connection;
+				cmd.CommandText = @"select paper.paper_id ID,paper_title Title, paper_content Content, category_name Category,author.author_id AuthorID, author_fname AuthorName, reviewer.reviewer_id reviewerID, reviewer_fname ReviewerName, rev_state ReviewState
+							  from paper, review, reviewer, research_categoryfield, author
+                              WHERE paper.paper_id = review.paper_id
+                              AND review.reviewer_id = reviewer.reviewer_id
+                              AND paper.research_id = research_categoryfield.category_id
+                              AND author.author_id = paper.author_id 
+							  AND paper.paper_title = :t
+			                  ";
+				cmd.Parameters.Add("t", GridView1.SelectedRows[0].Cells[1].Value.ToString());
+				cmd.CommandType = CommandType.Text;
+
+				OracleDataReader dr = cmd.ExecuteReader();
+				while (dr.Read())
+				{
+					idLbl.Text = dr["ID"].ToString();
+					titleLbl.Text = dr["Title"].ToString();
+					authorIdLbl.Text = dr["AuthorID"].ToString();
+					authorNameLbl.Text = dr["AuthorName"].ToString();
+					revIdLbl.Text = dr["reviewerID"].ToString();
+					revNameLbl.Text = dr["ReviewerName"].ToString();
+					stateLbl.Text = dr["ReviewState"].ToString();
+					content_textBox.Text = dr["Content"].ToString();
+
+				}
+				connection.Close();
+				PaperDataPnl.Visible = true;
+			}
 		}
 	}
 }

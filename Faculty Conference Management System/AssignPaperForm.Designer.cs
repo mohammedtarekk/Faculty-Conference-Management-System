@@ -58,6 +58,7 @@
 			this.papersGrid.Location = new System.Drawing.Point(12, 52);
 			this.papersGrid.Name = "papersGrid";
 			this.papersGrid.ReadOnly = true;
+			this.papersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.papersGrid.Size = new System.Drawing.Size(369, 289);
 			this.papersGrid.TabIndex = 5;
 			this.papersGrid.SelectionChanged += new System.EventHandler(this.papersGrid_SelectionChanged);
@@ -90,6 +91,7 @@
 			this.reviewersGrid.Location = new System.Drawing.Point(396, 52);
 			this.reviewersGrid.Name = "reviewersGrid";
 			this.reviewersGrid.ReadOnly = true;
+			this.reviewersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.reviewersGrid.Size = new System.Drawing.Size(369, 289);
 			this.reviewersGrid.TabIndex = 20;
 			this.reviewersGrid.SelectionChanged += new System.EventHandler(this.reviewersGrid_SelectionChanged);
@@ -211,6 +213,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.Name = "AssignPaperForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Assign paper to reviewer";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AssignPaperForm_FormClosed);
 			this.Load += new System.EventHandler(this.AssignPaperForm_Load);
