@@ -57,7 +57,7 @@ namespace Faculty_Conference_Management_System
 			    DBdataSet = new DataSet();
 			    adapter.Fill(DBdataSet);
                 if (DBdataSet.Tables[0].Rows.Count == 0)
-                    throw new Exception("No fata found!");
+                    throw new Exception("No data found!");
             }
             catch (Exception e)
             {
@@ -401,6 +401,44 @@ namespace Faculty_Conference_Management_System
                 return 0;
             }
             return Cat_ID;
+        }
+       public bool Check_Available(string date,string hall)
+        {
+            con = new OracleConnection(conStr);
+            con.Open();
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from Dates";
+
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                if (date == dr[0].ToString()&&hall==dr[1].ToString())
+                    return true;
+            }
+            dr.Close();
+            return false;
+        }
+
+        public bool insert_date(String date,String hall)
+        {
+            con = new OracleConnection(conStr);
+            con.Open();
+            try
+             {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into Dates values (:d,:h)";
+                cmd.Parameters.Add("d", date);
+                cmd.Parameters.Add("h", hall);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                return false;
+            }
+             return true;
         }
     }
 }

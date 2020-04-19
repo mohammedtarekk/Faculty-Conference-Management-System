@@ -48,7 +48,7 @@ namespace Faculty_Conference_Management_System
 
 
                 //selceting available dates
-                cmd = "select DAY_DATE, DAY_NAME FROM dates where day_state = 1";
+              /*  cmd = "select DAY_DATE, DAY_NAME FROM dates where day_state = 1";
                 set = con.DisconnectedExcuteQuery(cmd);
                 for (int i = 0; i < set.Tables[0].Rows.Count; i++)
                 {
@@ -56,7 +56,7 @@ namespace Faculty_Conference_Management_System
                 }
 
                 DatesCB.SelectedItem = DatesCB.Items[0];
-                selectedDate = DatesCB.SelectedItem.ToString(); 
+                selectedDate = DatesCB.SelectedItem.ToString(); */
             }
             catch (Exception ex)
             {
@@ -67,27 +67,38 @@ namespace Faculty_Conference_Management_System
 
         private void Finish_BT_Click(object sender, EventArgs e)
         {
-            //Update available date
-            cmd = "select * FROM DATES where DAY_DATE = :d";
-            set = con.DisconnectedExcuteQuery(cmd, "d", selectedDate);
-            set.Tables[0].Rows[0][2] = 0;
-            con.Update(set);
+        //    //Update available date
+        //     cmd = "select * FROM DATES where DAY_DATE = :d";
+        //     set = con.DisconnectedExcuteQuery(cmd, "d", selectedDate);
+        //     set.Tables[0].Rows[0][2] = 0;
+        //     con.Update(set);
 
-            //Add new conference
-            con.addConference(selectedDate,placesCB.Text,SelectedPaper_txt.Text,durationTxt.Text,selectedPaper);
+            Connection c = new Connection();
+            bool res = c.Check_Available(DatesCB.Text,placesCB.Text);
+            if (res == false)
+            {
+                selectedDate = DatesCB.Text;
+                //Add new conference
+               bool r= con.insert_date(selectedDate,placesCB.Text);
+                con.addConference(selectedDate, placesCB.Text, SelectedPaper_txt.Text, durationTxt.Text, selectedPaper);
+                OracleConnection connection = new OracleConnection(con.conStr);
+                connection.Open();
+                OracleCommand cmnd = new OracleCommand();
+                cmnd.Connection = connection;
+                cmnd.CommandText = @"update paper SET(hasconference) = 1 where paper_id = :i";
+                cmnd.Parameters.Add("i", selectedPaper);
+                cmnd.CommandType = CommandType.Text;
+                cmnd.ExecuteNonQuery();
+                connection.Close();
 
-            OracleConnection connection = new OracleConnection(con.conStr);
-            connection.Open();
-            OracleCommand cmnd = new OracleCommand();
-            cmnd.Connection = connection;
-            cmnd.CommandText = @"update paper SET(hasconference) = 1 where paper_id = :i";
-            cmnd.Parameters.Add("i", selectedPaper);
-            cmnd.CommandType = CommandType.Text;
-            cmnd.ExecuteNonQuery();
-            connection.Close();
-
-            MessageBox.Show("conference added successfully");
-            BookAppointmentForm_Load(sender, e);
+                MessageBox.Show("conference added successfully");
+                if (set.Tables[0].Rows.Count > 1)
+                    BookAppointmentForm_Load(sender, e);
+                else
+                    this.Close();
+            }
+            else
+                MessageBox.Show("Sorry :( \n there is a conference in this date ");
         }
 
         private void AcceptedPapersGrid_SelectionChanged(object sender, EventArgs e)

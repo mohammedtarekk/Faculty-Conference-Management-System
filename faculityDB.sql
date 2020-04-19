@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - Sunday-April-19-2020   
+--  File created - Monday-April-20-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence ADMIN_SEQ
@@ -10,27 +10,22 @@
 --  DDL for Sequence AUTHOR_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "AUTHOR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "AUTHOR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 22 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence CON_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "CON_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence PAPER_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "PAPER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "PAPER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence REVIEWER_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "REVIEWER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
---------------------------------------------------------
---  DDL for Sequence SEQ
---------------------------------------------------------
-
-   CREATE SEQUENCE  "SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
---------------------------------------------------------
---  DDL for Sequence SEQ_CON
---------------------------------------------------------
-
-   CREATE SEQUENCE  "SEQ_CON"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 61 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "REVIEWER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence SEQ_PAPER
 --------------------------------------------------------
@@ -41,6 +36,16 @@
 --------------------------------------------------------
 
    CREATE SEQUENCE  "SEQ_REV"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 101 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_CON
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SEQ_CON"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 61 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table ADMIN
 --------------------------------------------------------
@@ -93,12 +98,8 @@
 
   CREATE TABLE "DATES" 
    (	"DAY_DATE" VARCHAR2(100), 
-	"DAY_NAME" VARCHAR2(100), 
-	"DAY_STATE" CHAR(1) DEFAULT 1
+	"HALL" VARCHAR2(100)
    ) ;
- 
-
-   COMMENT ON COLUMN "DATES"."DAY_STATE" IS '1 = available 0 = not available';
 --------------------------------------------------------
 --  DDL for Table PAPER
 --------------------------------------------------------
@@ -109,7 +110,8 @@
 	"PAPER_CONTENT" VARCHAR2(1000), 
 	"RESEARCH_ID" NUMBER(10,0), 
 	"AUTHOR_ID" NUMBER(10,0), 
-	"IS_ASSIGNED" CHAR(1) DEFAULT 0
+	"IS_ASSIGNED" CHAR(1) DEFAULT 0, 
+	"HASCONFERENCE" NUMBER DEFAULT 0
    ) ;
 --------------------------------------------------------
 --  DDL for Table RESEARCH_CATEGORYFIELD
@@ -161,28 +163,15 @@
    ) ;
 
 ---------------------------------------------------
---   DATA FOR TABLE REVIEWER
+--   DATA FOR TABLE DATES
 --   FILTER = none used
 ---------------------------------------------------
-REM INSERTING into REVIEWER
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (1,'r','r','r','r','r','r',2);
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (2,'r2','r2','r2','r2','r2','r2',1);
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (3,'r3','r3','r3','r3','r3','r3',1);
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (4,'r4','r4','r4','r4','r4','r4',0);
+REM INSERTING into DATES
+Insert into DATES (DAY_DATE,HALL) values ('20/2/2020','Fahmy Tolba Hall');
+Insert into DATES (DAY_DATE,HALL) values ('20/2/2020','Saieed Abdelwahab Hall');
 
 ---------------------------------------------------
---   END DATA FOR TABLE REVIEWER
----------------------------------------------------
-
----------------------------------------------------
---   DATA FOR TABLE ADMIN
---   FILTER = none used
----------------------------------------------------
-REM INSERTING into ADMIN
-Insert into ADMIN (ADMIN_ID,ADMIN_FNAME,ADMIN_SNAME,ADMIN_DBIRTH,ADMIN_EMAIL,ADMIN_ADDRESS,ADMIN_PASSWORD) values (1,'a','a','a','a','aa','a');
-
----------------------------------------------------
---   END DATA FOR TABLE ADMIN
+--   END DATA FOR TABLE DATES
 ---------------------------------------------------
 
 ---------------------------------------------------
@@ -199,14 +188,16 @@ Insert into RESEARCH_CATEGORYFIELD (CATEGORY_ID,CATEGORY_NAME,CATEGORY_DESCRIBTI
 ---------------------------------------------------
 
 ---------------------------------------------------
---   DATA FOR TABLE CONFERENCE
+--   DATA FOR TABLE REVIEWER
 --   FILTER = none used
 ---------------------------------------------------
-REM INSERTING into CONFERENCE
-Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,PAPER_TITLE,CONFERENCE_DURATION,PAPER_ID) values (1,'19/4/2020','Fahmy Tolba HAll','medo',2,1);
+REM INSERTING into REVIEWER
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (1,'r','r','r','r','r','rr',3);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (2,'r2','r2','r2','r2','r2','r2',1);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (4,'r4','r4','r4','r4','r4','r4',0);
 
 ---------------------------------------------------
---   END DATA FOR TABLE CONFERENCE
+--   END DATA FOR TABLE REVIEWER
 ---------------------------------------------------
 
 ---------------------------------------------------
@@ -214,14 +205,39 @@ Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,PAPER_TIT
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into REVIEW
-Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (3,1,'Waiting');
 Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (1,1,'Accepted');
 Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (2,2,'Rejected');
 Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (4,3,'Waiting');
-Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (4,1,'Waiting');
+Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (21,1,'Accepted');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEW
+---------------------------------------------------
+
+---------------------------------------------------
+--   DATA FOR TABLE REVIEWER_PHONES
+--   FILTER = none used
+---------------------------------------------------
+REM INSERTING into REVIEWER_PHONES
+Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (1,'0111111111');
+Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (2,'0222222222');
+Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (3,'0333333333');
+Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (4,'0444444444');
+
+---------------------------------------------------
+--   END DATA FOR TABLE REVIEWER_PHONES
+---------------------------------------------------
+
+---------------------------------------------------
+--   DATA FOR TABLE CONFERENCE
+--   FILTER = none used
+---------------------------------------------------
+REM INSERTING into CONFERENCE
+Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,PAPER_TITLE,CONFERENCE_DURATION,PAPER_ID) values (12,'20/2/2020','Saieed Abdelwahab Hall','hii',5,21);
+Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,PAPER_TITLE,CONFERENCE_DURATION,PAPER_ID) values (11,'20/2/2020','Fahmy Tolba Hall','medo',5,1);
+
+---------------------------------------------------
+--   END DATA FOR TABLE CONFERENCE
 ---------------------------------------------------
 
 ---------------------------------------------------
@@ -229,9 +245,8 @@ Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (4,1,'Waiting');
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into AUTHOR
-Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (1,'m','m','m','m','m','m');
+Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (1,'m','m','m','m','m','mm');
 Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (2,'mm','mm','mm','mm','mm','mm');
-Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (3,'Ali','Ahmed','20/10/1990','Ali@gmail.com','blalball','ali');
 Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (4,'Ahmed','Khaled','20/9/1995','Ahmed@gmail.com','blalball','ahmed');
 
 ---------------------------------------------------
@@ -252,51 +267,6 @@ Insert into AUTHOR_PHONES (AUTHOR_ID,AUTHOR_PHONE) values (3,'01061057079');
 ---------------------------------------------------
 
 ---------------------------------------------------
---   DATA FOR TABLE DATES
---   FILTER = none used
----------------------------------------------------
-REM INSERTING into DATES
-Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('19/4/2020','sunday','0');
-Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('20/4/2020','monday','0');
-Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('21/4/2020','tuesday','0');
-Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('22/4/2020','wednesday','1');
-Insert into DATES (DAY_DATE,DAY_NAME,DAY_STATE) values ('23/4/2020','thursday','1');
-
----------------------------------------------------
---   END DATA FOR TABLE DATES
----------------------------------------------------
-
----------------------------------------------------
---   DATA FOR TABLE PAPER
---   FILTER = none used
----------------------------------------------------
-REM INSERTING into PAPER
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (2,'meeting','we will hold meeting at 5 pm isa',1,3,'1');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (3,'medo','hhhhhhhhhhhhhh',1,1,'0');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (4,'testtest','hiiiiiiiiiiiii',2,2,'1');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (1,'medo','medo1',1,1,'1');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (5,'test3','byeeeeeeeeeeee',3,3,'0');
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED) values (6,'AI','AI Content byeeeeeeeeeeee',1,4,'0');
-
----------------------------------------------------
---   END DATA FOR TABLE PAPER
----------------------------------------------------
-
----------------------------------------------------
---   DATA FOR TABLE REVIEWER_PHONES
---   FILTER = none used
----------------------------------------------------
-REM INSERTING into REVIEWER_PHONES
-Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (1,'0111111111');
-Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (2,'0222222222');
-Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (3,'0333333333');
-Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (4,'0444444444');
-
----------------------------------------------------
---   END DATA FOR TABLE REVIEWER_PHONES
----------------------------------------------------
-
----------------------------------------------------
 --   DATA FOR TABLE REVIEWER_DATES
 --   FILTER = none used
 ---------------------------------------------------
@@ -310,6 +280,34 @@ Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'22/4/2020');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEWER_DATES
+---------------------------------------------------
+
+---------------------------------------------------
+--   DATA FOR TABLE PAPER
+--   FILTER = none used
+---------------------------------------------------
+REM INSERTING into PAPER
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (2,'meeting','we will hold meeting at 5 pm isa',1,3,'1',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (3,'medo','hhhhhhhhhhhhhh',1,1,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (4,'testtest','hiiiiiiiiiiiii',2,2,'1',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (1,'medo','medo1',1,1,'1',1);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (5,'test3','byeeeeeeeeeeee',3,3,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (6,'AI','AI Content byeeeeeeeeeeee',1,4,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (21,'hii','hhhuh',3,1,'1',1);
+
+---------------------------------------------------
+--   END DATA FOR TABLE PAPER
+---------------------------------------------------
+
+---------------------------------------------------
+--   DATA FOR TABLE ADMIN
+--   FILTER = none used
+---------------------------------------------------
+REM INSERTING into ADMIN
+Insert into ADMIN (ADMIN_ID,ADMIN_FNAME,ADMIN_SNAME,ADMIN_DBIRTH,ADMIN_EMAIL,ADMIN_ADDRESS,ADMIN_PASSWORD) values (1,'a','a','a','a','aa','a');
+
+---------------------------------------------------
+--   END DATA FOR TABLE ADMIN
 ---------------------------------------------------
 --------------------------------------------------------
 --  Constraints for Table ADMIN
@@ -339,15 +337,19 @@ Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'22/4/2020');
   ALTER TABLE "CONFERENCE" MODIFY ("CONFERENCE_ID" NOT NULL ENABLE);
  
   ALTER TABLE "CONFERENCE" ADD PRIMARY KEY ("CONFERENCE_ID") ENABLE;
+ 
+  ALTER TABLE "CONFERENCE" MODIFY ("CONFERENCE_DATE" NOT NULL ENABLE);
+ 
+  ALTER TABLE "CONFERENCE" MODIFY ("CONFERENCE_PLACE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table DATES
 --------------------------------------------------------
 
   ALTER TABLE "DATES" MODIFY ("DAY_DATE" NOT NULL ENABLE);
  
-  ALTER TABLE "DATES" ADD PRIMARY KEY ("DAY_DATE") ENABLE;
+  ALTER TABLE "DATES" MODIFY ("HALL" NOT NULL ENABLE);
  
-  ALTER TABLE "DATES" MODIFY ("DAY_STATE" NOT NULL ENABLE);
+  ALTER TABLE "DATES" ADD PRIMARY KEY ("DAY_DATE", "HALL") ENABLE;
 --------------------------------------------------------
 --  Constraints for Table PAPER
 --------------------------------------------------------
@@ -365,6 +367,8 @@ Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'22/4/2020');
   ALTER TABLE "PAPER" MODIFY ("AUTHOR_ID" NOT NULL ENABLE);
  
   ALTER TABLE "PAPER" MODIFY ("IS_ASSIGNED" NOT NULL ENABLE);
+ 
+  ALTER TABLE "PAPER" MODIFY ("HASCONFERENCE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table RESEARCH_CATEGORYFIELD
 --------------------------------------------------------
@@ -417,8 +421,8 @@ Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'22/4/2020');
 --  Ref Constraints for Table CONFERENCE
 --------------------------------------------------------
 
-  ALTER TABLE "CONFERENCE" ADD FOREIGN KEY ("CONFERENCE_DATE")
-	  REFERENCES "DATES" ("DAY_DATE") ENABLE;
+  ALTER TABLE "CONFERENCE" ADD CONSTRAINT "CONFERENCE_DATES_FK1" FOREIGN KEY ("CONFERENCE_DATE", "CONFERENCE_PLACE")
+	  REFERENCES "DATES" ("DAY_DATE", "HALL") ENABLE;
 
 --------------------------------------------------------
 --  Ref Constraints for Table PAPER
@@ -435,6 +439,95 @@ Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'22/4/2020');
 	  REFERENCES "PAPER" ("PAPER_ID") ENABLE;
 
 
+
+--------------------------------------------------------
+--  DDL for View EMP_DETAILS_VIEW
+--------------------------------------------------------
+
+  CREATE OR REPLACE VIEW "EMP_DETAILS_VIEW" ("EMPLOYEE_ID", "JOB_ID", "MANAGER_ID", "DEPARTMENT_ID", "LOCATION_ID", "COUNTRY_ID", "FIRST_NAME", "LAST_NAME", "SALARY", "COMMISSION_PCT", "DEPARTMENT_NAME", "JOB_TITLE", "CITY", "STATE_PROVINCE", "COUNTRY_NAME", "REGION_NAME") AS 
+  SELECT
+  e.employee_id,
+  e.job_id,
+  e.manager_id,
+  e.department_id,
+  d.location_id,
+  l.country_id,
+  e.first_name,
+  e.last_name,
+  e.salary,
+  e.commission_pct,
+  d.department_name,
+  j.job_title,
+  l.city,
+  l.state_province,
+  c.country_name,
+  r.region_name
+FROM
+  employees e,
+  departments d,
+  jobs j,
+  locations l,
+  countries c,
+  regions r
+WHERE e.department_id = d.department_id
+  AND d.location_id = l.location_id
+  AND l.country_id = c.country_id
+  AND c.region_id = r.region_id
+  AND j.job_id = e.job_id
+WITH READ ONLY;
+--------------------------------------------------------
+--  DDL for Function GET
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "GET" 
+(value NUMBER)
+RETURN NUMBER
+IS
+c number;
+BEGIN
+select count(*) 
+into c
+from employees
+where department_id= value;
+return c;
+end;
+
+/
+
+--------------------------------------------------------
+--  DDL for Procedure ADD_CONFERENCE
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "ADD_CONFERENCE" 
+(con_date in varchar2,con_place in varchar2,con_des in varchar2,con_dur in number,pap_id in number)
+as
+begin
+insert into conference values(Con_Seq.nextval, con_date, con_place, con_des, con_dur, pap_id);
+end;
+
+/
+
+--------------------------------------------------------
+--  DDL for Procedure ADD_JOB_HISTORY
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "ADD_JOB_HISTORY" 
+  (  p_emp_id          job_history.employee_id%type
+   , p_start_date      job_history.start_date%type
+   , p_end_date        job_history.end_date%type
+   , p_job_id          job_history.job_id%type
+   , p_department_id   job_history.department_id%type
+   )
+IS
+BEGIN
+  INSERT INTO job_history (employee_id, start_date, end_date,
+                           job_id, department_id)
+    VALUES(p_emp_id, p_start_date, p_end_date, p_job_id, p_department_id);
+END add_job_history;
+
+/
 
 --------------------------------------------------------
 --  DDL for Procedure ADMIN_SIGNUP
@@ -469,6 +562,22 @@ insert into author (author_id, author_fname, author_sname, author_password, auth
 values(Author_Seq.nextval, aut_fname, aut_sname, aut_pass, aut_dob, aut_email, aut_add);
 
 End;
+
+/
+
+--------------------------------------------------------
+--  DDL for Procedure DIS
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "DIS" 
+(val OUT NUMBER)
+is
+begin
+select count(*) into val
+from employees 
+where manager_id is not null;
+END dis;
 
 /
 
@@ -546,6 +655,40 @@ insert into Reviewer (Reviewer_id, Reviewer_fname, Reviewer_sname, Reviewer_pass
 values(Author_Seq.nextval, Rev_fname, Rev_sname,Rev_pass, Rev_dob, Rev_email, Rev_add);
 
 End;
+
+/
+
+--------------------------------------------------------
+--  DDL for Procedure SECURE_DML
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "SECURE_DML" 
+IS
+BEGIN
+  IF TO_CHAR (SYSDATE, 'HH24:MI') NOT BETWEEN '08:00' AND '18:00'
+        OR TO_CHAR (SYSDATE, 'DY') IN ('SAT', 'SUN') THEN
+	RAISE_APPLICATION_ERROR (-20205,
+		'You may only make changes during normal office hours');
+  END IF;
+END secure_dml;
+
+/
+
+--------------------------------------------------------
+--  DDL for Procedure YLAA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "YLAA" 
+(var out employees%ROWTYPE)
+is
+begin
+select * 
+into var
+from employees
+where employee_id=198;
+END ylaa;
 
 /
 

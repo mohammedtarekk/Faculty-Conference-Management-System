@@ -78,8 +78,8 @@ namespace Faculty_Conference_Management_System
 			{
 				GridView1.AutoGenerateColumns = true;
 				GridView1.DataSource = con.DisconnectedExcuteQuery(cmd).Tables[0];
-				cmd = "select  *  from review ORDER BY paper_id ASC";
-				set = con.DisconnectedExcuteQuery(cmd);
+				cmd = "select  *  from review where Reviewer_ID=:id ORDER BY paper_id ASC ";
+				set = con.DisconnectedExcuteQuery(cmd, "id",Connection.Current_ReviewerID.ToString());
 				GridView2.AutoGenerateColumns = true;
 				GridView2.RowHeadersVisible = false;
 				GridView2.DataSource = set.Tables[0];
