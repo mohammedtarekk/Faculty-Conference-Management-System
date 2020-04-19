@@ -33,5 +33,17 @@ namespace Faculty_Conference_Management_System
         {
             Application.Exit();
         }
+
+        private void Delete_Reviewer_btn_Click(object sender, EventArgs e)
+        {
+            new Delete("Reviewer").Show();
+            this.Hide();
+        }
+
+        private void Delete_Author_btn_Click(object sender, EventArgs e)
+        {
+            new Delete("Author").Show();
+            this.Hide();
+        }
     }
 }
