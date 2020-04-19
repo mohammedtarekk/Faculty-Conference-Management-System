@@ -109,5 +109,10 @@ namespace Faculty_Conference_Management_System
 			//else disable editing
 			// w ma3 el salama rawa7 lommak :)
 		}
-	}
+
+        private void Gridview2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

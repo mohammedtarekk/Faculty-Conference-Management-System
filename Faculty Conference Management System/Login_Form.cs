@@ -84,8 +84,10 @@ namespace Faculty_Conference_Management_System
                     this.Hide();
                     if (type == 0)
                         new AuthorPage().Show();
-                    else
+                    else if (type == 1)
                         new ReviewerPage().Show();
+                    else
+                        new AdminMainForm().Show();
                 }
                 else
                     MessageBox.Show("Login failed :( ");

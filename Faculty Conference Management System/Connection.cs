@@ -87,14 +87,32 @@ namespace Faculty_Conference_Management_System
             return DBdataSet;
         }
 
-		internal void addConference(string conferenceDate, string conferencePlace, string paperTitle, string conferenceDuration, string paperID)
-		{
-            //Conference ID should be generated automatically
+        internal void addConference(string conferenceDate, string conferencePlace, string paperTitle, string conferenceDuration, string paperID)
+        {
+            con = new OracleConnection(conStr);
+            con.Open();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "Add_Conference";
+             
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("daye", conferenceDate);
+                cmd.Parameters.Add("place", conferencePlace);
+                cmd.Parameters.Add("title", paperTitle);
+                cmd.Parameters.Add("dur", conferenceDuration);
+                cmd.Parameters.Add("id", paperID);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            
+        }
 
-			throw new NotImplementedException();
-		}
-
-		internal void Update(DataSet dataSet)
+            internal void Update(DataSet dataSet)
 		{
 			builder = new OracleCommandBuilder(adapter);
 			adapter.Update(dataSet.Tables[0]);
