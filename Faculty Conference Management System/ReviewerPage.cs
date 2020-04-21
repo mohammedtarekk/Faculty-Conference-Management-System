@@ -224,6 +224,7 @@ namespace Faculty_Conference_Management_System
 		private void CrystalReport_BT_Click(object sender, EventArgs e)
 		{
 			paper_id=Convert.ToInt32( GridView1.SelectedRows[0].Cells[0].Value);
+			new Crystal_paper().Show();
 		}
 	}
 }

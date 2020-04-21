@@ -70,7 +70,6 @@
             this.Delete_BT = new CustomImageButton.ImageButtonCustom();
             this.Update_BT = new CustomImageButton.ImageButtonCustom();
             this.Submit_BT = new CustomImageButton.ImageButtonCustom();
-            this.CrystalReport_BT = new CustomImageButton.ImageButtonCustom();
             this.ViewAll_BT = new CustomImageButton.ImageButtonCustom();
             this.Search_BT = new CustomImageButton.ImageButtonCustom();
             this.dragControl1 = new DragControlDemo.DragControl();
@@ -94,7 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Delete_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Update_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Submit_BT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CrystalReport_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewAll_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_BT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateInfo_BT)).BeginInit();
@@ -564,7 +562,7 @@
             this.SaveAll_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("SaveAll_BT.ImageHover")));
             this.SaveAll_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("SaveAll_BT.ImageNormal")));
             this.SaveAll_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("SaveAll_BT.InitialImage")));
-            this.SaveAll_BT.Location = new System.Drawing.Point(776, 411);
+            this.SaveAll_BT.Location = new System.Drawing.Point(776, 361);
             this.SaveAll_BT.Name = "SaveAll_BT";
             this.SaveAll_BT.Size = new System.Drawing.Size(174, 65);
             this.SaveAll_BT.TabIndex = 26;
@@ -578,7 +576,7 @@
             this.Delete_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("Delete_BT.ImageHover")));
             this.Delete_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("Delete_BT.ImageNormal")));
             this.Delete_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("Delete_BT.InitialImage")));
-            this.Delete_BT.Location = new System.Drawing.Point(776, 350);
+            this.Delete_BT.Location = new System.Drawing.Point(776, 300);
             this.Delete_BT.Name = "Delete_BT";
             this.Delete_BT.Size = new System.Drawing.Size(174, 65);
             this.Delete_BT.TabIndex = 34;
@@ -591,7 +589,7 @@
             this.Update_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("Update_BT.ImageHover")));
             this.Update_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("Update_BT.ImageNormal")));
             this.Update_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("Update_BT.InitialImage")));
-            this.Update_BT.Location = new System.Drawing.Point(776, 229);
+            this.Update_BT.Location = new System.Drawing.Point(776, 179);
             this.Update_BT.Name = "Update_BT";
             this.Update_BT.Size = new System.Drawing.Size(174, 65);
             this.Update_BT.TabIndex = 33;
@@ -605,26 +603,12 @@
             this.Submit_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("Submit_BT.ImageHover")));
             this.Submit_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("Submit_BT.ImageNormal")));
             this.Submit_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("Submit_BT.InitialImage")));
-            this.Submit_BT.Location = new System.Drawing.Point(776, 174);
+            this.Submit_BT.Location = new System.Drawing.Point(776, 124);
             this.Submit_BT.Name = "Submit_BT";
             this.Submit_BT.Size = new System.Drawing.Size(174, 65);
             this.Submit_BT.TabIndex = 25;
             this.Submit_BT.TabStop = false;
             this.Submit_BT.Click += new System.EventHandler(this.Submit_BT_Click);
-            // 
-            // CrystalReport_BT
-            // 
-            this.CrystalReport_BT.BackColor = System.Drawing.Color.Transparent;
-            this.CrystalReport_BT.Image = ((System.Drawing.Image)(resources.GetObject("CrystalReport_BT.Image")));
-            this.CrystalReport_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("CrystalReport_BT.ImageHover")));
-            this.CrystalReport_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("CrystalReport_BT.ImageNormal")));
-            this.CrystalReport_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("CrystalReport_BT.InitialImage")));
-            this.CrystalReport_BT.Location = new System.Drawing.Point(776, 118);
-            this.CrystalReport_BT.Name = "CrystalReport_BT";
-            this.CrystalReport_BT.Size = new System.Drawing.Size(174, 65);
-            this.CrystalReport_BT.TabIndex = 23;
-            this.CrystalReport_BT.TabStop = false;
-            this.CrystalReport_BT.Click += new System.EventHandler(this.CrystalReport_BT_Click);
             // 
             // ViewAll_BT
             // 
@@ -665,7 +649,7 @@
             this.UpdateInfo_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("UpdateInfo_BT.ImageHover")));
             this.UpdateInfo_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("UpdateInfo_BT.ImageNormal")));
             this.UpdateInfo_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("UpdateInfo_BT.InitialImage")));
-            this.UpdateInfo_BT.Location = new System.Drawing.Point(776, 288);
+            this.UpdateInfo_BT.Location = new System.Drawing.Point(776, 238);
             this.UpdateInfo_BT.Name = "UpdateInfo_BT";
             this.UpdateInfo_BT.Size = new System.Drawing.Size(174, 65);
             this.UpdateInfo_BT.TabIndex = 36;
@@ -686,7 +670,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.Submit_BT);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.CrystalReport_BT);
             this.Controls.Add(this.ViewAll_BT);
             this.Controls.Add(this.Search_BT);
             this.Controls.Add(this.nextDate);
@@ -721,7 +704,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Delete_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Update_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Submit_BT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CrystalReport_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewAll_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_BT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateInfo_BT)).EndInit();
@@ -738,7 +720,6 @@
         private CustomImageButton.ImageButtonCustom Search_BT;
         private System.Windows.Forms.PictureBox textBoxPIC;
         private CustomImageButton.ImageButtonCustom ViewAll_BT;
-        private CustomImageButton.ImageButtonCustom CrystalReport_BT;
         private System.Windows.Forms.Label label2;
         private CustomImageButton.ImageButtonCustom Submit_BT;
         private DragControlDemo.DragControl dragControl1;

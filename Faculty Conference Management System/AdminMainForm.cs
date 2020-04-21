@@ -45,5 +45,15 @@ namespace Faculty_Conference_Management_System
             new Delete("Reviewer").Show();
             this.Hide();
         }
+
+        private void CrystalAuthor_BT_Click(object sender, EventArgs e)
+        {
+            new Crystal_author().Show();
+        }
+
+        private void CrystalCon_BT_Click(object sender, EventArgs e)
+        {
+            new Crystal_conference().Show();
+        }
     }
 }
