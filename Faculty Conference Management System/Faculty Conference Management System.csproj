@@ -74,6 +74,12 @@
     <Compile Include="AssignPaperForm.Designer.cs">
       <DependentUpon>AssignPaperForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="author.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>author.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AuthorPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     <Compile Include="BookAppointmentForm.Designer.cs">
       <DependentUpon>BookAppointmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="conference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>conference.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Controls\DragControl.cs">
       <SubType>Component</SubType>
@@ -97,6 +109,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ImageButtonCustom.designer.cs" />
+    <Compile Include="Crystal_author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystal_author.Designer.cs">
+      <DependentUpon>Crystal_author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crystal_conference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystal_conference.Designer.cs">
+      <DependentUpon>Crystal_conference.cs</DependentUpon>
+    </Compile>
     <Compile Include="Crystal_paper.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,13 +183,27 @@
     <EmbeddedResource Include="AssignPaperForm.resx">
       <DependentUpon>AssignPaperForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="author.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>author.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="AuthorPage.resx">
       <DependentUpon>AuthorPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookAppointmentForm.resx">
       <DependentUpon>BookAppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="conference.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>conference.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ImageButtonCustom.resx" />
+    <EmbeddedResource Include="Crystal_author.resx">
+      <DependentUpon>Crystal_author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal_conference.resx">
+      <DependentUpon>Crystal_conference.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Crystal_paper.resx">
       <DependentUpon>Crystal_paper.cs</DependentUpon>
     </EmbeddedResource>
