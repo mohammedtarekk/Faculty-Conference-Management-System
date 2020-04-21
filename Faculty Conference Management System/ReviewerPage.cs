@@ -18,7 +18,7 @@ namespace Faculty_Conference_Management_System
 		private int selectedPaper;
 		private string cmd;
 		private string selectedReviewer;
-
+		public static int paper_id;
 		public ReviewerPage()
 		{
 			InitializeComponent();
@@ -214,6 +214,16 @@ namespace Faculty_Conference_Management_System
 		private void UpdateInfo_BT_Click(object sender, EventArgs e)
 		{
 			new Update_Data(Connection.Current_ReviewerID, "Reviewer").Show();
+		}
+
+		private void ReviewerPage_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void CrystalReport_BT_Click(object sender, EventArgs e)
+		{
+			paper_id=Convert.ToInt32( GridView1.SelectedRows[0].Cells[0].Value);
 		}
 	}
 }

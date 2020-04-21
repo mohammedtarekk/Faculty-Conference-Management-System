@@ -201,6 +201,7 @@
             this.CrystalReport_BT.Size = new System.Drawing.Size(174, 65);
             this.CrystalReport_BT.TabIndex = 15;
             this.CrystalReport_BT.TabStop = false;
+            this.CrystalReport_BT.Click += new System.EventHandler(this.CrystalReport_BT_Click);
             // 
             // SaveAll_BT
             // 
@@ -288,6 +289,7 @@
             this.Name = "ReviewerPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reviewer";
+            this.Load += new System.EventHandler(this.ReviewerPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxPIC)).EndInit();
