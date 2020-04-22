@@ -289,6 +289,7 @@
             this.Name = "ReviewerPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reviewer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReviewerPage_FormClosed);
             this.Load += new System.EventHandler(this.ReviewerPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

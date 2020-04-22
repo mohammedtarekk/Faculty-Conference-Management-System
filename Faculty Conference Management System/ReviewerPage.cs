@@ -226,5 +226,11 @@ namespace Faculty_Conference_Management_System
 			paper_id=Convert.ToInt32( GridView1.SelectedRows[0].Cells[0].Value);
 			new Crystal_paper().Show();
 		}
+
+		private void ReviewerPage_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			this.Hide();
+			new Login_Form().Show();
+		}
 	}
 }

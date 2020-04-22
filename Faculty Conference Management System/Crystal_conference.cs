@@ -24,13 +24,18 @@ namespace Faculty_Conference_Management_System
 
             c = new conference();
             foreach (ParameterDiscreteValue V in c.ParameterFields[0].DefaultValues)
-                comboBox1.Items.Add(V);
+                comboBox1.Items.Add(V.Value);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             c.SetParameterValue(0, comboBox1.Text);
             crystalReportViewer1.ReportSource = c;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -131,3 +131,5 @@ M:\Learning\Third 2\Database\Faculty-Conference-Management-System\Faculty Confer
 M:\Learning\Third 2\Database\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.csproj.CopyComplete
 M:\Learning\Third 2\Database\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.exe
 M:\Learning\Third 2\Database\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty Conference Management System.pdb
+M:\Learning\Third 2\Database\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Crystal_author.resources
+M:\Learning\Third 2\Database\Faculty-Conference-Management-System\Faculty Conference Management System\obj\Debug\Faculty_Conference_Management_System.Crystal_conference.resources
