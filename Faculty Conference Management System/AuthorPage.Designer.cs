@@ -180,6 +180,7 @@
             this.GridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridView1.Size = new System.Drawing.Size(234, 410);
             this.GridView1.TabIndex = 4;
+            this.GridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView1_CellContentClick);
             this.GridView1.SelectionChanged += new System.EventHandler(this.GridView1_SelectionChanged);
             // 
             // PaperDataPnl

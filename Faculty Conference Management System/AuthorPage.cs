@@ -48,10 +48,11 @@ namespace Faculty_Conference_Management_System
 
 		private void ViewAll_BT_Click(object sender, EventArgs e)
 		{
-			string cmd = "select * from paper where paper.is_assigned = 1";
+
+			string cmd = "select * from paper where paper.is_assigned = 1 and paper.author_id =:id ";
 			try
 				{
-				set = con.DisconnectedExcuteQuery(cmd);
+				set = con.DisconnectedExcuteQuery(cmd,"id",Connection.Current_AuthorID.ToString());
 				GridView1.AutoGenerateColumns = true;
 				GridView1.DataSource = set.Tables[0];
 				GridView1.Columns[2].Visible = false;
@@ -174,6 +175,11 @@ namespace Faculty_Conference_Management_System
 		}
 
 		private void content_textBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void GridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 
 		}

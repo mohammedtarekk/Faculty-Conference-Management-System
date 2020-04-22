@@ -43,6 +43,9 @@
             this.Password_txt = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Update_BT = new CustomImageButton.ImageButtonCustom();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -58,7 +61,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(193, 359);
+            this.label2.Location = new System.Drawing.Point(193, 429);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(263, 14);
             this.label2.TabIndex = 63;
@@ -70,7 +73,7 @@
             this.DateBirth_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DateBirth_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateBirth_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.DateBirth_txt.Location = new System.Drawing.Point(381, 233);
+            this.DateBirth_txt.Location = new System.Drawing.Point(381, 271);
             this.DateBirth_txt.Name = "DateBirth_txt";
             this.DateBirth_txt.Size = new System.Drawing.Size(233, 14);
             this.DateBirth_txt.TabIndex = 61;
@@ -80,7 +83,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox6.Location = new System.Drawing.Point(360, 220);
+            this.pictureBox6.Location = new System.Drawing.Point(360, 258);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(276, 45);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,7 +96,7 @@
             this.Address_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Address_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Address_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Address_txt.Location = new System.Drawing.Point(381, 198);
+            this.Address_txt.Location = new System.Drawing.Point(381, 236);
             this.Address_txt.Name = "Address_txt";
             this.Address_txt.Size = new System.Drawing.Size(233, 14);
             this.Address_txt.TabIndex = 59;
@@ -103,7 +106,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox5.Location = new System.Drawing.Point(360, 185);
+            this.pictureBox5.Location = new System.Drawing.Point(360, 223);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(276, 45);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -116,7 +119,7 @@
             this.Email_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Email_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Email_txt.Location = new System.Drawing.Point(379, 159);
+            this.Email_txt.Location = new System.Drawing.Point(379, 179);
             this.Email_txt.Name = "Email_txt";
             this.Email_txt.Size = new System.Drawing.Size(234, 14);
             this.Email_txt.TabIndex = 57;
@@ -126,7 +129,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox4.Location = new System.Drawing.Point(359, 146);
+            this.pictureBox4.Location = new System.Drawing.Point(359, 166);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(278, 45);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -162,7 +165,7 @@
             this.FName_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FName_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FName_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.FName_txt.Location = new System.Drawing.Point(385, 117);
+            this.FName_txt.Location = new System.Drawing.Point(379, 117);
             this.FName_txt.Name = "FName_txt";
             this.FName_txt.Size = new System.Drawing.Size(105, 14);
             this.FName_txt.TabIndex = 53;
@@ -172,7 +175,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox2.Location = new System.Drawing.Point(365, 104);
+            this.pictureBox2.Location = new System.Drawing.Point(361, 104);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(137, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -185,7 +188,7 @@
             this.Password_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Password_txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password_txt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Password_txt.Location = new System.Drawing.Point(381, 271);
+            this.Password_txt.Location = new System.Drawing.Point(384, 309);
             this.Password_txt.Name = "Password_txt";
             this.Password_txt.Size = new System.Drawing.Size(233, 14);
             this.Password_txt.TabIndex = 51;
@@ -195,7 +198,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Faculty_Conference_Management_System.Properties.Resources.textBox_;
-            this.pictureBox1.Location = new System.Drawing.Point(361, 259);
+            this.pictureBox1.Location = new System.Drawing.Point(361, 297);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(276, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -209,19 +212,58 @@
             this.Update_BT.ImageHover = ((System.Drawing.Image)(resources.GetObject("Update_BT.ImageHover")));
             this.Update_BT.ImageNormal = ((System.Drawing.Image)(resources.GetObject("Update_BT.ImageNormal")));
             this.Update_BT.InitialImage = ((System.Drawing.Image)(resources.GetObject("Update_BT.InitialImage")));
-            this.Update_BT.Location = new System.Drawing.Point(146, 239);
+            this.Update_BT.Location = new System.Drawing.Point(136, 239);
             this.Update_BT.Name = "Update_BT";
             this.Update_BT.Size = new System.Drawing.Size(174, 65);
             this.Update_BT.TabIndex = 64;
             this.Update_BT.TabStop = false;
             this.Update_BT.Click += new System.EventHandler(this.Update_BT_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(371, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "First Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(511, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.TabIndex = 66;
+            this.label3.Text = "Last Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label4.Location = new System.Drawing.Point(371, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 17);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "Email";
+            // 
             // Update_Data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Faculty_Conference_Management_System.Properties.Resources.BACKGROUND__;
-            this.ClientSize = new System.Drawing.Size(656, 375);
+            this.ClientSize = new System.Drawing.Size(656, 469);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Update_BT);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DateBirth_txt);
@@ -270,5 +312,8 @@
         private System.Windows.Forms.TextBox Password_txt;
         private System.Windows.Forms.PictureBox pictureBox1;
         private CustomImageButton.ImageButtonCustom Update_BT;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

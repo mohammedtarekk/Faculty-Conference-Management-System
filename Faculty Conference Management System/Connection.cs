@@ -15,6 +15,7 @@ namespace Faculty_Conference_Management_System
         public static int Current_AuthorID;
         public static int Current_ReviewerID;
         public string conStr { get; set; }
+
 		private OracleDataAdapter adapter { get; set; }
 		private OracleCommandBuilder builder { get; set; }
 		private DataSet DBdataSet { get; set; }
@@ -343,21 +344,17 @@ namespace Faculty_Conference_Management_System
         {
             con = new OracleConnection(conStr);
             con.Open();
-            try
-            {
+           
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "insert into PAPER values (Paper_Seq.nextval,:PAPER_TITLE,:PAPER_CONTENT,:PAPER_CAT,:Author_id)";
+                cmd.CommandText = "insert into PAPER values (Paper_Seq.nextval,:PAPER_TITLE,:PAPER_CONTENT,:PAPER_CAT,:Author_id, 0 ,0)";
                 cmd.Parameters.Add("PAPER_TITLE", title);
                 cmd.Parameters.Add("PAPER_CONTENT", content);
                 cmd.Parameters.Add("PAPER_CAT", Cat_ID);///this row for test only it will be updated
                 cmd.Parameters.Add("Author_id", Current_AuthorID);
                 cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                return false;
-            }
+            
+           
             return true;
         }
 
