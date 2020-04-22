@@ -71,13 +71,14 @@ namespace Faculty_Conference_Management_System
                               AND review.reviewer_id = reviewer.reviewer_id
                               AND paper.research_id = research_categoryfield.category_id
                               AND author.author_id = paper.author_id
+							  AND paper.Reviewer_ID=:id
 							  ORDER BY paper.paper_id ASC
 								";
 
 			try
 			{
 				GridView1.AutoGenerateColumns = true;
-				GridView1.DataSource = con.DisconnectedExcuteQuery(cmd).Tables[0];
+				GridView1.DataSource = con.DisconnectedExcuteQuery(cmd, "id", Connection.Current_ReviewerID.ToString()).Tables[0];
 				cmd = "select  *  from review where Reviewer_ID=:id ORDER BY paper_id ASC ";
 				set = con.DisconnectedExcuteQuery(cmd, "id",Connection.Current_ReviewerID.ToString());
 				GridView2.AutoGenerateColumns = true;
