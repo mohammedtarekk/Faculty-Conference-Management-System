@@ -49,7 +49,7 @@ namespace Faculty_Conference_Management_System
 		private void ViewAll_BT_Click(object sender, EventArgs e)
 		{
 
-			string cmd = "select * from paper where paper.is_assigned = 1 and paper.author_id =:id ";
+			string cmd = "select * from paper where  paper.author_id =:id ";
 			try
 				{
 				set = con.DisconnectedExcuteQuery(cmd,"id",Connection.Current_AuthorID.ToString());
