@@ -59,7 +59,6 @@ namespace Faculty_Conference_Management_System
 
         private void Update_Data_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new AdminMainForm().Show();
         }
 
         private void Update_Data_Load(object sender, EventArgs e)

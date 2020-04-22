@@ -58,10 +58,6 @@ namespace Faculty_Conference_Management_System
 
 		}
 
-		private void Exit_BT_Click(object sender, EventArgs e)
-		{
-			Application.Exit();
-		}
 
 		private void ViewAll_BT_Click(object sender, EventArgs e)
 		{
@@ -230,7 +226,6 @@ namespace Faculty_Conference_Management_System
 
 		private void ReviewerPage_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			this.Hide();
 			new Login_Form().Show();
 		}
 	}

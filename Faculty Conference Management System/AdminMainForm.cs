@@ -31,7 +31,7 @@ namespace Faculty_Conference_Management_System
 
         private void AdminMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            new Login_Form().Show();
         }
 
         private void DeleteAuthor_BT_Click(object sender, EventArgs e)

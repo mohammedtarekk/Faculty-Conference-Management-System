@@ -51,8 +51,8 @@ namespace Faculty_Conference_Management_System
         {
             //new AdminMainForm().Show();
             //new Register_Form().Show();
-             //new ReviewerPage().Show();
-             new AuthorPage().Show();
+            //new ReviewerPage().Show();
+            new AuthorPage().Show();
             //new AssignPaperForm().Show();
             this.Hide();
         }

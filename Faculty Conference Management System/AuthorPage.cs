@@ -68,11 +68,6 @@ namespace Faculty_Conference_Management_System
 			}
 		}
 
-		private void Exit_BT_Click(object sender, EventArgs e)
-		{
-			Application.Exit();
-		}
-
 		private void searchTxt_TextChanged(object sender, EventArgs e)
 		{
 			searchTxt.ForeColor = Color.Silver;
@@ -124,7 +119,7 @@ namespace Faculty_Conference_Management_System
 
 		private void AuthorPage_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			Application.Exit();
+			new Login_Form().Show();
 		}
 
 		private void Update_BT_Click(object sender, EventArgs e)
