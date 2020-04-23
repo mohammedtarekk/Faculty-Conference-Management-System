@@ -38,7 +38,8 @@ namespace Faculty_Conference_Management_System
 				papersGrid.Rows[0].Selected = true;
 
 				//selecting available reviewer for the selected date
-				cmd = "select reviewer_id, reviewer_fname, reviewer_sname, assigned_papers FROM reviewer";
+				cmd = @"select reviewer_id, reviewer_fname, reviewer_sname, assigned_papers FROM reviewer
+						ORDER BY assigned_papers ASC";
 				set = con.DisconnectedExcuteQuery(cmd);
 				reviewersGrid.AutoGenerateColumns = true;
 				reviewersGrid.DataSource = set.Tables[0];

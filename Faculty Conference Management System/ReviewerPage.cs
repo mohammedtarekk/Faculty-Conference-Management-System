@@ -67,7 +67,7 @@ namespace Faculty_Conference_Management_System
                               AND review.reviewer_id = reviewer.reviewer_id
                               AND paper.research_id = research_categoryfield.category_id
                               AND author.author_id = paper.author_id
-							  AND paper.Reviewer_ID=:id
+							  AND review.Reviewer_ID=:id
 							  ORDER BY paper.paper_id ASC
 								";
 

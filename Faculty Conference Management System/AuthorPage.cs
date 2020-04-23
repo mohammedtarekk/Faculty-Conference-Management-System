@@ -83,40 +83,12 @@ namespace Faculty_Conference_Management_System
 			clickedOnce = true;
 		}
 
-		//The change he can do is to delete the rejected papers only
-		private void SaveAll_BT_Click(object sender, EventArgs e)
-		{
-			OracleConnection connection = new OracleConnection(con.conStr);
-			connection.Open();
-			OracleCommand cmd = new OracleCommand();
-			cmd.Connection = connection;
-			cmd.CommandText = @"delete from review where paper_id = :id";
-			cmd.Parameters.Add("id", SelectedPaperID);
-			cmd.CommandType = CommandType.Text;
-			cmd.ExecuteNonQuery();
-			connection.Close();
-
-			con.Update(set);
-			PaperDataPnl.Visible = false;
-			MessageBox.Show("Changes are saved successfully");
-		}
-
 		private int SelectedPaperID;
 		
 		private void Submit_BT_Click(object sender, EventArgs e)
 		{
 			new SubmitPaper().Show();
 		}
-
-		private void PaperDataPnl_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void CrystalReport_BT_Click(object sender, EventArgs e)
-		{
-		}
-
 		private void AuthorPage_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			new Login_Form().Show();
@@ -142,13 +114,24 @@ namespace Faculty_Conference_Management_System
                               AND review.reviewer_id = reviewer.reviewer_id
                               AND paper.research_id = research_categoryfield.category_id
                               AND author.author_id = paper.author_id 
-							  AND paper.paper_title = :t
+							  AND paper.paper_id = :t
 			                  ";
-				cmd.Parameters.Add("t", GridView1.SelectedRows[0].Cells[1].Value.ToString());
+				cmd.Parameters.Add("t", GridView1.SelectedRows[0].Cells[0].Value.ToString());
 				cmd.CommandType = CommandType.Text;
-
 				OracleDataReader dr = cmd.ExecuteReader();
-				while (dr.Read())
+				bool flag = dr.Read();
+				if (!flag)
+				{
+						idLbl.Text = GridView1.SelectedRows[0].Cells[0].Value.ToString();
+						titleLbl.Text = GridView1.SelectedRows[0].Cells[1].Value.ToString();
+					authorIdLbl.Text = GridView1.SelectedRows[0].Cells[4].Value.ToString();
+					authorNameLbl.Text = GridView1.SelectedRows[0].Cells[4].Value.ToString(); ;
+					revIdLbl.Text = "-";
+					revNameLbl.Text = "-";
+					stateLbl.Text = "Pending";
+					content_textBox.Text = GridView1.SelectedRows[0].Cells[2].Value.ToString(); ;
+				}
+				while (flag)
 				{
 					idLbl.Text = dr["ID"].ToString();
 					titleLbl.Text = dr["Title"].ToString();
@@ -158,7 +141,8 @@ namespace Faculty_Conference_Management_System
 					revNameLbl.Text = dr["ReviewerName"].ToString();
 					stateLbl.Text = dr["ReviewState"].ToString();
 					content_textBox.Text = dr["Content"].ToString();
-
+					categoryLbl.Text = dr["Category"].ToString();
+					flag = dr.Read();
 				}
 				connection.Close();
 				PaperDataPnl.Visible = true;
@@ -169,13 +153,28 @@ namespace Faculty_Conference_Management_System
 			new Update_Data(Connection.Current_AuthorID, "Author").Show();
 		}
 
-		private void content_textBox_TextChanged(object sender, EventArgs e)
+		private void Delete_BT_Click(object sender, EventArgs e)
 		{
+			if (MessageBox.Show("Are you sure you want to delete the selected paper " + GridView1.SelectedRows[0].Cells[1].Value.ToString() + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+				== DialogResult.Yes)
+			{
 
-		}
+					OracleConnection connection = new OracleConnection(con.conStr);
+					connection.Open();
+					OracleCommand cmd = new OracleCommand();
+					cmd.Connection = connection;
+					cmd.CommandText = @"delete from review where paper_id = :id";
+					cmd.Parameters.Add("id", SelectedPaperID);
+					cmd.CommandType = CommandType.Text;
+					cmd.ExecuteNonQuery();
+					connection.Close();
+				GridView1.Rows.RemoveAt(GridView1.SelectedRows[0].Index);
+				con.Update(set);
 
-		private void GridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
+				ViewAll_BT_Click(sender, e);
+				MessageBox.Show("Changes are saved successfully");
+
+			}
 
 		}
 	}
