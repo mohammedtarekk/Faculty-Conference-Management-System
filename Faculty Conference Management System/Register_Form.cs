@@ -68,9 +68,9 @@ namespace Faculty_Conference_Management_System
         {
             bool res = true;
             if (ReviewerRB.Checked)
-                res = con.Signup("Author",FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
+                res = con.Signup("Reviewer",FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
             else if(AuthorRB.Checked)
-                res = con.Signup("Reviewer", FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
+                res = con.Signup("Author", FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
             else if(AdminRB.Checked)
                 res = con.Signup("Admin", FName_txt.Text, LNAME_txt.Text, DateBirth_txt.Text, Address_txt.Text, Password_txt.Text, Email_txt.Text);
 

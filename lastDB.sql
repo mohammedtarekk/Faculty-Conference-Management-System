@@ -1,51 +1,31 @@
 --------------------------------------------------------
---  File created - Monday-April-20-2020   
+--  File created - Thursday-April-23-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence ADMIN_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "ADMIN_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "ADMIN_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 2 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence AUTHOR_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "AUTHOR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 22 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "AUTHOR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 26 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence CON_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "CON_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "CON_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence PAPER_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "PAPER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "PAPER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 14 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence REVIEWER_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "REVIEWER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
---------------------------------------------------------
---  DDL for Sequence SEQ_PAPER
---------------------------------------------------------
-
-   CREATE SEQUENCE  "SEQ_PAPER"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 61 CACHE 20 NOORDER  NOCYCLE ;
---------------------------------------------------------
---  DDL for Sequence SEQ_REV
---------------------------------------------------------
-
-   CREATE SEQUENCE  "SEQ_REV"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 101 CACHE 20 NOORDER  NOCYCLE ;
---------------------------------------------------------
---  DDL for Sequence SEQ
---------------------------------------------------------
-
-   CREATE SEQUENCE  "SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
---------------------------------------------------------
---  DDL for Sequence SEQ_CON
---------------------------------------------------------
-
-   CREATE SEQUENCE  "SEQ_CON"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 61 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "REVIEWER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 8 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table ADMIN
 --------------------------------------------------------
@@ -167,8 +147,6 @@
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into DATES
-Insert into DATES (DAY_DATE,HALL) values ('20/2/2020','Fahmy Tolba Hall');
-Insert into DATES (DAY_DATE,HALL) values ('20/2/2020','Saieed Abdelwahab Hall');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE DATES
@@ -192,9 +170,13 @@ Insert into RESEARCH_CATEGORYFIELD (CATEGORY_ID,CATEGORY_NAME,CATEGORY_DESCRIBTI
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into REVIEWER
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (1,'r','r','r','r','r','rr',3);
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (2,'r2','r2','r2','r2','r2','r2',1);
-Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (4,'r4','r4','r4','r4','r4','r4',0);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (7,'admin','1','17/12/1969','admin@gmail.com','cairo','admin',0);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (1,'r','r','17/12/1969','r@gmail.com','cairo','rr',5);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (2,'r2','r2','17/12/1969','r2@gmail.com','cairo','r2',2);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (4,'r4','r4','17/12/1969','r4@gmail.com','cairo','r4',0);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (5,'mostafa','nasr','17/12/1969','mostafa@hotmail.com','7 hafez ibrahem','m',0);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (6,'medo','kmal','17/12/1969','yousef@hotmail.com','cairo','m',0);
+Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,REVIEWER_EMAIL,REVIEWER_ADDRESS,REVIEWER_PASSWORD,ASSIGNED_PAPERS) values (3,'r3','r3','17/12/1969','r3@gmail.com','cairo','r3',1);
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEWER
@@ -205,10 +187,6 @@ Insert into REVIEWER (REVIEWER_ID,REVIEWER_FNAME,REVIEWER_SNAME,REVIEWER_DBIRTH,
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into REVIEW
-Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (1,1,'Accepted');
-Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (2,2,'Rejected');
-Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (4,3,'Waiting');
-Insert into REVIEW (PAPER_ID,REVIEWER_ID,REV_STATE) values (21,1,'Accepted');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEW
@@ -223,6 +201,8 @@ Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (1,'0111111111')
 Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (2,'0222222222');
 Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (3,'0333333333');
 Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (4,'0444444444');
+Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (5,'0235895178');
+Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (6,'02105498751');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE REVIEWER_PHONES
@@ -233,8 +213,6 @@ Insert into REVIEWER_PHONES (REVIEWER_ID,REVIEWER_PHONE) values (4,'0444444444')
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into CONFERENCE
-Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,PAPER_TITLE,CONFERENCE_DURATION,PAPER_ID) values (12,'20/2/2020','Saieed Abdelwahab Hall','hii',5,21);
-Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,PAPER_TITLE,CONFERENCE_DURATION,PAPER_ID) values (11,'20/2/2020','Fahmy Tolba Hall','medo',5,1);
 
 ---------------------------------------------------
 --   END DATA FOR TABLE CONFERENCE
@@ -245,9 +223,12 @@ Insert into CONFERENCE (CONFERENCE_ID,CONFERENCE_DATE,CONFERENCE_PLACE,PAPER_TIT
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into AUTHOR
+Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (6,'author','author','17/2/1960','author@gmail.com','cairo','author');
 Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (1,'m','m','m','m','m','mm');
 Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (2,'mm','mm','mm','mm','mm','mm');
-Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (4,'Ahmed','Khaled','20/9/1995','Ahmed@gmail.com','blalball','ahmed');
+Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (3,'Ahmed','Khaled','20/9/1995','Ahmed@gmail.com','blalball','ahmed');
+Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (4,'mohamed','ahmed','2000','yousef@hotmail.com','nasr city','m');
+Insert into AUTHOR (AUTHOR_ID,AUTHOR_FNAME,AUTHOR_SNAME,AUTHOR_DBIRTH,AUTHOR_EMAIL,AUTHOR_ADDRESS,AUTHOR_PASSWORD) values (5,'kmal','medo','2000','yousef@hotamil.com','egypt','m');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE AUTHOR
@@ -261,6 +242,8 @@ REM INSERTING into AUTHOR_PHONES
 Insert into AUTHOR_PHONES (AUTHOR_ID,AUTHOR_PHONE) values (1,'01141931203');
 Insert into AUTHOR_PHONES (AUTHOR_ID,AUTHOR_PHONE) values (2,'01001419267');
 Insert into AUTHOR_PHONES (AUTHOR_ID,AUTHOR_PHONE) values (3,'01061057079');
+Insert into AUTHOR_PHONES (AUTHOR_ID,AUTHOR_PHONE) values (4,'01008075453');
+Insert into AUTHOR_PHONES (AUTHOR_ID,AUTHOR_PHONE) values (5,'20122689523');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE AUTHOR_PHONES
@@ -288,12 +271,24 @@ Insert into REVIEWER_DATES (REVIEWER_ID,REV_DATE) values (3,'22/4/2020');
 ---------------------------------------------------
 REM INSERTING into PAPER
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (2,'meeting','we will hold meeting at 5 pm isa',1,3,'1',0);
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (3,'medo','hhhhhhhhhhhhhh',1,1,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (3,'medo','hhhhhhhhhhhhhh',1,1,'1',0);
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (4,'testtest','hiiiiiiiiiiiii',2,2,'1',0);
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (1,'medo','medo1',1,1,'1',1);
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (5,'test3','byeeeeeeeeeeee',3,3,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (5,'test3','byeeeeeeeeeeee',3,3,'1',0);
 Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (6,'AI','AI Content byeeeeeeeeeeee',1,4,'0',0);
-Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (21,'hii','hhhuh',3,1,'1',1);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (7,'hii','hhhuh',3,1,'1',1);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (8,'asdas','asdasdasdasd',2,1,'1',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (11,'AI','In the near term, the goal of keeping AI’s impact on society beneficial motivates research in many areas, from economics and law to technical topics such as verification, validity, security and control. Whereas it may be little more than a minor nuisance if your laptop crashes or gets hacked, it becomes all the more important that an AI system does what you want it to do if it controls your car, your airplane, your pacemaker, your automated trading system or your power grid. Another short-term challenge is preventing a devastating arms race in lethal autonomous weapons. 
+',2,5,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (13,'Covid-19','THE TOP MYTHS ABOUT ADVANCED AI 
+A captivating conversation is taking place about the future of artificial intelligence and what it will/should mean for humanity. There are fascinating controversies where the world’s leading experts disagree, such as: AI’s future impact on the job market; if/when human-level AI will be developed; whether this will lead to an intelligence explosion; and whether this is something we should welcome or fear. But there are also many examples of of boring pseudo-controversies caused by people misunderstanding and talking past each other. To help ourselves focus on the interesting controversies and open questions — and not on the misunderstandings — let’s  clear up some of the most common myths.',3,4,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (12,'Operating System','Stephen Hawking, Elon Musk, Steve Wozniak, Bill Gates, and many other big names in science and technology have recently expressed concern in the media and via open letters about the risks posed by AI, joined by many leading AI researchers. Why is the subject suddenly in the headlines? 
+The idea that the quest for strong AI would ultimately succeed was long thought of as science fiction, centuries or more away. However, thanks to recent breakthroughs, many AI milestones, which experts viewed as decades away merely five years ago, have now been reached, making many experts take seriously the possibility of superintelligence in our lifetime. While some experts still guess that human-level AI is centuries away, most AI researches at the 2015 Puerto',3,4,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (10,'Database','DOAJ is a community-curated online directory that indexes and provides access to high quality, open access, peer-reviewed journals. DOAJ is independent. All funding is via donations, 22% of which comes from sponsors and 78% from members and publisher members. All DOAJ services are free of charge including being indexed in DOAJ. All data is freely available. 
+An article database is an online tool that allows you to search within a group of journals for articles on a particular topic. There are many different databases to choose from, and each individual database covers only a certain type and number of journals 
+The Journal and Article Locator is a tool that allows you to search for journals by title. Go to the Library homepage and click the "Databases and Journals" tab. Then select "Journal and Article Locator." Search for the journal name 
+Google is not a database, but it''s mostly made up of databases. Especially it''s main service, which is a search engine.',1,5,'0',0);
+Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_ASSIGNED,HASCONFERENCE) values (9,'werytr','rygxnhjmgjimrimuyrimy',1,1,'0',0);
 
 ---------------------------------------------------
 --   END DATA FOR TABLE PAPER
@@ -304,7 +299,7 @@ Insert into PAPER (PAPER_ID,PAPER_TITLE,PAPER_CONTENT,RESEARCH_ID,AUTHOR_ID,IS_A
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into ADMIN
-Insert into ADMIN (ADMIN_ID,ADMIN_FNAME,ADMIN_SNAME,ADMIN_DBIRTH,ADMIN_EMAIL,ADMIN_ADDRESS,ADMIN_PASSWORD) values (1,'a','a','a','a','aa','a');
+Insert into ADMIN (ADMIN_ID,ADMIN_FNAME,ADMIN_SNAME,ADMIN_DBIRTH,ADMIN_EMAIL,ADMIN_ADDRESS,ADMIN_PASSWORD) values (1,'admin','1','17/2/1999','admin@gmail.com','cairo','a');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE ADMIN
@@ -509,27 +504,6 @@ end;
 /
 
 --------------------------------------------------------
---  DDL for Procedure ADD_JOB_HISTORY
---------------------------------------------------------
-set define off;
-
-  CREATE OR REPLACE PROCEDURE "ADD_JOB_HISTORY" 
-  (  p_emp_id          job_history.employee_id%type
-   , p_start_date      job_history.start_date%type
-   , p_end_date        job_history.end_date%type
-   , p_job_id          job_history.job_id%type
-   , p_department_id   job_history.department_id%type
-   )
-IS
-BEGIN
-  INSERT INTO job_history (employee_id, start_date, end_date,
-                           job_id, department_id)
-    VALUES(p_emp_id, p_start_date, p_end_date, p_job_id, p_department_id);
-END add_job_history;
-
-/
-
---------------------------------------------------------
 --  DDL for Procedure ADMIN_SIGNUP
 --------------------------------------------------------
 set define off;
@@ -562,22 +536,6 @@ insert into author (author_id, author_fname, author_sname, author_password, auth
 values(Author_Seq.nextval, aut_fname, aut_sname, aut_pass, aut_dob, aut_email, aut_add);
 
 End;
-
-/
-
---------------------------------------------------------
---  DDL for Procedure DIS
---------------------------------------------------------
-set define off;
-
-  CREATE OR REPLACE PROCEDURE "DIS" 
-(val OUT NUMBER)
-is
-begin
-select count(*) into val
-from employees 
-where manager_id is not null;
-END dis;
 
 /
 
@@ -676,19 +634,20 @@ END secure_dml;
 /
 
 --------------------------------------------------------
---  DDL for Procedure YLAA
+--  DDL for Procedure UPDATE_PAPER
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE PROCEDURE "YLAA" 
-(var out employees%ROWTYPE)
-is
+  CREATE OR REPLACE PROCEDURE "UPDATE_PAPER" 
+(pid in INTEGER,ptit in VARCHAR2,pcat in INTEGER,pcon in VARCHAR2)
+as
 begin
-select * 
-into var
-from employees
-where employee_id=198;
-END ylaa;
+update paper set 
+Paper_Title=ptit,
+RESEARCH_ID=pcat,
+Paper_Content=pcon 
+where Paper_id= pid;
+end;
 
 /
 
