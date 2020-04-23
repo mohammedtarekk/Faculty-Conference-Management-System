@@ -437,5 +437,28 @@ namespace Faculty_Conference_Management_System
             }
              return true;
         }
+        public bool update_paper(int paper_id, string paper_title,string paper_category, string paper_content)
+        {
+           int catid = Get_CatID(paper_category);
+            con = new OracleConnection(conStr);
+            con.Open();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "Update_Paper";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("id",paper_id);
+                cmd.Parameters.Add("title",paper_title );
+                cmd.Parameters.Add("cat", catid);
+                cmd.Parameters.Add("content", paper_content);
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

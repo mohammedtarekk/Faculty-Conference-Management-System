@@ -17,9 +17,12 @@ namespace Faculty_Conference_Management_System
         bool Italic = false;
         bool Underline = false;
 
-        public UpdateForm()
+        public UpdateForm(string title,string cat, string content)
         {
             InitializeComponent();
+            Title_textBox.Text = title;
+            Categories_combo.Text = cat;
+            content_textBox.Text = content;
         }
 
         private void UpdateForm_Load(object sender, EventArgs e)
@@ -168,7 +171,24 @@ namespace Faculty_Conference_Management_System
         }
         private void Categories_combo_Click(object sender, EventArgs e)
         {
+            Connection c = new Connection();
+            List<String> Cat = c.Get_Categories();
+            Categories_combo.Items.Clear();
+            for (int i = 0; i < Cat.Count; i++)
+                Categories_combo.Items.Add(Cat[i]);
+        }
 
+        private void Update_BT_Click(object sender, EventArgs e)
+        {
+            int pap_id = AuthorPage.SelectedPaperID;
+            Connection c = new Connection();
+            bool res= c.update_paper(pap_id, Title_textBox.Text, Categories_combo.Text, content_textBox.Text);
+            if (res)
+                MessageBox.Show("Updated successfully :)");
+            else
+                MessageBox.Show("Updated Failed :( ");
+
+            this.Hide();
         }
     }
 }

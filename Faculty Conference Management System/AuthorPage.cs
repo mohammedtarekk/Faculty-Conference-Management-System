@@ -83,7 +83,7 @@ namespace Faculty_Conference_Management_System
 			clickedOnce = true;
 		}
 
-		private int SelectedPaperID;
+		public static int SelectedPaperID;
 		
 		private void Submit_BT_Click(object sender, EventArgs e)
 		{
@@ -93,10 +93,11 @@ namespace Faculty_Conference_Management_System
 		{
 			new Login_Form().Show();
 		}
-
-		private void Update_BT_Click(object sender, EventArgs e)
+    
+        private void Update_BT_Click(object sender, EventArgs e)
 		{
-			new UpdateForm().Show();
+           
+			new UpdateForm(titleLbl.Text,categoryLbl.Text,content_textBox.Text).Show();
 		}
 
 		private void GridView1_SelectionChanged(object sender, EventArgs e)
@@ -155,27 +156,39 @@ namespace Faculty_Conference_Management_System
 
 		private void Delete_BT_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Are you sure you want to delete the selected paper " + GridView1.SelectedRows[0].Cells[1].Value.ToString() + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-				== DialogResult.Yes)
-			{
+            if (stateLbl.Text == "Accepted")
+            {
+                MessageBox.Show("You can't delete accepted paper :( ", "Sorry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to delete the selected paper " + GridView1.SelectedRows[0].Cells[1].Value.ToString() + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                    == DialogResult.Yes)
+                {
 
-					OracleConnection connection = new OracleConnection(con.conStr);
-					connection.Open();
-					OracleCommand cmd = new OracleCommand();
-					cmd.Connection = connection;
-					cmd.CommandText = @"delete from review where paper_id = :id";
-					cmd.Parameters.Add("id", SelectedPaperID);
-					cmd.CommandType = CommandType.Text;
-					cmd.ExecuteNonQuery();
-					connection.Close();
-				GridView1.Rows.RemoveAt(GridView1.SelectedRows[0].Index);
-				con.Update(set);
+                    OracleConnection connection = new OracleConnection(con.conStr);
+                    connection.Open();
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = connection;
+                    cmd.CommandText = @"delete from review where paper_id = :id";
+                    cmd.Parameters.Add("id", SelectedPaperID);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    GridView1.Rows.RemoveAt(GridView1.SelectedRows[0].Index);
+                    con.Update(set);
 
-				ViewAll_BT_Click(sender, e);
-				MessageBox.Show("Changes are saved successfully");
+                    ViewAll_BT_Click(sender, e);
+                    MessageBox.Show("Changes are saved successfully");
 
-			}
+                }
+            }
 
 		}
-	}
+
+        private void GridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

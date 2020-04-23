@@ -33,6 +33,8 @@ namespace Faculty_Conference_Management_System
                 MessageBox.Show("submitted successfully :)");
             else
                 MessageBox.Show("submitted failed :(");
+
+            this.Hide();
         }
         private void Title_textBox_TextChanged(object sender, EventArgs e)
         {
